@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using LivedoorWeather;
+using PokeAPI;
 
 namespace testApp
 {
@@ -21,11 +22,9 @@ namespace testApp
 		private void Form1_Load(object sender, EventArgs e)
 		{
 			try {
-				LivedoorWeatherService livedoorWeather = new LivedoorWeatherService();
+				PokeAPIConnection api = new PokeAPIConnection();
 
-				livedoorWeather.LoadWeatherInfo();
-
-				MessageBox.Show(livedoorWeather.LivedoorWeatherData.Description.Text);
+				MessageBox.Show(api.Connect("pokemon/801"));
 			}
 			catch(Exception ex) {
 				MessageBox.Show(ex.ToString());

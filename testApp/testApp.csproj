@@ -84,6 +84,10 @@
       <Project>{0bcd9e88-4e4c-4911-84a5-3fd14d579f6c}</Project>
       <Name>LivedoorWeather</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PokeAPI\PokeAPI.csproj">
+      <Project>{cace23b3-e80c-4c40-9177-9b09bbb07834}</Project>
+      <Name>PokeAPI</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
