@@ -22,9 +22,9 @@ namespace testApp
 		private void Form1_Load(object sender, EventArgs e)
 		{
 			try {
-				PokeAPIConnection api = new PokeAPIConnection();
+//				PokeAPIBase api = new PokeAPIBase();
 
-				MessageBox.Show(api.Connect("pokemon/801"));
+//				MessageBox.Show(api.Connect("pokemon/801"));
 			}
 			catch(Exception ex) {
 				MessageBox.Show(ex.ToString());

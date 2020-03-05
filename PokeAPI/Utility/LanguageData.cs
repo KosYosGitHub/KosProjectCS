@@ -21,7 +21,7 @@ namespace PokeAPI
 		public bool Official { get; internal set; } = false;
 
 		/// <summary>言語が使用されている国の2文字コード</summary>
-		public string ISO369 { get; internal set; } = string.Empty;
+		public string ISO639 { get; internal set; } = string.Empty;
 
 		/// <summary>言語の2文字コード</summary>
 		public string ISO3166 { get; internal set; } = string.Empty;
