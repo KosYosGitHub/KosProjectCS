@@ -71,37 +71,7 @@ namespace PokeAPI
 		public const string NameCzech = "CS";
 		#endregion
 
-		// internal プロパティ
-
-		#region 言語APIリスト
-		/// <summary>
-		/// 言語APIリスト
-		/// </summary>
-		internal NamedAPIResourceListData LanguageAPIList {
-			get { return languageAPIList; }
-		}
-		#endregion
-
-		// internal 関数
-
-		#region 言語APIリストを取得
-		/// <summary>
-		/// 言語リストを取得
-		/// </summary>
-		internal void GetAPIList()
-		{
-			// 取得済確認
-			if(languageAPIList != null) {
-				return;
-			}
-
-			// 言語リスト用JSON文字列取得
-			string json = RunAPICommand("language");
-
-			// 取得したJSON文字列を解析
-			ParseNamedAPIResourceListJson(json, ref languageAPIList);
-		}
-		#endregion
+		// public メソッド
 
 		#region 言語情報取得
 		/// <summary>
@@ -152,11 +122,43 @@ namespace PokeAPI
 		/// <summary>
 		/// クリア
 		/// </summary>
-		internal void Clear()
+		public void Clear()
 		{
 			languageAPIList = null;
 			languageDataIDKey.Clear();
 			languageDataNameKey.Clear();
+		}
+		#endregion
+
+		// internal プロパティ
+
+		#region 言語APIリスト
+		/// <summary>
+		/// 言語APIリスト
+		/// </summary>
+		internal NamedAPIResourceListData LanguageAPIList {
+			get { return languageAPIList; }
+		}
+		#endregion
+
+		// internal メソッド
+
+		#region 言語APIリストを取得
+		/// <summary>
+		/// 言語リストを取得
+		/// </summary>
+		internal void GetAPIList()
+		{
+			// 取得済確認
+			if(languageAPIList != null) {
+				return;
+			}
+
+			// 言語リスト用JSON文字列取得
+			string json = RunAPICommand("language");
+
+			// 取得したJSON文字列を解析
+			ParseNamedAPIResourceListJson(json, ref languageAPIList);
 		}
 		#endregion
 
