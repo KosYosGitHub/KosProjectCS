@@ -15,14 +15,14 @@ namespace PokeAPI
 	{
 		// public 定数
 
-		#region 赤・緑・青
-		/// <summary>赤・緑・青</summary>
-		public const string NameRedGreenBlue = "RED-BLUE";
+		#region 赤・緑
+		/// <summary>赤・緑</summary>
+		public const string NameRedBlue = "RED-BLUE";
 		#endregion
 
 		#region ピカチュウ
 		/// <summary>ピカチュウ</summary>
-		public const string NamePikachu = "YELLOW";
+		public const string NameYellow = "YELLOW";
 		#endregion
 
 		#region 金・銀

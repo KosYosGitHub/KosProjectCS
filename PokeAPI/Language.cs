@@ -161,11 +161,8 @@ namespace PokeAPI
 			data.ISO3166 = (obj["iso3166"] as JValue).ToString();   // 言語の2文字コード
 
 			// 言語ごとの名称
-			JArray names = obj["names"] as JArray;
 			data.Names = new List<NameData>();
-			foreach(JObject name in names) {
-				data.Names.Add(ParseName(name));
-			}
+			ParseNameList(obj, "names", data.Names);
 
 			// ディクショナリに追加
 			languageDataIDKey.Add(data.ID, data);

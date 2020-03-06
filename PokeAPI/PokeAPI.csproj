@@ -57,6 +57,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Games\VersionData.cs" />
     <Compile Include="Games\VersionGroupData.cs" />
+    <Compile Include="Version.cs" />
     <Compile Include="VersionGroup.cs" />
   </ItemGroup>
   <ItemGroup>

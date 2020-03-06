@@ -147,6 +147,26 @@ namespace PokeAPI
 		}
 		#endregion
 
+		#region NameDataのリスト要素を解析
+		/// <summary>
+		/// NameDataのリスト要素を解析
+		/// </summary>
+		/// <param name="token">JSONトークン</param>
+		/// <param name="name">名称</param>
+		/// <param name="datas">解析したデータの格納先</param>
+		protected void ParseNameList(JToken token, string name, List<NameData> datas)
+		{
+			JArray fields = token[name] as JArray;
+			if(fields == null) {
+				throw new Exception($"{name}要素が見つかりません。");
+			}
+
+			foreach(JObject field in fields) {
+				datas.Add(ParseName(field));
+			}
+		}
+		#endregion
+
 		#region NameAPIResourceData用フィールドの解析
 		/// <summary>
 		/// NameAPIResourceData用フィールドの解析
@@ -168,7 +188,7 @@ namespace PokeAPI
 		/// <summary>
 		/// NamedAPIResourceDataのリスト要素を解析
 		/// </summary>
-		/// <param name="token">Jsonトークン</param>
+		/// <param name="token">JSONトークン</param>
 		/// <param name="name">名称</param>
 		/// <param name="datas">解析したデータの格納先</param>
 		protected void ParseNamedAPIResourceList(JToken token, string name, List<NamedAPIResourceData> datas)
