@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using Newtonsoft.Json.Linq;
 
 //--- MITライセンスに基づくコメント ---
@@ -73,6 +71,15 @@ namespace PokeAPI
 
 		// public メソッド
 
+		#region コンストラクタ
+		/// <summary>
+		/// コンストラクタ
+		/// </summary>
+		public Language() : base("language")
+		{
+		}
+		#endregion
+
 		#region 言語情報取得
 		/// <summary>
 		/// 言語情報取得
@@ -80,8 +87,8 @@ namespace PokeAPI
 		/// <param name="name">言語名</param>
 		public void GetLanguage(string name)
 		{
-			// 言語リストの取得
-			GetAPIList();
+			// APIリソースの取得
+			GetAPIResourceList();
 
 			// 読込済確認
 			if(languageDataNameKey.ContainsKey(name)) {
@@ -89,10 +96,7 @@ namespace PokeAPI
 			}
 
 			// 言語情報APIリソースURL取得
-			string url = languageAPIList.Results.FirstOrDefault(x => x.Name == name)?.URL;
-			if(string.IsNullOrEmpty(url)) {
-				throw new Exception($"{name}のAPIリソースが見つかりません。");
-			}
+			string url = APIResourceList.GetURL(name);
 
 			// 言語JSON文字列取得
 			string json = RunPokeAPI(url);
@@ -108,11 +112,7 @@ namespace PokeAPI
 		/// </summary>
 		public void GetLanguageAll()
 		{
-			// 言語リストの取得
-			GetAPIList();
-
-			// 各言語情報の取得
-			foreach(NamedAPIResourceData data in languageAPIList.Results) {
+			foreach(NamedAPIResourceData data in APIResourceList.Results) {
 				GetLanguage(data.Name);
 			}
 		}
@@ -122,52 +122,15 @@ namespace PokeAPI
 		/// <summary>
 		/// クリア
 		/// </summary>
-		public void Clear()
+		public new void Clear()
 		{
-			languageAPIList = null;
+			base.Clear();
 			languageDataIDKey.Clear();
 			languageDataNameKey.Clear();
 		}
 		#endregion
 
-		// internal プロパティ
-
-		#region 言語APIリスト
-		/// <summary>
-		/// 言語APIリスト
-		/// </summary>
-		internal NamedAPIResourceListData LanguageAPIList {
-			get { return languageAPIList; }
-		}
-		#endregion
-
-		// internal メソッド
-
-		#region 言語APIリストを取得
-		/// <summary>
-		/// 言語リストを取得
-		/// </summary>
-		internal void GetAPIList()
-		{
-			// 取得済確認
-			if(languageAPIList != null) {
-				return;
-			}
-
-			// 言語リスト用JSON文字列取得
-			string json = RunAPICommand("language");
-
-			// 取得したJSON文字列を解析
-			ParseNamedAPIResourceListJson(json, ref languageAPIList);
-		}
-		#endregion
-
 		// private メンバ変数
-
-		#region 言語APIリスト
-		/// <summary>言語APIリスト</summary>
-		private NamedAPIResourceListData languageAPIList = null;
-		#endregion
 
 		#region 言語ディクショナリ(IDキー)
 		/// <summary>言語ディクショナリ(IDキー)</summary>

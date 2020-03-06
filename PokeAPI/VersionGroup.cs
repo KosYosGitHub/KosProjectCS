@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using Newtonsoft.Json.Linq;
 
 //--- MITライセンスに基づくコメント ---
@@ -109,25 +107,24 @@ namespace PokeAPI
 
 		// public メソッド
 
+		#region コンストラクタ
+		/// <summary>
+		/// コンストラクタ
+		/// </summary>
+		public VersionGroup() : base("version-group")
+		{
+		}
+		#endregion
+
 		#region クリア
 		/// <summary>
 		/// クリア
 		/// </summary>
-		public void Clear()
+		public new void Clear()
 		{
-			versionGroupAPIList = null;
-		}
-		#endregion
-
-		// internal プロパティ
-
-		#region バージョングループAPIリスト
-		/// <summary>
-		/// バージョングループAPIリスト
-		/// </summary>
-		internal NamedAPIResourceListData VersionGroupAPIList
-		{
-			get { return versionGroupAPIList; }
+			base.Clear();
+			versionGroupDataIDKey = null;
+			versionGroupDataNameKey = null;
 		}
 		#endregion
 
@@ -135,58 +132,31 @@ namespace PokeAPI
 
 		#region バージョングループ情報取得
 		/// <summary>
-		/// 言語情報取得
+		/// バージョングループ情報取得
 		/// </summary>
 		/// <param name="name">バージョングループ名</param>
 		public void GetVersionGroup(string name)
 		{
 			// 言語リストの取得
-			GetAPIList();
+			GetAPIResourceList();
 
 			// 読込済確認
 			if(versionGroupDataNameKey.ContainsKey(name)) {
 				return;
 			}
 
-			// 言語情報APIリソースURL取得
-			string url = versionGroupAPIList.Results.FirstOrDefault(x => x.Name == name)?.URL;
-			if(string.IsNullOrEmpty(url)) {
-				throw new Exception($"{name}のAPIリソースが見つかりません。");
-			}
+			// バージョングループAPIリソースURL取得
+			string url = APIResourceList.GetURL(name);
 
-			// 言語JSON文字列取得
+			// バージョングループJSON文字列取得
 			string json = RunPokeAPI(url);
 
-			// 言語JSON文字列解析
+			// バージョングループJSON文字列解析
 			ParseVersionGroupJson(json);
 		}
 		#endregion
 
-		#region バージョングループAPIリストを取得
-		/// <summary>
-		/// バージョングループリストを取得
-		/// </summary>
-		internal void GetAPIList()
-		{
-			// 取得済確認
-			if(versionGroupAPIList != null) {
-				return;
-			}
-
-			// バージョングループリスト用JSON文字列取得
-			string json = RunAPICommand("version-group");
-
-			// 取得したJSON文字列を解析
-			ParseNamedAPIResourceListJson(json, ref versionGroupAPIList);
-		}
-		#endregion
-
 		// private メンバ変数
-
-		#region バージョングループAPIリスト
-		/// <summary>バージョングループAPIリスト</summary>
-		private NamedAPIResourceListData versionGroupAPIList = null;
-		#endregion
 
 		#region バージョングループディクショナリ(IDキー)
 		/// <summary>バージョングループディクショナリ(IDキー)</summary>

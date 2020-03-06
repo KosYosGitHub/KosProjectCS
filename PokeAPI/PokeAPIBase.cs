@@ -15,7 +15,61 @@ namespace PokeAPI
 	/// </summary>
 	public abstract class PokeAPIBase
 	{
+		// protected メンバ変数
+
+		#region APIリソースリスト
+		/// <summary>APIリソースリスト</summary>
+		protected NamedAPIResourceListData apiResourceList = null;
+		#endregion
+
+		// protected プロパティ
+
+		#region APIリソースリスト
+		/// <summary>APIリソースリスト</summary>
+		protected NamedAPIResourceListData APIResourceList => apiResourceList;
+		#endregion
+
 		// protected メソッド
+
+		#region コンストラクタ
+		/// <summary>
+		/// コンストラクタ
+		/// </summary>
+		/// <param name="apiEndPoint">APIエンドポイント</param>
+		protected PokeAPIBase(string apiEndPoint)
+		{
+			this.apiEndPoint = apiEndPoint;
+		}
+		#endregion
+
+		#region APIリソースの取得
+		/// <summary>
+		/// APIリソースの取得
+		/// </summary>
+		protected void GetAPIResourceList()
+		{
+			// 取得済確認
+			if(apiResourceList != null) {
+				return;
+			}
+
+			// APIリソースのJSON文字列取得
+			string json = RunAPICommand(apiEndPoint);
+
+			// 取得したJSON文字列を解析
+			ParseNamedAPIResourceListJson(json, ref apiResourceList);
+		}
+		#endregion
+
+		#region クリア
+		/// <summary>
+		/// クリア
+		/// </summary>
+		protected void Clear()
+		{
+			apiResourceList = null;
+		}
+		#endregion
 
 		#region PokeAPIサーバーに接続し、Jsonリソース取得
 		/// <summary>
@@ -107,6 +161,13 @@ namespace PokeAPI
 
 			return data;
 		}
+		#endregion
+
+		// private メンバ変数
+
+		#region APIエンドポイント
+		/// <summary>APIエンドポイント</summary>
+		string apiEndPoint = null;
 		#endregion
 	}
 }
