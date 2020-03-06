@@ -92,15 +92,13 @@ namespace PokeAPI
 		}
 		#endregion
 
-		// private メソッド
-
 		#region NameAPIResourceData用フィールドの解析
 		/// <summary>
 		/// NameAPIResourceData用フィールドの解析
 		/// </summary>
 		/// <param name="token">Jsonトークン</param>
 		/// <returns>解析データ</returns>
-		private NamedAPIResourceData ParseNamedAPIResource(JToken token)
+		protected NamedAPIResourceData ParseNamedAPIResource(JToken token)
 		{
 			NamedAPIResourceData data = new NamedAPIResourceData();
 
