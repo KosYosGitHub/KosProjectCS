@@ -197,7 +197,7 @@ namespace PokeAPI
 		/// <param name="name">バージョン名</param>
 		public void GetVersion(string name)
 		{
-			// 言語リストの取得
+			// バージョンリストの取得
 			GetAPIResourceList();
 
 			// 読込済確認
@@ -205,13 +205,13 @@ namespace PokeAPI
 				return;
 			}
 
-			// バージョングループAPIリソースURL取得
+			// バージョンAPIリソースURL取得
 			string url = APIResourceList.GetURL(name);
 
-			// バージョングループJSON文字列取得
+			// バージョンJSON文字列取得
 			string json = RunPokeAPI(url);
 
-			// バージョングループJSON文字列解析
+			// バージョンJSON文字列解析
 			ParseVersionJson(json);
 		}
 		#endregion

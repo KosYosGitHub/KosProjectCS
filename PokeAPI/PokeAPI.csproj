@@ -47,6 +47,7 @@
     <Compile Include="CommonModels\DescriptionData.cs" />
     <Compile Include="Games\GenerationData.cs" />
     <Compile Include="Language.cs" />
+    <Compile Include="Pokedex.cs" />
     <Compile Include="Utility\LanguageData.cs" />
     <Compile Include="ResourceLists\NamedAPIResourceListData.cs" />
     <Compile Include="CommonModels\NameData.cs" />

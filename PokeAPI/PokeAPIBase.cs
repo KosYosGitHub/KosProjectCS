@@ -134,13 +134,13 @@ namespace PokeAPI
 		/// <summary>
 		/// NameData用フィールドの解析
 		/// </summary>
-		/// <param name="token">Jsonトークンb</param>
+		/// <param name="token">JSONトークン</param>
 		/// <returns>解析データ</returns>
 		protected NameData ParseName(JToken token)
 		{
 			NameData data = new NameData();
 
-			data.Name = (token as JValue).ToString();               // 名称
+			data.Name = (token["name"] as JValue).ToString();         // 名称
 			data.Language = ParseNamedAPIResource(token["language"]); // 言語ごとの名称
 
 			return data;
@@ -200,6 +200,43 @@ namespace PokeAPI
 
 			foreach(JObject field in fields) {
 				datas.Add(ParseNamedAPIResource(field));
+			}
+		}
+		#endregion
+
+		#region Description用フィールドの解析
+		/// <summary>
+		/// Description用フィールドの解析
+		/// </summary>
+		/// <param name="token">JSONトークン</param>
+		/// <returns>解析データ</returns>
+		protected DescriptionData ParseDescription(JToken token)
+		{
+			DescriptionData data = new DescriptionData();
+
+			data.Description = (token["description"] as JValue).ToString();
+			data.Language = ParseNamedAPIResource(token["language"]);
+
+			return data;
+		}
+		#endregion
+
+		#region DescriptionDataのリスト要素を解析
+		/// <summary>
+		/// DescriptionDataのリスト要素を解析
+		/// </summary>
+		/// <param name="token">JSONトークン</param>
+		/// <param name="name">名称</param>
+		/// <param name="datas">解析したデータの格納先</param>
+		protected void ParseDescriptionList(JToken token, string name, List<DescriptionData> datas)
+		{
+			JArray fields = token[name] as JArray;
+			if(fields == null) {
+				throw new Exception($"{name}要素が見つかりません。");
+			}
+
+			foreach(JObject field in fields) {
+				datas.Add(ParseDescription(field));
 			}
 		}
 		#endregion

@@ -137,7 +137,7 @@ namespace PokeAPI
 		/// <param name="name">バージョングループ名</param>
 		public void GetVersionGroup(string name)
 		{
-			// 言語リストの取得
+			// バージョングループリストの取得
 			GetAPIResourceList();
 
 			// 読込済確認
