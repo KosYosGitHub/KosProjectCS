@@ -123,8 +123,8 @@ namespace PokeAPI
 		public new void Clear()
 		{
 			base.Clear();
-			versionGroupDataIDKey = null;
-			versionGroupDataNameKey = null;
+			versionGroupDataIDKey.Clear();
+			versionGroupDataNameKey.Clear();
 		}
 		#endregion
 

@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="CommonModels\DescriptionData.cs" />
     <Compile Include="Games\GenerationData.cs" />
+    <Compile Include="Generation.cs" />
     <Compile Include="Language.cs" />
     <Compile Include="Pokedex.cs" />
     <Compile Include="Utility\LanguageData.cs" />

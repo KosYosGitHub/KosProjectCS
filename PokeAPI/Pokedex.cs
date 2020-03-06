@@ -154,8 +154,8 @@ namespace PokeAPI
 		public new void Clear()
 		{
 			base.Clear();
-			pokedexDataIDKey = null;
-			pokedexDataNameKey = null;
+			pokedexDataIDKey.Clear();
+			pokedexDataNameKey.Clear();
 		}
 		#endregion
 
