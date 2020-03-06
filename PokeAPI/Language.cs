@@ -18,8 +18,10 @@ namespace PokeAPI
 		// public 定数
 
 		#region 日本語
+		/// <summary>日本語 仮名</summary>
+		public const string NameJapaneseHrkt = "JA-HRKT";
 		/// <summary>日本語</summary>
-		public const string NameJapanese = "JA-HRKT";
+		public const string NameJapanese = "JA";
 		#endregion
 
 		#region ローマ字
@@ -33,8 +35,10 @@ namespace PokeAPI
 		#endregion
 
 		#region 中国語
-		/// <summary>中国語</summary>
-		public const string NameChinese = "ZH-HANT";
+		/// <summary>中国語 繁体字</summary>
+		public const string NameChineseHant = "ZH-HANT";
+		/// <summary>中国語 簡体字</summary>
+		public const string NameChineseHans = "ZH-HANS";
 		#endregion
 
 		#region フランス語
@@ -50,6 +54,21 @@ namespace PokeAPI
 		#region スペイン語
 		/// <summary>スペイン語</summary>
 		public const string NameSpanish = "ES";
+		#endregion
+
+		#region イタリア語
+		/// <summary>イタリア語</summary>
+		public const string NameItalian = "IT";
+		#endregion
+
+		#region 英語
+		/// <summary>英語</summary>
+		public const string NameEnglish = "EN";
+		#endregion
+
+		#region チェコ語
+		/// <summary>チェコ語</summary>
+		public const string NameCzech = "CS";
 		#endregion
 
 		// internal プロパティ
