@@ -186,32 +186,20 @@ namespace PokeAPI
 			data.Generation = ParseNamedAPIResource(obj);           // 世代
 
 			// 技の習得方法
-			JArray moveLearnMethods = obj["move_learn_methods"] as JArray;
 			data.MoveLearnMethods = new List<NamedAPIResourceData>();
-			foreach(JObject method in moveLearnMethods) {
-				data.MoveLearnMethods.Add(ParseNamedAPIResource(method));
-			}
+			ParseNamedAPIResourceList(obj, "move_learn_methods", data.MoveLearnMethods);
 
 			// ポケモン図鑑
-			JArray pokedexes = obj["pokedexes"] as JArray;
 			data.Pokedexes = new List<NamedAPIResourceData>();
-			foreach(JObject pokedex in pokedexes) {
-				data.Pokedexes.Add(ParseNamedAPIResource(pokedex));
-			}
+			ParseNamedAPIResourceList(obj, "pokedexes", data.Pokedexes);
 
 			// 地方
-			JArray regions = obj["regions"] as JArray;
 			data.Regions = new List<NamedAPIResourceData>();
-			foreach(JObject region in regions) {
-				data.Regions.Add(ParseNamedAPIResource(region));
-			}
+			ParseNamedAPIResourceList(obj, "regions", data.Regions);
 
 			// バージョン
-			JArray versions = obj["versions"] as JArray;
 			data.Versions = new List<NamedAPIResourceData>();
-			foreach(JObject version in versions) {
-				data.Versions.Add(ParseNamedAPIResource(version));
-			}
+			ParseNamedAPIResourceList(obj, "versions", data.Versions);
 
 			// ディクショナリに追加
 			versionGroupDataIDKey.Add(data.ID, data);
