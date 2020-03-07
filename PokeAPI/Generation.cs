@@ -9,6 +9,9 @@ using Newtonsoft.Json.Linq;
 
 namespace PokeAPI
 {
+	/// <summary>
+	/// 世代クラス
+	/// </summary>
 	public class Generation : PokeAPIBase
 	{
 		// public メソッド
@@ -43,7 +46,7 @@ namespace PokeAPI
 		internal void GetGeneration(int generation)
 		{
 			// 世代リストの取得
-			GetAPIResourceList();
+			GetNamedAPIResourceList();
 
 			// 読込済確認
 			if(generationDataGenerationKey.ContainsKey(generation)) {
@@ -56,7 +59,7 @@ namespace PokeAPI
 			}
 
 			// 世代APIリソースURL取得
-			string url = APIResourceList.GetURL(GenerationName[generation]);
+			string url = NamedAPIResourceList.GetURL(GenerationName[generation]);
 
 			// 世代JSON文字列取得
 			string json = RunPokeAPI(url);

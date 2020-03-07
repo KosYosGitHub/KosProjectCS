@@ -4,6 +4,9 @@ using System.Linq;
 
 namespace PokeAPI
 {
+	/// <summary>
+	/// 名前付きAPIリソースリスト
+	/// </summary>
 	public class NamedAPIResourceListData
 	{
 		// プロパティ

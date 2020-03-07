@@ -198,7 +198,7 @@ namespace PokeAPI
 		public void GetVersion(string name)
 		{
 			// バージョンリストの取得
-			GetAPIResourceList();
+			GetNamedAPIResourceList();
 
 			// 読込済確認
 			if(versionDataNameKey.ContainsKey(name)) {
@@ -206,7 +206,7 @@ namespace PokeAPI
 			}
 
 			// バージョンAPIリソースURL取得
-			string url = APIResourceList.GetURL(name);
+			string url = NamedAPIResourceList.GetURL(name);
 
 			// バージョンJSON文字列取得
 			string json = RunPokeAPI(url);

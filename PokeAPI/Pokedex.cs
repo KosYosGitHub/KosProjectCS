@@ -169,7 +169,7 @@ namespace PokeAPI
 		public void GetPokedex(string name)
 		{
 			// ポケモン図鑑リストの取得
-			GetAPIResourceList();
+			GetNamedAPIResourceList();
 
 			// 読込済確認
 			if(pokedexDataNameKey.ContainsKey(name)) {
@@ -177,7 +177,7 @@ namespace PokeAPI
 			}
 
 			// ポケモン図鑑APIリソースURL取得
-			string url = APIResourceList.GetURL(name);
+			string url = NamedAPIResourceList.GetURL(name);
 
 			// ポケモン図鑑JSON文字列取得
 			string json = RunPokeAPI(url);

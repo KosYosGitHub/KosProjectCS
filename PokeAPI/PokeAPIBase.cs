@@ -18,16 +18,26 @@ namespace PokeAPI
 	{
 		// protected メンバ変数
 
+		#region 名前付きAPIリソースリスト
+		/// <summary>名前付きAPIリソースリスト</summary>
+		protected NamedAPIResourceListData namedAPIResourceList = null;
+		#endregion
+
 		#region APIリソースリスト
 		/// <summary>APIリソースリスト</summary>
-		protected NamedAPIResourceListData apiResourceList = null;
+		protected APIResourceListData apiResourceList = null;
 		#endregion
 
 		// protected プロパティ
 
+		#region 名前付きAPIリソースリスト
+		/// <summary>名前付きAPIリソースリスト</summary>
+		protected NamedAPIResourceListData NamedAPIResourceList => namedAPIResourceList;
+		#endregion
+
 		#region APIリソースリスト
 		/// <summary>APIリソースリスト</summary>
-		protected NamedAPIResourceListData APIResourceList => apiResourceList;
+		protected APIResourceListData APIResourceList => apiResourceList;
 		#endregion
 
 		// protected メソッド
@@ -40,6 +50,25 @@ namespace PokeAPI
 		protected PokeAPIBase(string apiEndPoint)
 		{
 			this.apiEndPoint = apiEndPoint;
+		}
+		#endregion
+
+		#region 名前付きAPIリソースの取得
+		/// <summary>
+		/// 名前付きAPIリソースの取得
+		/// </summary>
+		protected void GetNamedAPIResourceList()
+		{
+			// 取得済確認
+			if(namedAPIResourceList != null) {
+				return;
+			}
+
+			// APIリソースのJSON文字列取得
+			string json = RunAPICommand(apiEndPoint);
+
+			// 取得したJSON文字列を解析
+			ParseNamedAPIResourceListJson(json, ref namedAPIResourceList);
 		}
 		#endregion
 
@@ -58,7 +87,7 @@ namespace PokeAPI
 			string json = RunAPICommand(apiEndPoint);
 
 			// 取得したJSON文字列を解析
-			ParseNamedAPIResourceListJson(json, ref apiResourceList);
+			ParseAPIResourceListJson(json, ref apiResourceList);
 		}
 		#endregion
 
@@ -68,6 +97,7 @@ namespace PokeAPI
 		/// </summary>
 		protected void Clear()
 		{
+			namedAPIResourceList = null;
 			apiResourceList = null;
 		}
 		#endregion
@@ -102,6 +132,7 @@ namespace PokeAPI
 		/// NamedAPIResourceListモデルのJSONを解析
 		/// </summary>
 		/// <param name="json">JSON文字列</param>
+		/// <param name="listData">解析データ</param>
 		protected void ParseNamedAPIResourceListJson(string json, ref NamedAPIResourceListData listData)
 		{
 			// JSON文字列を解析
@@ -126,6 +157,40 @@ namespace PokeAPI
 			// 次ページがあれば再起呼出
 			if(next != null) {
 				ParseNamedAPIResourceListJson(RunPokeAPI(next), ref listData);
+			}
+		}
+		#endregion
+
+		#region APIResourceListモデルのJSONを解析
+		/// <summary>
+		/// APIResourceListモデルのJSONを解析
+		/// </summary>
+		/// <param name="json">JSON文字列</param>
+		/// <param name="listData">解析データ</param>
+		protected void ParseAPIResourceListJson(string json, ref APIResourceListData listData)
+		{
+			// JSON文字列を解析
+			JObject obj = JObject.Parse(json);
+
+			// リストが存在しない(初回呼出時)はインスタンス化
+			if(listData == null) {
+				listData = new APIResourceListData();
+				listData.Count = (int)obj["count"];
+			}
+
+			// 次ページのURLを取得
+			string next = (obj["next"] as JValue)?.ToString();
+
+			// 結果リストを解析
+			JArray results = obj["results"] as JArray;
+			listData.Results = new List<APIResourceData>();
+			foreach(JObject result in results) {
+				listData.Results.Add(ParseAPIResource(result));
+			}
+
+			// 次ページがあれば再起呼出
+			if(next != null) {
+				ParseAPIResourceListJson(RunPokeAPI(next), ref listData);
 			}
 		}
 		#endregion
@@ -171,13 +236,29 @@ namespace PokeAPI
 		/// <summary>
 		/// NameAPIResourceData用フィールドの解析
 		/// </summary>
-		/// <param name="token">Jsonトークン</param>
+		/// <param name="token">JSONトークン</param>
 		/// <returns>解析データ</returns>
 		protected NamedAPIResourceData ParseNamedAPIResource(JToken token)
 		{
 			NamedAPIResourceData data = new NamedAPIResourceData();
 
 			data.Name = (token["name"] as JValue).ToString();
+			data.URL = (token["url"] as JValue).ToString();
+
+			return data;
+		}
+		#endregion
+
+		#region APIResouceData用フィールドの解析
+		/// <summary>
+		/// APIResouceData用フィールドの解析
+		/// </summary>
+		/// <param name="token">JSONトークン</param>
+		/// <returns>解析データ</returns>
+		protected APIResourceData ParseAPIResource(JToken token)
+		{
+			APIResourceData data = new APIResourceData();
+
 			data.URL = (token["url"] as JValue).ToString();
 
 			return data;

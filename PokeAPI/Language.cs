@@ -88,7 +88,7 @@ namespace PokeAPI
 		public void GetLanguage(string name)
 		{
 			// APIリソースの取得
-			GetAPIResourceList();
+			GetNamedAPIResourceList();
 
 			// 読込済確認
 			if(languageDataNameKey.ContainsKey(name)) {
@@ -96,7 +96,7 @@ namespace PokeAPI
 			}
 
 			// 言語情報APIリソースURL取得
-			string url = APIResourceList.GetURL(name);
+			string url = NamedAPIResourceList.GetURL(name);
 
 			// 言語JSON文字列取得
 			string json = RunPokeAPI(url);
@@ -112,7 +112,7 @@ namespace PokeAPI
 		/// </summary>
 		public void GetLanguageAll()
 		{
-			foreach(NamedAPIResourceData data in APIResourceList.Results) {
+			foreach(NamedAPIResourceData data in NamedAPIResourceList.Results) {
 				GetLanguage(data.Name);
 			}
 		}
