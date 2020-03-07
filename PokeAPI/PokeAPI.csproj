@@ -51,11 +51,14 @@
     <Compile Include="Games\GenerationData.cs" />
     <Compile Include="Gender.cs" />
     <Compile Include="Generation.cs" />
+    <Compile Include="GrowthRate.cs" />
     <Compile Include="Language.cs" />
     <Compile Include="Pokedex.cs" />
     <Compile Include="Pokemon\CharacteristicsData.cs" />
     <Compile Include="Pokemon\EggGroupData.cs" />
     <Compile Include="Pokemon\GenderData.cs" />
+    <Compile Include="Pokemon\GrowthRateData.cs" />
+    <Compile Include="Pokemon\GrowthRateExperienceLevelData.cs" />
     <Compile Include="Pokemon\PokemonSpeciesGenderData.cs" />
     <Compile Include="ResourceLists\APIResourceListData.cs" />
     <Compile Include="Utility\LanguageData.cs" />
