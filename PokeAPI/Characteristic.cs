@@ -85,25 +85,8 @@ namespace PokeAPI
 		private CharacteristicData ParseCharacteristicJson(string json)
 		{
 			JObject obj = JObject.Parse(json);
-			CharacteristicData data = new CharacteristicData();
 
-			data.ID = (int)obj["id"];						// ID
-			data.GeneModulo = (int)obj["gene_modulo"];      // 遺伝子モジュロ
-
-			// 説明リスト
-			data.Descriptions = new List<DescriptionData>();
-			ParseDescriptionList(obj, "descriptions", data.Descriptions);
-
-			// あり得る値
-			JArray possibleValues = obj["possible_values"] as JArray;
-			data.PossibleValues = new List<int>();
-			int no = 0;
-			foreach(JObject possibleValue in possibleValues) {
-				data.PossibleValues.Add((int)possibleValue[$"{no}"]);
-				no++;
-			}
-
-			return data;
+			return new CharacteristicData(obj);
 		}
 		#endregion
 	}

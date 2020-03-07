@@ -162,7 +162,7 @@ namespace PokeAPI
 
 			// 言語ごとの名称
 			data.Names = new List<NameData>();
-			ParseNameList(obj, "names", data.Names);
+			NameData.ParseList(obj, "names", data.Names);
 
 			// ディクショナリに追加
 			languageDataIDKey.Add(data.ID, data);

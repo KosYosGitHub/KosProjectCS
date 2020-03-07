@@ -209,69 +209,12 @@ namespace PokeAPI
 		private void ParsePokedexJson(string json)
 		{
 			JObject obj = JObject.Parse(json);
-			PokedexData data = new PokedexData();
 
-			data.ID = (int)obj["id"];                               // ID
-			data.Name = (obj["name"] as JValue).ToString();         // 名称
-			data.IsMainSeries = (bool)obj["is_main_series"];        // メインのポケモン図鑑か
-			data.Region = ParseNamedAPIResource(obj["region"]);     // 地方
-
-			// 言語ごとの説明
-			data.Descriptions = new List<DescriptionData>();
-			ParseDescriptionList(obj, "descriptions", data.Descriptions);
-
-			// 言語ごとの名称
-			data.Names = new List<NameData>();
-			ParseNameList(obj, "names", data.Names);
-
-			// ポケモン登録情報
-			data.PokemonEntries = new List<PokemonEntryData>();
-			ParsePokemonEntryDataList(obj, "pokemon_entries", data.PokemonEntries);
-
-			// バージョングループ
-			data.VersionGroups = new List<NamedAPIResourceData>();
-			ParseNamedAPIResourceList(obj, "version_groups", data.VersionGroups);
+			PokedexData data = new PokedexData(obj);
 
 			// ディクショナリに追加
 			pokedexDataIDKey.Add(data.ID, data);
 			pokedexDataNameKey.Add(data.Name.ToUpper(), data);
-		}
-		#endregion
-
-		#region PokemonEntryData用フィールド解析
-		/// <summary>
-		/// PokemonEntryData用フィールド解析
-		/// </summary>
-		/// <param name="token">JSONトークン</param>
-		/// <returns>解析データ</returns>
-		private PokemonEntryData ParsePokemonEntry(JToken token)
-		{
-			PokemonEntryData data = new PokemonEntryData();
-
-			data.EntryNumber = (int)token["entry_number"];							// ポケモン図鑑番号
-			data.PokemonSpecies = ParseNamedAPIResource(token["pokemon_species"]);	// ポケモン
-
-			return data;
-		}
-		#endregion
-
-		#region PokemonEntryDataのリスト要素を解析
-		/// <summary>
-		/// PokemonEntryDataのリスト要素を解析
-		/// </summary>
-		/// <param name="token">JSONトークン</param>
-		/// <param name="name">名称</param>
-		/// <param name="datas">解析したデータの格納先</param>
-		protected void ParsePokemonEntryDataList(JToken token, string name, List<PokemonEntryData> datas)
-		{
-			JArray fields = token[name] as JArray;
-			if(fields == null) {
-				throw new Exception($"{name}要素が見つかりません。");
-			}
-
-			foreach(JObject field in fields) {
-				datas.Add(ParsePokemonEntry(field));
-			}
 		}
 		#endregion
 	}

@@ -218,10 +218,10 @@ namespace PokeAPI
 
 			data.ID = (int)obj["id"];												// ID
 			data.Name = (obj["name"] as JValue).ToString();							// 名称
-			data.DecreasedStat = ParseNamedAPIResource(obj["decreased_stat"]);		// 10%減少するステータス
-			data.IncreasedStat = ParseNamedAPIResource(obj["increased_stat"]);		// 10%増加するステータス
-			data.HatesFlavor = ParseNamedAPIResource(obj["hates_flavor"]);			// 嫌いな味
-			data.LikesFlavor = ParseNamedAPIResource(obj["likes_flavor"]);			// 好きな味
+			data.DecreasedStat = new NamedAPIResourceData(obj["decreased_stat"]);	// 10%減少するステータス
+			data.IncreasedStat = new NamedAPIResourceData(obj["increased_stat"]);	// 10%増加するステータス
+			data.HatesFlavor = new NamedAPIResourceData(obj["hates_flavor"]);		// 嫌いな味
+			data.LikesFlavor = new NamedAPIResourceData(obj["likes_flavor"]);		// 好きな味
 
 			// 影響を受けるステータス
 			data.PokeathlonStateChanges = new List<NatureStatChangeData>();
@@ -268,7 +268,7 @@ namespace PokeAPI
 			NatureStatChangeData data = new NatureStatChangeData();
 
 			data.MaxChange = (int)token["max_change"];									// 影響の最大値
-			data.PokeathlonState = ParseNamedAPIResource(token["pokeathlon_stat"]);		// ステータス
+			data.PokeathlonState = new NamedAPIResourceData(token["pokeathlon_stat"]);	// ステータス
 
 			return data;
 		}
@@ -304,9 +304,9 @@ namespace PokeAPI
 		{
 			MoveBattleStylePreferenceData data = new MoveBattleStylePreferenceData();
 
-			data.LowHPPreference = (int)token["low_hp_preference"];						// HPが半分以下の時に使用する可能性
-			data.HighHPPreference = (int)token["high_hp_preference"];					// HPが半分以上の時に使用する可能性
-			data.MoveBattleStyle = ParseNamedAPIResource(token["move_battle_style"]);	// 技スタイル
+			data.LowHPPreference = (int)token["low_hp_preference"];							// HPが半分以下の時に使用する可能性
+			data.HighHPPreference = (int)token["high_hp_preference"];						// HPが半分以上の時に使用する可能性
+			data.MoveBattleStyle = new NamedAPIResourceData(token["move_battle_style"]);	// 技スタイル
 
 			return data;
 		}

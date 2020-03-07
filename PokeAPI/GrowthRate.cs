@@ -127,7 +127,7 @@ namespace PokeAPI
 
 			// 言語ごとの説明
 			data.Descriptions = new List<DescriptionData>();
-			ParseDescriptionList(obj, "descriptions", data.Descriptions);
+			DescriptionData.ParseList(obj, "descriptions", data.Descriptions);
 
 			// レベル
 			data.Levels = new List<GrowthRateExperienceLevelData>();
@@ -135,7 +135,7 @@ namespace PokeAPI
 
 			// ポケモン
 			data.PokemonSpecies = new List<NamedAPIResourceData>();
-			ParseNamedAPIResourceList(obj, "pokemon_species", data.PokemonSpecies);
+			NamedAPIResourceData.ParseList(obj, "pokemon_species", data.PokemonSpecies);
 
 			// ディクショナリに追加
 			growthRateDataIDKey.Add(data.ID, data);

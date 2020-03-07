@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Newtonsoft.Json.Linq;
 
 //--- MITライセンスに基づくコメント ---
@@ -101,59 +100,12 @@ namespace PokeAPI
 		private void ParseGenderJson(string json)
 		{
 			JObject obj = JObject.Parse(json);
-			GenderData data = new GenderData();
 
-			data.ID = (int)obj["id"];
-			data.Name = (obj["name"] as JValue).ToString();
-
-			// ポケモン詳細
-			data.PokemonSpeciesDetails = new List<PokemonSpeciesGenderData>();
-			ParsePokemonSpeciesGenderList(obj, "pokemon_species_details", data.PokemonSpeciesDetails);
-
-			// 進化するために性別が条件になっているポケモン
-			data.RequiredForEvolution = new List<NamedAPIResourceData>();
-			ParseNamedAPIResourceList(obj, "required_for_evolution", data.RequiredForEvolution);
+			GenderData data = new GenderData(obj);
 
 			// ディクショナリに追加
 			genderDataIDKey.Add(data.ID, data);
 			genderDataNameKey.Add(data.Name, data);
-		}
-		#endregion
-
-		#region PokemonSpeciesGenderのリスト要素を解析
-		/// <summary>
-		/// PokemonSpeciesGenderのリスト要素を解析
-		/// </summary>
-		/// <param name="token">JSONトークン</param>
-		/// <param name="name">名称</param>
-		/// <param name="datas">解析したデータの格納先</param>
-		private void ParsePokemonSpeciesGenderList(JToken token, string name, List<PokemonSpeciesGenderData> datas)
-		{
-			JArray fields = token[name] as JArray;
-			if(fields == null) {
-				throw new Exception($"{name}要素が見つかりません。");
-			}
-
-			foreach(JObject field in fields) {
-				datas.Add(ParsePokemonSpeciesGender(field));
-			}
-		}
-		#endregion
-
-		#region PokemonSpeciesGender 解析
-		/// <summary>
-		/// PokemonSpeciesGender 解析
-		/// </summary>
-		/// <param name="token">JSONトークン</param>
-		/// <returns>解析データ</returns>
-		private PokemonSpeciesGenderData ParsePokemonSpeciesGender(JToken token)
-		{
-			PokemonSpeciesGenderData data = new PokemonSpeciesGenderData();
-
-			data.Rate = (int)token["rate"];											// 1/8でメスになる確率
-			data.PokemonSpecies = ParseNamedAPIResource(token["pokemon_species"]);	// ポケモン
-
-			return data;
 		}
 		#endregion
 	}

@@ -148,11 +148,8 @@ namespace PokeAPI
 			string next = (obj["next"] as JValue)?.ToString();
 
 			// 結果リストを解析
-			JArray results = obj["results"] as JArray;
 			listData.Results = new List<NamedAPIResourceData>();
-			foreach(JObject result in results) {
-				listData.Results.Add(ParseNamedAPIResource(result));
-			}
+			NamedAPIResourceData.ParseList(obj, "results", listData.Results);
 
 			// 次ページがあれば再起呼出
 			if(next != null) {
@@ -182,142 +179,12 @@ namespace PokeAPI
 			string next = (obj["next"] as JValue)?.ToString();
 
 			// 結果リストを解析
-			JArray results = obj["results"] as JArray;
 			listData.Results = new List<APIResourceData>();
-			foreach(JObject result in results) {
-				listData.Results.Add(ParseAPIResource(result));
-			}
+			APIResourceData.ParseList(obj, "results", listData.Results);
 
 			// 次ページがあれば再起呼出
 			if(next != null) {
 				ParseAPIResourceListJson(RunPokeAPI(next), ref listData);
-			}
-		}
-		#endregion
-
-		#region NameData用フィールドの解析
-		/// <summary>
-		/// NameData用フィールドの解析
-		/// </summary>
-		/// <param name="token">JSONトークン</param>
-		/// <returns>解析データ</returns>
-		protected NameData ParseName(JToken token)
-		{
-			NameData data = new NameData();
-
-			data.Name = (token["name"] as JValue).ToString();         // 名称
-			data.Language = ParseNamedAPIResource(token["language"]); // 言語ごとの名称
-
-			return data;
-		}
-		#endregion
-
-		#region NameDataのリスト要素を解析
-		/// <summary>
-		/// NameDataのリスト要素を解析
-		/// </summary>
-		/// <param name="token">JSONトークン</param>
-		/// <param name="name">名称</param>
-		/// <param name="datas">解析したデータの格納先</param>
-		protected void ParseNameList(JToken token, string name, List<NameData> datas)
-		{
-			JArray fields = token[name] as JArray;
-			if(fields == null) {
-				throw new Exception($"{name}要素が見つかりません。");
-			}
-
-			foreach(JObject field in fields) {
-				datas.Add(ParseName(field));
-			}
-		}
-		#endregion
-
-		#region NameAPIResourceData用フィールドの解析
-		/// <summary>
-		/// NameAPIResourceData用フィールドの解析
-		/// </summary>
-		/// <param name="token">JSONトークン</param>
-		/// <returns>解析データ</returns>
-		protected NamedAPIResourceData ParseNamedAPIResource(JToken token)
-		{
-			NamedAPIResourceData data = new NamedAPIResourceData();
-
-			data.Name = (token["name"] as JValue).ToString();
-			data.URL = (token["url"] as JValue).ToString();
-
-			return data;
-		}
-		#endregion
-
-		#region APIResouceData用フィールドの解析
-		/// <summary>
-		/// APIResouceData用フィールドの解析
-		/// </summary>
-		/// <param name="token">JSONトークン</param>
-		/// <returns>解析データ</returns>
-		protected APIResourceData ParseAPIResource(JToken token)
-		{
-			APIResourceData data = new APIResourceData();
-
-			data.URL = (token["url"] as JValue).ToString();
-
-			return data;
-		}
-		#endregion
-
-		#region NamedAPIResourceDataのリスト要素を解析
-		/// <summary>
-		/// NamedAPIResourceDataのリスト要素を解析
-		/// </summary>
-		/// <param name="token">JSONトークン</param>
-		/// <param name="name">名称</param>
-		/// <param name="datas">解析したデータの格納先</param>
-		protected void ParseNamedAPIResourceList(JToken token, string name, List<NamedAPIResourceData> datas)
-		{
-			JArray fields = token[name] as JArray;
-			if(fields == null) {
-				throw new Exception($"{name}要素が見つかりません。");
-			}
-
-			foreach(JObject field in fields) {
-				datas.Add(ParseNamedAPIResource(field));
-			}
-		}
-		#endregion
-
-		#region Description用フィールドの解析
-		/// <summary>
-		/// Description用フィールドの解析
-		/// </summary>
-		/// <param name="token">JSONトークン</param>
-		/// <returns>解析データ</returns>
-		protected DescriptionData ParseDescription(JToken token)
-		{
-			DescriptionData data = new DescriptionData();
-
-			data.Description = (token["description"] as JValue).ToString();
-			data.Language = ParseNamedAPIResource(token["language"]);
-
-			return data;
-		}
-		#endregion
-
-		#region DescriptionDataのリスト要素を解析
-		/// <summary>
-		/// DescriptionDataのリスト要素を解析
-		/// </summary>
-		/// <param name="token">JSONトークン</param>
-		/// <param name="name">名称</param>
-		/// <param name="datas">解析したデータの格納先</param>
-		protected void ParseDescriptionList(JToken token, string name, List<DescriptionData> datas)
-		{
-			JArray fields = token[name] as JArray;
-			if(fields == null) {
-				throw new Exception($"{name}要素が見つかりません。");
-			}
-
-			foreach(JObject field in fields) {
-				datas.Add(ParseDescription(field));
 			}
 		}
 		#endregion

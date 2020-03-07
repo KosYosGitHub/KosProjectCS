@@ -99,33 +99,9 @@ namespace PokeAPI
 		private void ParseGenerationJson(int generation, string json)
 		{
 			JObject obj = JObject.Parse(json);
-			GenerationData data = new GenerationData();
 
-			data.ID = (int)obj["id"];										// ID
-			data.Name = (obj["name"] as JValue).ToString();					// 名称
-			data.MainRegion = ParseNamedAPIResource(obj["main_region"]);    // 主な地方
+			GenerationData data = new GenerationData(obj);
 
-			// 特性
-			data.Abilities = new List<NamedAPIResourceData>();
-			ParseNamedAPIResourceList(obj, "abilities", data.Abilities);
-
-			// 技
-			data.Moves = new List<NamedAPIResourceData>();
-			ParseNamedAPIResourceList(obj, "moves", data.Moves);
-
-			// ポケモン
-			data.PokemonSpecies = new List<NamedAPIResourceData>();
-			ParseNamedAPIResourceList(obj, "pokemon_species", data.PokemonSpecies);
-
-			// タイプ
-			data.Types = new List<NamedAPIResourceData>();
-			ParseNamedAPIResourceList(obj, "types", data.Types);
-
-			// バージョングループ
-			data.VersionGroups = new List<NamedAPIResourceData>();
-			ParseNamedAPIResourceList(obj, "version_groups", data.VersionGroups);
-
-			// ディクショナリに追加
 			generationDataGenerationKey.Add(generation, data);
 		}
 		#endregion

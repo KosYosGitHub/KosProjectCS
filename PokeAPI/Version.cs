@@ -238,15 +238,8 @@ namespace PokeAPI
 		private void ParseVersionJson(string json)
 		{
 			JObject obj = JObject.Parse(json);
-			VersionData data = new VersionData();
 
-			data.ID = (int)obj["id"];                               // ID
-			data.Name = (obj["name"] as JValue).ToString();         // 名称
-			data.VersionGroup = ParseNamedAPIResource(obj);         // バージョングループ
-
-			// 言語ごとの名称
-			data.Names = new List<NameData>();
-			ParseNameList(obj, "names", data.Names);
+			VersionData data = new VersionData(obj);
 
 			// ディクショナリに追加
 			versionDataIDKey.Add(data.ID, data);

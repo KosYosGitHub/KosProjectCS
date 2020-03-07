@@ -163,18 +163,8 @@ namespace PokeAPI
 		private void ParseEggGroupJson(string json)
 		{
 			JObject obj = JObject.Parse(json);
-			EggGroupData data = new EggGroupData();
 
-			data.ID = (int)obj["id"];							// ID
-			data.Name = (obj["name"] as JValue).ToString();     // 名称
-
-			// 言語ごとの名称
-			data.Names = new List<NameData>();
-			ParseNameList(obj, "names", data.Names);
-
-			// ポケモン
-			data.PokemonSpecies = new List<NamedAPIResourceData>();
-			ParseNamedAPIResourceList(obj, "pokemon_species", data.PokemonSpecies);
+			EggGroupData data = new EggGroupData(obj);
 
 			// ディクショナリに追加
 			eggGroupDataIDKey.Add(data.ID, data);

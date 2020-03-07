@@ -178,28 +178,8 @@ namespace PokeAPI
 		private void ParseVersionGroupJson(string json)
 		{
 			JObject obj = JObject.Parse(json);
-			VersionGroupData data = new VersionGroupData();
 
-			data.ID = (int)obj["id"];								// ID
-			data.Name = (obj["name"] as JValue).ToString();			// 名称
-			data.Order = (int)obj["order"];							// ソート順番
-			data.Generation = ParseNamedAPIResource(obj);           // 世代
-
-			// 技の習得方法
-			data.MoveLearnMethods = new List<NamedAPIResourceData>();
-			ParseNamedAPIResourceList(obj, "move_learn_methods", data.MoveLearnMethods);
-
-			// ポケモン図鑑
-			data.Pokedexes = new List<NamedAPIResourceData>();
-			ParseNamedAPIResourceList(obj, "pokedexes", data.Pokedexes);
-
-			// 地方
-			data.Regions = new List<NamedAPIResourceData>();
-			ParseNamedAPIResourceList(obj, "regions", data.Regions);
-
-			// バージョン
-			data.Versions = new List<NamedAPIResourceData>();
-			ParseNamedAPIResourceList(obj, "versions", data.Versions);
+			VersionGroupData data = new VersionGroupData(obj);
 
 			// ディクショナリに追加
 			versionGroupDataIDKey.Add(data.ID, data);
