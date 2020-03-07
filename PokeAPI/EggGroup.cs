@@ -1,5 +1,5 @@
-﻿using Newtonsoft.Json.Linq;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Newtonsoft.Json.Linq;
 
 //--- MITライセンスに基づくコメント ---
 // Newtonsoft.Json 使用
@@ -8,6 +8,9 @@ using System.Collections.Generic;
 
 namespace PokeAPI
 {
+	/// <summary>
+	/// 卵グループ
+	/// </summary>
 	public class EggGroup : PokeAPIBase
 	{
 		// public 定数
