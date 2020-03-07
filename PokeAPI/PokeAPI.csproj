@@ -47,11 +47,13 @@
     <Compile Include="Characteristic.cs" />
     <Compile Include="CommonModels\APIResourceData.cs" />
     <Compile Include="CommonModels\DescriptionData.cs" />
+    <Compile Include="EggGroup.cs" />
     <Compile Include="Games\GenerationData.cs" />
     <Compile Include="Generation.cs" />
     <Compile Include="Language.cs" />
     <Compile Include="Pokedex.cs" />
     <Compile Include="Pokemon\CharacteristicsData.cs" />
+    <Compile Include="Pokemon\EggGroupData.cs" />
     <Compile Include="ResourceLists\APIResourceListData.cs" />
     <Compile Include="Utility\LanguageData.cs" />
     <Compile Include="ResourceLists\NamedAPIResourceListData.cs" />
