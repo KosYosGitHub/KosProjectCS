@@ -52,6 +52,12 @@
     <Compile Include="GenerationDetailDialog.Designer.cs">
       <DependentUpon>GenerationDetailDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="GenerationListDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenerationListDialog.Designer.cs">
+      <DependentUpon>GenerationListDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="LanguageDetailDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,8 +109,17 @@
     <Compile Include="VersionGroupListDialog.Designer.cs">
       <DependentUpon>VersionGroupListDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="VersionListDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VersionListDialog.Designer.cs">
+      <DependentUpon>VersionListDialog.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="GenerationDetailDialog.resx">
       <DependentUpon>GenerationDetailDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenerationListDialog.resx">
+      <DependentUpon>GenerationListDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LanguageDetailDialog.resx">
       <DependentUpon>LanguageDetailDialog.cs</DependentUpon>
@@ -138,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VersionGroupListDialog.resx">
       <DependentUpon>VersionGroupListDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VersionListDialog.resx">
+      <DependentUpon>VersionListDialog.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

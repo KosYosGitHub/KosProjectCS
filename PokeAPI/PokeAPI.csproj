@@ -52,6 +52,7 @@
     <Compile Include="Games\GenerationData.cs" />
     <Compile Include="Gender.cs" />
     <Compile Include="Generation.cs" />
+    <Compile Include="GenerationList.cs" />
     <Compile Include="GrowthRate.cs" />
     <Compile Include="Language.cs" />
     <Compile Include="LanguageList.cs" />
@@ -87,6 +88,7 @@
     <Compile Include="Version.cs" />
     <Compile Include="VersionGroup.cs" />
     <Compile Include="VersionGroupList.cs" />
+    <Compile Include="VersionList.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Generic\Generic.csproj">

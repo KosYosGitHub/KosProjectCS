@@ -46,5 +46,33 @@ namespace PokeAPITool
 			dialog.ShowDialog(this);
 		}
 		#endregion
+
+		#region バージョンボタン クリック
+		/// <summary>
+		/// バージョンボタン クリック
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void buttonVersion_Click(object sender, EventArgs e)
+		{
+			VersionListDialog dialog = new VersionListDialog();
+
+			dialog.ShowDialog(this);
+		}
+		#endregion
+
+		#region 世代ボタン クリック
+		/// <summary>
+		/// 世代ボタン クリック
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void buttonGeneration_Click(object sender, EventArgs e)
+		{
+			GenerationListDialog dialog = new GenerationListDialog();
+
+			dialog.ShowDialog(this);
+		}
+		#endregion
 	}
 }
