@@ -77,14 +77,14 @@ namespace PokeAPI
 			}
 
 			// 次ページのURLを取得
-			string next = (obj["next"] as JValue)?.ToString();
+			string next = (obj["next"] as JValue).ToString();
 
 			// 結果リストを解析
 			Results = new List<NamedAPIResourceData>();
 			NamedAPIResourceData.ParseList(obj, "results", Results);
 
 			// 次ページがあれば再起呼出
-			if(next != null) {
+			if(!string.IsNullOrEmpty(next)) {
 				string nextJson = Singleton<PokeAPIClient>.Instance.GetJson(next);
 				ParseList(nextJson, false);
 			}

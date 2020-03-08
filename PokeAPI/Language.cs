@@ -86,24 +86,26 @@ namespace PokeAPI
 		/// 言語情報取得
 		/// </summary>
 		/// <param name="name">言語名</param>
-		public void GetLanguage(string name)
+		/// <returns>言語情報</returns>
+		public LanguageData GetLanguage(string name)
 		{
 			// APIリソースの取得
 			GetNamedAPIResourceList();
 
 			// 読込済確認
-			if(languageDataNameKey.ContainsKey(name)) {
-				return;
+			LanguageData data = null;
+			if(languageDataNameKey.TryGetValue(name.ToUpper(), out data)) {
+				return data;
 			}
 
 			// 言語情報APIリソースURL取得
-			string url = NamedAPIResourceList.GetURL(name);
+			string url = Singleton<LanguageList>.Instance.GetURL(name);
 
 			// 言語JSON文字列取得
 			string json = Singleton<PokeAPIClient>.Instance.GetJson(url);
 
 			// 言語JSON文字列解析
-			ParseLanguageJson(json);
+			return ParseLanguageJson(json);
 		}
 		#endregion
 
@@ -150,7 +152,8 @@ namespace PokeAPI
 		/// 言語 JSON解析
 		/// </summary>
 		/// <param name="json">JSON文字列</param>
-		private void ParseLanguageJson(string json)
+		/// <returns>解析データ</returns>
+		private LanguageData ParseLanguageJson(string json)
 		{
 			JObject obj = JObject.Parse(json);
 
@@ -159,6 +162,8 @@ namespace PokeAPI
 			// ディクショナリに追加
 			languageDataIDKey.Add(data.ID, data);
 			languageDataNameKey.Add(data.Name.ToUpper(), data);
+
+			return data;
 		}
 		#endregion
 	}

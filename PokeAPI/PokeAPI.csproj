@@ -54,6 +54,7 @@
     <Compile Include="Generation.cs" />
     <Compile Include="GrowthRate.cs" />
     <Compile Include="Language.cs" />
+    <Compile Include="LanguageList.cs" />
     <Compile Include="Nature.cs" />
     <Compile Include="PokeAPIClient.cs" />
     <Compile Include="Pokedex.cs" />
