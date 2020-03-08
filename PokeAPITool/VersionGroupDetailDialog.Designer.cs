@@ -307,6 +307,7 @@
 			this.buttonRegionDetail.TabIndex = 14;
 			this.buttonRegionDetail.Text = "詳細";
 			this.buttonRegionDetail.UseVisualStyleBackColor = true;
+			this.buttonRegionDetail.Click += new System.EventHandler(this.buttonRegionDetail_Click);
 			// 
 			// buttonPokedexDetail
 			// 

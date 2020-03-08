@@ -37,8 +37,6 @@ namespace PokeAPI
 		}
 		#endregion
 
-		// internal メソッド
-
 		#region バージョン情報取得
 		/// <summary>
 		/// バージョン情報取得

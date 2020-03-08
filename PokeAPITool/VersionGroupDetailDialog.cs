@@ -84,6 +84,29 @@ namespace PokeAPITool
 		}
 		#endregion
 
+		#region 地方詳細ボタン クリック
+		/// <summary>
+		/// 地方詳細ボタン クリック
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void buttonRegionDetail_Click(object sender, EventArgs e)
+		{
+			// 対象行確認
+			if(regionsDataView.Rows.Count <= 0) {
+				return;
+			}
+
+			// 選択行取得
+			DataGridViewRow row = regionsDataView.SelectedRows[0];
+
+			// 選択行の情報表示
+			RegionDetailDialog dialog = new RegionDetailDialog();
+			dialog.RegionName = row.Cells[0].Value.ToString();
+			dialog.ShowDialog(this);
+		}
+		#endregion
+
 		// private メソッド
 
 		#region 画面にデータ表示

@@ -40,6 +40,29 @@ namespace PokeAPITool
 		}
 		#endregion
 
+		#region バージョングループ詳細ボタン クリック
+		/// <summary>
+		/// バージョングループ詳細ボタン クリック
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void buttonVersionGroupDetail_Click(object sender, EventArgs e)
+		{
+			// 対象行確認
+			if(versionGroupDataView.Rows.Count <= 0) {
+				return;
+			}
+
+			// 選択行取得
+			DataGridViewRow row = versionGroupDataView.SelectedRows[0];
+
+			// 選択言語の情報表示
+			VersionGroupDetailDialog dialog = new VersionGroupDetailDialog();
+			dialog.VersionGroupName = row.Cells[0].Value.ToString();
+			dialog.ShowDialog(this);
+		}
+		#endregion
+
 		#region 言語詳細 クリック
 		/// <summary>
 		/// 言語詳細 クリック

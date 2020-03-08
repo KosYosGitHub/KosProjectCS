@@ -226,6 +226,7 @@
 			this.buttonVersionGroupDetail.TabIndex = 9;
 			this.buttonVersionGroupDetail.Text = "詳細";
 			this.buttonVersionGroupDetail.UseVisualStyleBackColor = true;
+			this.buttonVersionGroupDetail.Click += new System.EventHandler(this.buttonVersionGroupDetail_Click);
 			// 
 			// pokemonDataView
 			// 

@@ -55,6 +55,7 @@
     <Compile Include="GrowthRate.cs" />
     <Compile Include="Language.cs" />
     <Compile Include="LanguageList.cs" />
+    <Compile Include="Locations\RegionData.cs" />
     <Compile Include="Nature.cs" />
     <Compile Include="PokeAPIClient.cs" />
     <Compile Include="Pokedex.cs" />
@@ -70,6 +71,7 @@
     <Compile Include="Pokemon\TypeData.cs" />
     <Compile Include="Pokemon\TypePokemonData.cs" />
     <Compile Include="Pokemon\TypeRelationsData.cs" />
+    <Compile Include="Region.cs" />
     <Compile Include="ResourceLists\APIResourceListData.cs" />
     <Compile Include="Type.cs" />
     <Compile Include="Utility\LanguageData.cs" />
