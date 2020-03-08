@@ -10,9 +10,9 @@ using Newtonsoft.Json.Linq;
 namespace PokeAPI
 {
 	/// <summary>
-	/// ゲームごとの世代データクラス
+	/// パルパーク エンカウントエリアデータクラス
 	/// </summary>
-	public class GenerationGameIndexData
+	public class PalParkEncounterArea
 	{
 		// public static メソッド
 
@@ -23,7 +23,7 @@ namespace PokeAPI
 		/// <param name="token">JSONトークン</param>
 		/// <param name="name">名称</param>
 		/// <param name="list">格納先リスト</param>
-		public static void ParseList(JToken token, string name, List<GenerationGameIndexData> list)
+		public static void ParseList(JToken token, string name, List<PalParkEncounterArea> list)
 		{
 			JArray fields = token[name] as JArray;
 			if(fields == null) {
@@ -31,21 +31,26 @@ namespace PokeAPI
 			}
 
 			foreach(JObject field in fields) {
-				list.Add(new GenerationGameIndexData(field));
+				list.Add(new PalParkEncounterArea(field));
 			}
 		}
 		#endregion
 
 		// プロパティ
 
-		#region ゲームインデックス
-		/// <summary>ゲームインデックス</summary>
-		public int GameIndex { get; internal set; } = 0;
+		#region 基本スコア
+		/// <summary>基本スコア</summary>
+		public int BaseScore { get; internal set; } = 0;
 		#endregion
 
-		#region 世代
-		/// <summary>世代</summary>
-		public NamedAPIResourceData Generation { get; internal set; } = null;
+		#region レート
+		/// <summary>レート</summary>
+		public int Rate { get; internal set; } = 0;
+		#endregion
+
+		#region エリア
+		/// <summary>エリア</summary>
+		public NamedAPIResourceData Area { get; internal set; } = null;
 		#endregion
 
 		// public メソッド
@@ -55,7 +60,7 @@ namespace PokeAPI
 		/// コンストラクタ
 		/// </summary>
 		/// <param name="token">JSONトークン</param>
-		public GenerationGameIndexData(JToken token)
+		public PalParkEncounterArea(JToken token)
 		{
 			Parse(token);
 		}
@@ -70,8 +75,9 @@ namespace PokeAPI
 		/// <param name="token">JSONトークン</param>
 		private void Parse(JToken token)
 		{
-			GameIndex = (int)token["game_index"];
-			Generation = new NamedAPIResourceData(token["generation"]);
+			BaseScore = (int)token["base_score"];
+			Rate = (int)token["rate"];
+			Area = new NamedAPIResourceData(token["area"]);
 		}
 		#endregion
 	}

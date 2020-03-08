@@ -10,9 +10,9 @@ using Newtonsoft.Json.Linq;
 namespace PokeAPI
 {
 	/// <summary>
-	/// ゲームごとの世代データクラス
+	/// ポケモン バリエーションデータクラス
 	/// </summary>
-	public class GenerationGameIndexData
+	public class PokemonSpeciesVariety
 	{
 		// public static メソッド
 
@@ -23,7 +23,7 @@ namespace PokeAPI
 		/// <param name="token">JSONトークン</param>
 		/// <param name="name">名称</param>
 		/// <param name="list">格納先リスト</param>
-		public static void ParseList(JToken token, string name, List<GenerationGameIndexData> list)
+		public static void ParseList(JToken token, string name, List<PokemonSpeciesVariety> list)
 		{
 			JArray fields = token[name] as JArray;
 			if(fields == null) {
@@ -31,21 +31,21 @@ namespace PokeAPI
 			}
 
 			foreach(JObject field in fields) {
-				list.Add(new GenerationGameIndexData(field));
+				list.Add(new PokemonSpeciesVariety(field));
 			}
 		}
 		#endregion
 
-		// プロパティ
+		// public プロパティ
 
-		#region ゲームインデックス
-		/// <summary>ゲームインデックス</summary>
-		public int GameIndex { get; internal set; } = 0;
+		#region デフォルト
+		/// <summary>デフォルトか</summary>
+		public bool IsDefault { get; internal set; } = false;
 		#endregion
 
-		#region 世代
-		/// <summary>世代</summary>
-		public NamedAPIResourceData Generation { get; internal set; } = null;
+		#region ポケモン
+		/// <summary>ポケモン</summary>
+		public NamedAPIResourceData Pokemon { get; internal set; } = null;
 		#endregion
 
 		// public メソッド
@@ -55,7 +55,7 @@ namespace PokeAPI
 		/// コンストラクタ
 		/// </summary>
 		/// <param name="token">JSONトークン</param>
-		public GenerationGameIndexData(JToken token)
+		public PokemonSpeciesVariety(JToken token)
 		{
 			Parse(token);
 		}
@@ -70,8 +70,8 @@ namespace PokeAPI
 		/// <param name="token">JSONトークン</param>
 		private void Parse(JToken token)
 		{
-			GameIndex = (int)token["game_index"];
-			Generation = new NamedAPIResourceData(token["generation"]);
+			IsDefault = (bool)token["is_default"];
+			Pokemon = new NamedAPIResourceData(token["pokemon"]);
 		}
 		#endregion
 	}

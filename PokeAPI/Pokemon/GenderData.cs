@@ -53,7 +53,7 @@ namespace PokeAPI
 		/// JSON解析
 		/// </summary>
 		/// <param name="token">JSONトークン</param>
-		public void Parse(JToken token)
+		private void Parse(JToken token)
 		{
 			ID = (int)token["id"];
 			Name = (token["name"] as JValue).ToString();
