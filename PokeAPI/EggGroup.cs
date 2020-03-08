@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Generic;
 using Newtonsoft.Json.Linq;
 
 //--- MITライセンスに基づくコメント ---
@@ -134,7 +135,7 @@ namespace PokeAPI
 			string url = NamedAPIResourceList.GetURL(name);
 
 			// 卵グループJSON文字列の取得
-			string json = RunPokeAPI(url);
+			string json = Singleton<PokeAPIClient>.Instance.GetJson(url);
 
 			// 卵グループJSON文字列の解析
 			ParseEggGroupJson(json);

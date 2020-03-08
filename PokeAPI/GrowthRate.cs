@@ -1,6 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Newtonsoft.Json.Linq;
+using Generic;
 
 //--- MITライセンスに基づくコメント ---
 // Newtonsoft.Json 使用
@@ -90,7 +90,7 @@ namespace PokeAPI
 			string url = NamedAPIResourceList.GetURL(name);
 
 			// 経験値タイプJSON文字列の取得
-			string json = RunPokeAPI(url);
+			string json = Singleton<PokeAPIClient>.Instance.GetJson(url);
 
 			// 経験値タイプJSON文字列の解析
 			ParseGrowthRateJson(json);
@@ -119,64 +119,12 @@ namespace PokeAPI
 		private void ParseGrowthRateJson(string json)
 		{
 			JObject obj = JObject.Parse(json);
-			GrowthRateData data = new GrowthRateData();
 
-			data.ID = (int)obj["id"];								// ID
-			data.Name = (obj["name"] as JValue).ToString();			// 名称
-			data.Formula = (obj["formula"] as JValue).ToString();	// 計算式
-
-			// 言語ごとの説明
-			data.Descriptions = new List<DescriptionData>();
-			DescriptionData.ParseList(obj, "descriptions", data.Descriptions);
-
-			// レベル
-			data.Levels = new List<GrowthRateExperienceLevelData>();
-			ParseGrowthRateExperienceLevelList(obj, "levels", data.Levels);
-
-			// ポケモン
-			data.PokemonSpecies = new List<NamedAPIResourceData>();
-			NamedAPIResourceData.ParseList(obj, "pokemon_species", data.PokemonSpecies);
+			GrowthRateData data = new GrowthRateData(obj);
 
 			// ディクショナリに追加
 			growthRateDataIDKey.Add(data.ID, data);
-			growthRateDataNameKey.Add(data.Name, data);
-		}
-		#endregion
-
-		#region GrowthRateExperienceLevelのリスト要素を解析
-		/// <summary>
-		/// PokemonSpeciesGenderのリスト要素を解析
-		/// </summary>
-		/// <param name="token">JSONトークン</param>
-		/// <param name="name">名称</param>
-		/// <param name="datas">解析したデータの格納先</param>
-		private void ParseGrowthRateExperienceLevelList(JToken token, string name, List<GrowthRateExperienceLevelData> datas)
-		{
-			JArray fields = token[name] as JArray;
-			if(fields == null) {
-				throw new Exception($"{name}要素が見つかりません。");
-			}
-
-			foreach(JObject field in fields) {
-				datas.Add(ParseGrowthRateExperienceLevel(field));
-			}
-		}
-		#endregion
-
-		#region GrowthRateExperienceLevelData 解析
-		/// <summary>
-		/// GrowthRateExperienceLevelData 解析
-		/// </summary>
-		/// <param name="token">JSONトークン</param>
-		/// <returns>解析データ</returns>
-		private GrowthRateExperienceLevelData ParseGrowthRateExperienceLevel(JToken token)
-		{
-			GrowthRateExperienceLevelData data = new GrowthRateExperienceLevelData();
-
-			data.Level = (int)token["level"];					// レベル
-			data.Experience = (long)token["experience"];        // 必要経験値
-
-			return data;
+			growthRateDataNameKey.Add(data.Name.ToUpper(), data);
 		}
 		#endregion
 	}

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Newtonsoft.Json.Linq;
+using Generic;
 
 //--- MITライセンスに基づくコメント ---
 // Newtonsoft.Json 使用
@@ -71,7 +72,7 @@ namespace PokeAPI
 			string url = NamedAPIResourceList.GetURL(name);
 
 			// 性別JSON文字列の取得
-			string json = RunPokeAPI(url);
+			string json = Singleton<PokeAPIClient>.Instance.GetJson(url);
 
 			// 性別JSON文字列の解析
 			ParseGenderJson(json);

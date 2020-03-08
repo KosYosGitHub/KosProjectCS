@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using Generic;
 using Newtonsoft.Json.Linq;
 
 //--- MITライセンスに基づくコメント ---
@@ -60,7 +57,7 @@ namespace PokeAPI
 			string url = $"characteric/{id}/";
 
 			// 個性JSON文字列取得
-			string json = RunPokeAPI(url);
+			string json = Singleton<PokeAPIClient>.Instance.GetJson(url);
 
 			// 個性JSON文字列解析
 			ParseCharacteristicJson(json);

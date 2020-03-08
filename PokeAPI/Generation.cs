@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Newtonsoft.Json.Linq;
+using Generic;
 
 //--- MITライセンスに基づくコメント ---
 // Newtonsoft.Json 使用
@@ -62,7 +63,7 @@ namespace PokeAPI
 			string url = NamedAPIResourceList.GetURL(GenerationName[generation]);
 
 			// 世代JSON文字列取得
-			string json = RunPokeAPI(url);
+			string json = Singleton<PokeAPIClient>.Instance.GetJson(url);
 
 			// 世代JSON文字列解析
 			ParseGenerationJson(generation, json);

@@ -1,6 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Newtonsoft.Json.Linq;
+using Generic;
 
 //--- MITライセンスに基づくコメント ---
 // Newtonsoft.Json 使用
@@ -180,7 +180,7 @@ namespace PokeAPI
 			string url = NamedAPIResourceList.GetURL(name);
 
 			// ポケモン図鑑JSON文字列取得
-			string json = RunPokeAPI(url);
+			string json = Singleton<PokeAPIClient>.Instance.GetJson(url);
 
 			// ポケモン図鑑JSON文字列解析
 			ParsePokedexJson(json);

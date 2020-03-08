@@ -27,7 +27,7 @@ namespace PokeAPI
 		{
 			JArray fields = token[name] as JArray;
 			if(fields == null) {
-				throw new Exception($"{name}要素が見つかりません。");
+				throw new ArgumentException("要素が見つかりません。", nameof(name));
 			}
 
 			foreach(JObject field in fields) {

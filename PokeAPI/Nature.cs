@@ -1,6 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Newtonsoft.Json.Linq;
+using Generic;
 
 //--- MITライセンスに基づくコメント ---
 // Newtonsoft.Json 使用
@@ -185,7 +185,7 @@ namespace PokeAPI
 			string url = NamedAPIResourceList.GetURL(name);
 
 			// 性格JSON文字列の取得
-			string json = RunPokeAPI(url);
+			string json = Singleton<PokeAPIClient>.Instance.GetJson(url);
 
 			// 性格JSON文字列の解析
 			ParseNatureJson(json);
@@ -214,101 +214,12 @@ namespace PokeAPI
 		private void ParseNatureJson(string json)
 		{
 			JObject obj = JObject.Parse(json);
-			NatureData data = new NatureData();
 
-			data.ID = (int)obj["id"];												// ID
-			data.Name = (obj["name"] as JValue).ToString();							// 名称
-			data.DecreasedStat = new NamedAPIResourceData(obj["decreased_stat"]);	// 10%減少するステータス
-			data.IncreasedStat = new NamedAPIResourceData(obj["increased_stat"]);	// 10%増加するステータス
-			data.HatesFlavor = new NamedAPIResourceData(obj["hates_flavor"]);		// 嫌いな味
-			data.LikesFlavor = new NamedAPIResourceData(obj["likes_flavor"]);		// 好きな味
-
-			// 影響を受けるステータス
-			data.PokeathlonStateChanges = new List<NatureStatChangeData>();
-			ParseNatureStatChangeList(obj, "pokeathlon_stat_changes", data.PokeathlonStateChanges);
-
-			// 技スタイル
-			data.MoveBattleStylePerferences = new List<MoveBattleStylePreferenceData>();
-			ParseMoveBattleStylePreferenceList(obj, "move_battle_style_preferences", data.MoveBattleStylePerferences);
+			NatureData data = new NatureData(obj);
 
 			// ディクショナリに追加
 			natureDataIDKey.Add(data.ID, data);
-			natureDataNameKey.Add(data.Name, data);
-		}
-		#endregion
-
-		#region NatureStatChangeDataのリスト要素を解析
-		/// <summary>
-		/// NatureStatChangeDataのリスト要素を解析
-		/// </summary>
-		/// <param name="token">JSONトークン</param>
-		/// <param name="name">名称</param>
-		/// <param name="datas">解析したデータの格納先</param>
-		private void ParseNatureStatChangeList(JToken token, string name, List<NatureStatChangeData> datas)
-		{
-			JArray fields = token[name] as JArray;
-			if(fields == null) {
-				throw new Exception($"{name}要素が見つかりません。");
-			}
-
-			foreach(JObject field in fields) {
-				datas.Add(ParseNatureStatChange(field));
-			}
-		}
-		#endregion
-
-		#region NatureStatChangeData 解析
-		/// <summary>
-		/// NatureStatChangeData 解析
-		/// </summary>
-		/// <param name="token">JSONトークン</param>
-		/// <returns>解析データ</returns>
-		private NatureStatChangeData ParseNatureStatChange(JToken token)
-		{
-			NatureStatChangeData data = new NatureStatChangeData();
-
-			data.MaxChange = (int)token["max_change"];									// 影響の最大値
-			data.PokeathlonState = new NamedAPIResourceData(token["pokeathlon_stat"]);	// ステータス
-
-			return data;
-		}
-		#endregion
-
-		#region MoveBattleStylePreferenceDataのリスト要素を解析
-		/// <summary>
-		/// MoveBattleStylePreferenceDataのリスト要素を解析
-		/// </summary>
-		/// <param name="token">JSONトークン</param>
-		/// <param name="name">名称</param>
-		/// <param name="datas">解析したデータの格納先</param>
-		private void ParseMoveBattleStylePreferenceList(JToken token, string name, List<MoveBattleStylePreferenceData> datas)
-		{
-			JArray fields = token[name] as JArray;
-			if(fields == null) {
-				throw new Exception($"{name}要素が見つかりません。");
-			}
-
-			foreach(JObject field in fields) {
-				datas.Add(ParseMoveBattleStylePreference(field));
-			}
-		}
-		#endregion
-
-		#region NatureStatChangeData 解析
-		/// <summary>
-		/// NatureStatChangeData 解析
-		/// </summary>
-		/// <param name="token">JSONトークン</param>
-		/// <returns>解析データ</returns>
-		private MoveBattleStylePreferenceData ParseMoveBattleStylePreference(JToken token)
-		{
-			MoveBattleStylePreferenceData data = new MoveBattleStylePreferenceData();
-
-			data.LowHPPreference = (int)token["low_hp_preference"];							// HPが半分以下の時に使用する可能性
-			data.HighHPPreference = (int)token["high_hp_preference"];						// HPが半分以上の時に使用する可能性
-			data.MoveBattleStyle = new NamedAPIResourceData(token["move_battle_style"]);	// 技スタイル
-
-			return data;
+			natureDataNameKey.Add(data.Name.ToUpper(), data);
 		}
 		#endregion
 	}

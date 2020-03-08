@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Newtonsoft.Json.Linq;
+using Generic;
 
 //--- MITライセンスに基づくコメント ---
 // Newtonsoft.Json 使用
@@ -99,7 +100,7 @@ namespace PokeAPI
 			string url = NamedAPIResourceList.GetURL(name);
 
 			// 言語JSON文字列取得
-			string json = RunPokeAPI(url);
+			string json = Singleton<PokeAPIClient>.Instance.GetJson(url);
 
 			// 言語JSON文字列解析
 			ParseLanguageJson(json);
@@ -152,17 +153,8 @@ namespace PokeAPI
 		private void ParseLanguageJson(string json)
 		{
 			JObject obj = JObject.Parse(json);
-			LanguageData data = new LanguageData();
 
-			data.ID = (int)obj["id"];								// ID
-			data.Name = (obj["name"] as JValue).ToString();			// 名称
-			data.Official = (bool)obj["official"];					// 公式対応の言語か
-			data.ISO639 = (obj["iso639"] as JValue).ToString();		// 言語の使用国2文字コード
-			data.ISO3166 = (obj["iso3166"] as JValue).ToString();   // 言語の2文字コード
-
-			// 言語ごとの名称
-			data.Names = new List<NameData>();
-			NameData.ParseList(obj, "names", data.Names);
+			LanguageData data = new LanguageData(obj);
 
 			// ディクショナリに追加
 			languageDataIDKey.Add(data.ID, data);

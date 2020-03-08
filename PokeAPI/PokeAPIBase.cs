@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Net.Http;
 using Generic;
 using Newtonsoft.Json.Linq;
@@ -65,10 +64,10 @@ namespace PokeAPI
 			}
 
 			// APIリソースのJSON文字列取得
-			string json = RunAPICommand(apiEndPoint);
+			string json = Singleton<PokeAPIClient>.Instance.GetAPIResourceListEndPoint(apiEndPoint);
 
 			// 取得したJSON文字列を解析
-			ParseNamedAPIResourceListJson(json, ref namedAPIResourceList);
+			namedAPIResourceList = new NamedAPIResourceListData(json);
 		}
 		#endregion
 
@@ -84,10 +83,10 @@ namespace PokeAPI
 			}
 
 			// APIリソースのJSON文字列取得
-			string json = RunAPICommand(apiEndPoint);
+			string json = Singleton<PokeAPIClient>.Instance.GetAPIResourceListEndPoint(apiEndPoint);
 
 			// 取得したJSON文字列を解析
-			ParseAPIResourceListJson(json, ref apiResourceList);
+			apiResourceList = new APIResourceListData(json);
 		}
 		#endregion
 
@@ -99,93 +98,6 @@ namespace PokeAPI
 		{
 			namedAPIResourceList = null;
 			apiResourceList = null;
-		}
-		#endregion
-
-		#region PokeAPIサーバーに接続し、Jsonリソース取得
-		/// <summary>
-		/// PokeAPIサーバーに接続し、Jsonリソース取得
-		/// </summary>
-		/// <param name="apiCommand">APIコマンド</param>
-		/// <returns></returns>
-		protected string RunAPICommand(string apiCommand)
-		{
-			// GET要求を送信して、Jsonデータを取得
-			return RunPokeAPI($"https://pokeapi.co/api/v2/{apiCommand}");
-		}
-		#endregion
-
-		#region PokeAPIにGET要求を送信しJSON文字列を取得
-		/// <summary>
-		/// PokeAPIにGET要求を送信しJSON文字列を取得
-		/// </summary>
-		/// <param name="url">GET要求を送信するURL</param>
-		/// <returns>取得したJSON文字列</returns>
-		protected string RunPokeAPI(string url)
-		{
-			return Singleton<HttpClient>.Instance.GetStringAsync(url).Result;
-		}
-		#endregion
-
-		#region NamedAPIResourceListモデルのJSONを解析
-		/// <summary>
-		/// NamedAPIResourceListモデルのJSONを解析
-		/// </summary>
-		/// <param name="json">JSON文字列</param>
-		/// <param name="listData">解析データ</param>
-		protected void ParseNamedAPIResourceListJson(string json, ref NamedAPIResourceListData listData)
-		{
-			// JSON文字列を解析
-			JObject obj = JObject.Parse(json);
-
-			// リストが存在しない(初回呼出時)はインスタンス化
-			if(listData == null) {
-				listData = new NamedAPIResourceListData();
-				listData.Count = (int)obj["count"];
-			}
-
-			// 次ページのURLを取得
-			string next = (obj["next"] as JValue)?.ToString();
-
-			// 結果リストを解析
-			listData.Results = new List<NamedAPIResourceData>();
-			NamedAPIResourceData.ParseList(obj, "results", listData.Results);
-
-			// 次ページがあれば再起呼出
-			if(next != null) {
-				ParseNamedAPIResourceListJson(RunPokeAPI(next), ref listData);
-			}
-		}
-		#endregion
-
-		#region APIResourceListモデルのJSONを解析
-		/// <summary>
-		/// APIResourceListモデルのJSONを解析
-		/// </summary>
-		/// <param name="json">JSON文字列</param>
-		/// <param name="listData">解析データ</param>
-		protected void ParseAPIResourceListJson(string json, ref APIResourceListData listData)
-		{
-			// JSON文字列を解析
-			JObject obj = JObject.Parse(json);
-
-			// リストが存在しない(初回呼出時)はインスタンス化
-			if(listData == null) {
-				listData = new APIResourceListData();
-				listData.Count = (int)obj["count"];
-			}
-
-			// 次ページのURLを取得
-			string next = (obj["next"] as JValue)?.ToString();
-
-			// 結果リストを解析
-			listData.Results = new List<APIResourceData>();
-			APIResourceData.ParseList(obj, "results", listData.Results);
-
-			// 次ページがあれば再起呼出
-			if(next != null) {
-				ParseAPIResourceListJson(RunPokeAPI(next), ref listData);
-			}
 		}
 		#endregion
 
