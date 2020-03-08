@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Generic;
 using PokeAPI;
@@ -54,6 +47,20 @@ namespace PokeAPITool
 		}
 		#endregion
 
+		#region 世代詳細ボタン クリック
+		/// <summary>
+		/// 世代詳細ボタン クリック
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void buttonGenerationDetail_Click(object sender, EventArgs e)
+		{
+			GenerationDetailDialog dialog = new GenerationDetailDialog();
+			dialog.GenerationName = generationData.Text;
+			dialog.ShowDialog(this);
+		}
+		#endregion
+
 		// private メソッド
 
 		#region 画面にデータ表示
@@ -62,7 +69,7 @@ namespace PokeAPITool
 		/// </summary>
 		private void ShowData()
 		{
-			VersionGroupData data = Singleton<VersionGroup>.Instance.GetVersionGroup(versionGroupName);
+			VersionGroupData data = Singleton<PokeAPIToolModel>.Instance.VersionGroupDetailList.GetVersionGroup(versionGroupName);
 
 			idData.Text = $"{data.ID}";						// ID
 			nameData.Text = data.Name;						// 名称

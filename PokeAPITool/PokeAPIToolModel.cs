@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Generic;
+﻿using Generic;
 
 namespace PokeAPITool
 {
@@ -24,6 +19,16 @@ namespace PokeAPITool
 		#region バージョングループリスト
 		/// <summary>バージョングループリスト</summary>
 		public PokeAPI.VersionGroupList VersionGroupList => Singleton<PokeAPI.VersionGroupList>.Instance;
+		#endregion
+
+		#region バージョングループ詳細リスト
+		/// <summary>バージョングループ詳細リスト</summary>
+		public PokeAPI.VersionGroup VersionGroupDetailList => Singleton<PokeAPI.VersionGroup>.Instance;
+		#endregion
+
+		#region 世代詳細リスト
+		/// <summary>世代詳細リスト</summary>
+		public PokeAPI.Generation GenerationDetailList => Singleton<PokeAPI.Generation>.Instance;
 		#endregion
 	}
 }

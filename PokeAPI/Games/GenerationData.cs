@@ -32,7 +32,7 @@ namespace PokeAPI
 
 		#region 各言語での名称
 		/// <summary>各言語での名称</summary>
-		public List<NamedAPIResourceData> Names { get; internal set; } = null;
+		public List<NameData> Names { get; internal set; } = null;
 		#endregion
 
 		#region 主な地方
@@ -105,6 +105,10 @@ namespace PokeAPI
 			// バージョングループ
 			VersionGroups = new List<NamedAPIResourceData>();
 			NamedAPIResourceData.ParseList(token, "version_groups", VersionGroups);
+
+			// 各言語での名称
+			Names = new List<NameData>();
+			NameData.ParseList(token, "names", Names);
 		}
 		#endregion
 	}

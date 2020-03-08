@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GenerationDetailDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenerationDetailDialog.Designer.cs">
+      <DependentUpon>GenerationDetailDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="LanguageDetailDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +85,9 @@
     <Compile Include="VersionGroupListDialog.Designer.cs">
       <DependentUpon>VersionGroupListDialog.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="GenerationDetailDialog.resx">
+      <DependentUpon>GenerationDetailDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LanguageDetailDialog.resx">
       <DependentUpon>LanguageDetailDialog.cs</DependentUpon>
     </EmbeddedResource>

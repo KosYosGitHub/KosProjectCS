@@ -47,11 +47,11 @@
 			this.pokedexDataView = new System.Windows.Forms.DataGridView();
 			this.pokedexColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.moveLearnMethodDataView = new System.Windows.Forms.DataGridView();
+			this.moveDataMethodColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.buttonVersionDetail = new System.Windows.Forms.Button();
 			this.buttonRegionDetail = new System.Windows.Forms.Button();
 			this.buttonPokedexDetail = new System.Windows.Forms.Button();
 			this.buttonMoveLearnMethod = new System.Windows.Forms.Button();
-			this.moveDataMethodColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			nameCaption = new System.Windows.Forms.Label();
 			idCaption = new System.Windows.Forms.Label();
 			orderCaption = new System.Windows.Forms.Label();
@@ -205,6 +205,7 @@
 			this.buttonGenerationDetail.TabIndex = 8;
 			this.buttonGenerationDetail.Text = "詳細";
 			this.buttonGenerationDetail.UseVisualStyleBackColor = true;
+			this.buttonGenerationDetail.Click += new System.EventHandler(this.buttonGenerationDetail_Click);
 			// 
 			// regionsDataView
 			// 
@@ -279,42 +280,6 @@
 			this.moveLearnMethodDataView.Size = new System.Drawing.Size(171, 143);
 			this.moveLearnMethodDataView.TabIndex = 19;
 			// 
-			// buttonVersionDetail
-			// 
-			this.buttonVersionDetail.Location = new System.Drawing.Point(13, 251);
-			this.buttonVersionDetail.Name = "buttonVersionDetail";
-			this.buttonVersionDetail.Size = new System.Drawing.Size(39, 24);
-			this.buttonVersionDetail.TabIndex = 11;
-			this.buttonVersionDetail.Text = "詳細";
-			this.buttonVersionDetail.UseVisualStyleBackColor = true;
-			// 
-			// buttonRegionDetail
-			// 
-			this.buttonRegionDetail.Location = new System.Drawing.Point(146, 251);
-			this.buttonRegionDetail.Name = "buttonRegionDetail";
-			this.buttonRegionDetail.Size = new System.Drawing.Size(39, 24);
-			this.buttonRegionDetail.TabIndex = 14;
-			this.buttonRegionDetail.Text = "詳細";
-			this.buttonRegionDetail.UseVisualStyleBackColor = true;
-			// 
-			// buttonPokedexDetail
-			// 
-			this.buttonPokedexDetail.Location = new System.Drawing.Point(274, 251);
-			this.buttonPokedexDetail.Name = "buttonPokedexDetail";
-			this.buttonPokedexDetail.Size = new System.Drawing.Size(39, 24);
-			this.buttonPokedexDetail.TabIndex = 17;
-			this.buttonPokedexDetail.Text = "詳細";
-			this.buttonPokedexDetail.UseVisualStyleBackColor = true;
-			// 
-			// buttonMoveLearnMethod
-			// 
-			this.buttonMoveLearnMethod.Location = new System.Drawing.Point(404, 251);
-			this.buttonMoveLearnMethod.Name = "buttonMoveLearnMethod";
-			this.buttonMoveLearnMethod.Size = new System.Drawing.Size(39, 24);
-			this.buttonMoveLearnMethod.TabIndex = 20;
-			this.buttonMoveLearnMethod.Text = "詳細";
-			this.buttonMoveLearnMethod.UseVisualStyleBackColor = true;
-			// 
 			// moveDataMethodColumn
 			// 
 			this.moveDataMethodColumn.HeaderText = "技の習得方法";
@@ -323,6 +288,42 @@
 			this.moveDataMethodColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
 			this.moveDataMethodColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
 			this.moveDataMethodColumn.Width = 150;
+			// 
+			// buttonVersionDetail
+			// 
+			this.buttonVersionDetail.Location = new System.Drawing.Point(13, 246);
+			this.buttonVersionDetail.Name = "buttonVersionDetail";
+			this.buttonVersionDetail.Size = new System.Drawing.Size(39, 24);
+			this.buttonVersionDetail.TabIndex = 11;
+			this.buttonVersionDetail.Text = "詳細";
+			this.buttonVersionDetail.UseVisualStyleBackColor = true;
+			// 
+			// buttonRegionDetail
+			// 
+			this.buttonRegionDetail.Location = new System.Drawing.Point(146, 246);
+			this.buttonRegionDetail.Name = "buttonRegionDetail";
+			this.buttonRegionDetail.Size = new System.Drawing.Size(39, 24);
+			this.buttonRegionDetail.TabIndex = 14;
+			this.buttonRegionDetail.Text = "詳細";
+			this.buttonRegionDetail.UseVisualStyleBackColor = true;
+			// 
+			// buttonPokedexDetail
+			// 
+			this.buttonPokedexDetail.Location = new System.Drawing.Point(274, 246);
+			this.buttonPokedexDetail.Name = "buttonPokedexDetail";
+			this.buttonPokedexDetail.Size = new System.Drawing.Size(39, 24);
+			this.buttonPokedexDetail.TabIndex = 17;
+			this.buttonPokedexDetail.Text = "詳細";
+			this.buttonPokedexDetail.UseVisualStyleBackColor = true;
+			// 
+			// buttonMoveLearnMethod
+			// 
+			this.buttonMoveLearnMethod.Location = new System.Drawing.Point(404, 246);
+			this.buttonMoveLearnMethod.Name = "buttonMoveLearnMethod";
+			this.buttonMoveLearnMethod.Size = new System.Drawing.Size(39, 24);
+			this.buttonMoveLearnMethod.TabIndex = 20;
+			this.buttonMoveLearnMethod.Text = "詳細";
+			this.buttonMoveLearnMethod.UseVisualStyleBackColor = true;
 			// 
 			// VersionGroupDetailDialog
 			// 
