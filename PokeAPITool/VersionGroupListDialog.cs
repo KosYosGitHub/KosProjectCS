@@ -5,9 +5,9 @@ using Generic;
 namespace PokeAPITool
 {
 	/// <summary>
-	/// 言語リスト画面
+	/// バージョングループリスト画面
 	/// </summary>
-	public partial class LanguageListDialog : Form
+	public partial class VersionGroupListDialog : Form
 	{
 		// public イベント
 
@@ -15,7 +15,7 @@ namespace PokeAPITool
 		/// <summary>
 		/// コンストラクタ
 		/// </summary>
-		public LanguageListDialog()
+		public VersionGroupListDialog()
 		{
 			InitializeComponent();
 		}
@@ -29,30 +29,29 @@ namespace PokeAPITool
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void LanguageList_Load(object sender, EventArgs e)
+		private void VersionGroupListDialog_Load(object sender, EventArgs e)
 		{
-			// 言語名称設定
-			ShowLanguageListData();
+			ShowVersionGroupListData();
 		}
 		#endregion
 
-		#region 言語リスト 選択変更
+		#region バージョングループリスト 選択変更
 		/// <summary>
-		/// 言語リスト 選択変更
+		/// バージョングループリスト 選択変更
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void languageDataView_SelectionChanged(object sender, EventArgs e)
+		private void versionGroupDataView_SelectionChanged(object sender, EventArgs e)
 		{
-			if(languageDataView.SelectedRows.Count <= 0) {
+			if(versionGroupDataView.SelectedRows.Count <= 0) {
 				return;
 			}
 
 			// 選択行取得
-			DataGridViewRow row = languageDataView.SelectedRows[0];
+			DataGridViewRow row = versionGroupDataView.SelectedRows[0];
 
 			nameData.Text = row.Cells[0].Value.ToString();
-			urlData.Text = Singleton<PokeAPIToolModel>.Instance.LanguageList.GetURL(nameData.Text);
+			urlData.Text = Singleton<PokeAPIToolModel>.Instance.VersionGroupList.GetURL(nameData.Text);
 		}
 		#endregion
 
@@ -64,26 +63,25 @@ namespace PokeAPITool
 		/// <param name="e"></param>
 		private void detailButton_Click(object sender, EventArgs e)
 		{
-			LanguageDetailDialog dialog = new LanguageDetailDialog();
-			dialog.LanguageName = nameData.Text;
+			VersionGroupDetailDialog dialog = new VersionGroupDetailDialog();
+			dialog.VersionGroupName = nameData.Text;
 			dialog.ShowDialog(this);
 		}
 		#endregion
 
 		// private メソッド
 
-		#region 言語リストデータの表示
+		#region バージョングループデータの表示
 		/// <summary>
-		/// 言語リストデータの表示
+		/// バージョングループデータの表示
 		/// </summary>
-		private void ShowLanguageListData()
+		private void ShowVersionGroupListData()
 		{
 			// 一度クリア
-			languageDataView.Rows.Clear();
+			versionGroupDataView.Rows.Clear();
 
-			// 言語名称設定
-			foreach(string name in Singleton<PokeAPIToolModel>.Instance.LanguageList.Names) {
-				languageDataView.Rows.Add(name);
+			foreach(string name in Singleton<PokeAPIToolModel>.Instance.VersionGroupList.Names) {
+				versionGroupDataView.Rows.Add(name);
 			}
 		}
 		#endregion

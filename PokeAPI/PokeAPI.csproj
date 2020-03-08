@@ -84,6 +84,7 @@
     <Compile Include="Games\VersionGroupData.cs" />
     <Compile Include="Version.cs" />
     <Compile Include="VersionGroup.cs" />
+    <Compile Include="VersionGroupList.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Generic\Generic.csproj">

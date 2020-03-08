@@ -27,9 +27,23 @@ namespace PokeAPITool
 		/// <param name="e"></param>
 		private void buttonLanguage_Click(object sender, EventArgs e)
 		{
-			LanguageListDialog languageList = new LanguageListDialog();
+			LanguageListDialog dialog = new LanguageListDialog();
 
-			languageList.ShowDialog(this);
+			dialog.ShowDialog(this);
+		}
+		#endregion
+
+		#region バージョングループボタン クリック
+		/// <summary>
+		/// バージョングループボタン クリック
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void buttonVersionGroup_Click(object sender, EventArgs e)
+		{
+			VersionGroupListDialog dialog = new VersionGroupListDialog();
+
+			dialog.ShowDialog(this);
 		}
 		#endregion
 	}

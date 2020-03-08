@@ -77,10 +77,10 @@ namespace PokeAPI
 		/// <param name="token">JSONトークン</param>
 		private void Parse(JToken token)
 		{
-			ID = (int)token["id"];							// ID
-			Name = (token["name"] as JValue).ToString();	// 名称
-			Order = (int)token["order"];					// ソート順番
-			Generation = new NamedAPIResourceData(token);	// 世代
+			ID = (int)token["id"];										// ID
+			Name = (token["name"] as JValue).ToString();				// 名称
+			Order = (int)token["order"];								// ソート順番
+			Generation = new NamedAPIResourceData(token["generation"]);	// 世代
 
 			// 技の習得方法
 			MoveLearnMethods = new List<NamedAPIResourceData>();

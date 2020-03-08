@@ -66,7 +66,7 @@
 			nameCaption.Location = new System.Drawing.Point(13, 31);
 			nameCaption.Name = "nameCaption";
 			nameCaption.Size = new System.Drawing.Size(29, 12);
-			nameCaption.TabIndex = 1;
+			nameCaption.TabIndex = 2;
 			nameCaption.Text = "名称";
 			// 
 			// officialCaption
@@ -75,7 +75,7 @@
 			officialCaption.Location = new System.Drawing.Point(13, 49);
 			officialCaption.Name = "officialCaption";
 			officialCaption.Size = new System.Drawing.Size(53, 12);
-			officialCaption.TabIndex = 2;
+			officialCaption.TabIndex = 4;
 			officialCaption.Text = "公式言語";
 			// 
 			// iso639Caption
@@ -84,7 +84,7 @@
 			iso639Caption.Location = new System.Drawing.Point(13, 67);
 			iso639Caption.Name = "iso639Caption";
 			iso639Caption.Size = new System.Drawing.Size(41, 12);
-			iso639Caption.TabIndex = 3;
+			iso639Caption.TabIndex = 6;
 			iso639Caption.Text = "ISO639";
 			// 
 			// iso3166Caption
@@ -93,7 +93,7 @@
 			iso3166Caption.Location = new System.Drawing.Point(13, 85);
 			iso3166Caption.Name = "iso3166Caption";
 			iso3166Caption.Size = new System.Drawing.Size(47, 12);
-			iso3166Caption.TabIndex = 4;
+			iso3166Caption.TabIndex = 8;
 			iso3166Caption.Text = "ISO3166";
 			// 
 			// namesCaption
@@ -111,7 +111,7 @@
 			this.idData.Location = new System.Drawing.Point(70, 12);
 			this.idData.Name = "idData";
 			this.idData.Size = new System.Drawing.Size(30, 15);
-			this.idData.TabIndex = 5;
+			this.idData.TabIndex = 1;
 			// 
 			// nameData
 			// 
@@ -119,7 +119,7 @@
 			this.nameData.Location = new System.Drawing.Point(70, 30);
 			this.nameData.Name = "nameData";
 			this.nameData.Size = new System.Drawing.Size(100, 15);
-			this.nameData.TabIndex = 6;
+			this.nameData.TabIndex = 3;
 			// 
 			// officialData
 			// 
@@ -127,7 +127,7 @@
 			this.officialData.Location = new System.Drawing.Point(70, 48);
 			this.officialData.Name = "officialData";
 			this.officialData.Size = new System.Drawing.Size(40, 15);
-			this.officialData.TabIndex = 7;
+			this.officialData.TabIndex = 5;
 			// 
 			// iso639Data
 			// 
@@ -135,7 +135,7 @@
 			this.iso639Data.Location = new System.Drawing.Point(70, 66);
 			this.iso639Data.Name = "iso639Data";
 			this.iso639Data.Size = new System.Drawing.Size(30, 15);
-			this.iso639Data.TabIndex = 8;
+			this.iso639Data.TabIndex = 7;
 			// 
 			// iso3166Data
 			// 

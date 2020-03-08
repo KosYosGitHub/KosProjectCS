@@ -4,14 +4,14 @@ using System.Linq;
 namespace PokeAPI
 {
 	/// <summary>
-	/// 言語リストクラス
+	/// バージョングループリスト
 	/// </summary>
-	public class LanguageList : PokeAPIBase
+	public class VersionGroupList : PokeAPIBase
 	{
 		// public プロパティ
 
-		#region 言語名称リスト
-		/// <summary>言語名称リスト</summary>
+		#region バージョングループ名称リスト
+		/// <summary>バージョングループ名称リスト</summary>
 		public List<string> Names => MakeNames();
 		#endregion
 
@@ -21,7 +21,7 @@ namespace PokeAPI
 		/// <summary>
 		/// コンストラクタ
 		/// </summary>
-		public LanguageList() : base("language")
+		public VersionGroupList() : base("version-group")
 		{
 			GetNamedAPIResourceList();
 		}
@@ -47,9 +47,9 @@ namespace PokeAPI
 
 		// private メソッド
 
-		#region 言語名称リストの作成
+		#region バージョングループ名称リストの作成
 		/// <summary>
-		/// 言語名称リストの作成
+		/// バージョングループ名称リストの作成
 		/// </summary>
 		/// <returns>名称リスト</returns>
 		private List<string> MakeNames()

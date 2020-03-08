@@ -20,5 +20,10 @@ namespace PokeAPITool
 		/// <summary>言語詳細リスト</summary>
 		public PokeAPI.Language LanguageDetailList => Singleton<PokeAPI.Language>.Instance;
 		#endregion
+
+		#region バージョングループリスト
+		/// <summary>バージョングループリスト</summary>
+		public PokeAPI.VersionGroupList VersionGroupList => Singleton<PokeAPI.VersionGroupList>.Instance;
+		#endregion
 	}
 }

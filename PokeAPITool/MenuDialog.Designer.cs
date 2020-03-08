@@ -28,6 +28,7 @@
 		private void InitializeComponent()
 		{
 			this.buttonLanguage = new System.Windows.Forms.Button();
+			this.buttonVersionGroup = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// buttonLanguage
@@ -40,13 +41,24 @@
 			this.buttonLanguage.UseVisualStyleBackColor = true;
 			this.buttonLanguage.Click += new System.EventHandler(this.buttonLanguage_Click);
 			// 
-			// Menu
+			// buttonVersionGroup
+			// 
+			this.buttonVersionGroup.Location = new System.Drawing.Point(13, 54);
+			this.buttonVersionGroup.Name = "buttonVersionGroup";
+			this.buttonVersionGroup.Size = new System.Drawing.Size(80, 35);
+			this.buttonVersionGroup.TabIndex = 1;
+			this.buttonVersionGroup.Text = "バージョン\r\nグループ";
+			this.buttonVersionGroup.UseVisualStyleBackColor = true;
+			this.buttonVersionGroup.Click += new System.EventHandler(this.buttonVersionGroup_Click);
+			// 
+			// MenuDialog
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.Controls.Add(this.buttonVersionGroup);
 			this.Controls.Add(this.buttonLanguage);
-			this.Name = "Menu";
+			this.Name = "MenuDialog";
 			this.Text = "PokeAPI ツール";
 			this.ResumeLayout(false);
 
@@ -55,6 +67,7 @@
 		#endregion
 
 		private System.Windows.Forms.Button buttonLanguage;
+		private System.Windows.Forms.Button buttonVersionGroup;
 	}
 }
 

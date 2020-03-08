@@ -14,98 +14,6 @@ namespace PokeAPI
 	/// </summary>
 	public class VersionGroup : PokeAPIBase
 	{
-		// public 定数
-
-		#region 赤・緑
-		/// <summary>赤・緑</summary>
-		public const string NameRedBlue = "RED-BLUE";
-		#endregion
-
-		#region ピカチュウ
-		/// <summary>ピカチュウ</summary>
-		public const string NameYellow = "YELLOW";
-		#endregion
-
-		#region 金・銀
-		/// <summary>金・銀</summary>
-		public const string NameGoldSilver = "GOLD-SILVER";
-		#endregion
-
-		#region クリスタル
-		/// <summary>クリスタル</summary>
-		public const string NameCrystal = "CRYSTAL";
-		#endregion
-
-		#region ルビー・サファイア
-		/// <summary>ルビー・サファイア</summary>
-		public const string NameRubySapphire = "RUBY-SAPPHIRE";
-		#endregion
-
-		#region エメラルド
-		/// <summary>エメラルド</summary>
-		public const string NameEmerald = "EMERALD";
-		#endregion
-
-		#region ファイアレッド・リーフグリーン
-		/// <summary>ファイアレッド・リーフグリーン</summary>
-		public const string NameFireRedLeafGreen = "FIRERED-LEAFGREEN";
-		#endregion
-
-		#region ダイヤモンド・パール
-		/// <summary>ダイヤモンド・パール</summary>
-		public const string NameDiamondPearl = "DIAMOND-PEARL";
-		#endregion
-
-		#region プラチナ
-		/// <summary>プラチナ</summary>
-		public const string NamePlutinum = "PLUTINUM";
-		#endregion
-
-		#region ハートゴールド・ソウルシルバー
-		/// <summary>ハートゴールド・ソウルシルバー</summary>
-		public const string NameHeartGoldSoulSilver = "HEARTGOLD-SOULSILVER";
-		#endregion
-
-		#region ブラック・ホワイト
-		/// <summary>ブラック・ホワイト</summary>
-		public const string NameBlackWhite = "BLACK-WHITE";
-		#endregion
-
-		#region ブラック2・ホワイト2
-		/// <summary>ブラック2・ホワイト2</summary>
-		public const string NameBlack2White2 = "BLACK-2-WHITE-2";
-		#endregion
-
-		#region X・Y
-		/// <summary>X・Y</summary>
-		public const string NameXY = "X-Y";
-		#endregion
-
-		#region オメガルビー・アルファサファイア
-		/// <summary>オメガルビー・アルファサファイア</summary>
-		public const string NameOmegaRubyAlphaSapphire = "OMEGA-RUBY-ALPHA-SAPPHIRE";
-		#endregion
-
-		#region サン・ムーン
-		/// <summary>サン・ムーン</summary>
-		public const string NameSunMoon = "SUN-MOON";
-		#endregion
-
-		#region ウルトラサン・ウルトラムーン
-		/// <summary>ウルトラサン・ウルトラムーン</summary>
-		public const string NameUltraSunUltraMoon = "ULTRA-SUN-ULTRA-MOON";
-		#endregion
-
-		#region ポケモンコロシアム
-		/// <summary>コロシアム</summary>
-		public const string NameColusseum = "COLUSSEUM";
-		#endregion
-
-		#region ポケモンXD 闇の旋風ダーク・ルギア
-		/// <summary>ポケモンXD 闇の旋風ダーク・ルギア</summary>
-		public const string NameXD = "XD";
-		#endregion
-
 		// public メソッド
 
 		#region コンストラクタ
@@ -136,14 +44,16 @@ namespace PokeAPI
 		/// バージョングループ情報取得
 		/// </summary>
 		/// <param name="name">バージョングループ名</param>
-		public void GetVersionGroup(string name)
+		/// <returns>データ</returns>
+		public VersionGroupData GetVersionGroup(string name)
 		{
 			// バージョングループリストの取得
 			GetNamedAPIResourceList();
 
 			// 読込済確認
-			if(versionGroupDataNameKey.ContainsKey(name)) {
-				return;
+			VersionGroupData data = null;
+			if(versionGroupDataNameKey.TryGetValue(name.ToUpper(), out data)) {
+				return data;
 			}
 
 			// バージョングループAPIリソースURL取得
@@ -153,7 +63,7 @@ namespace PokeAPI
 			string json = Singleton<PokeAPIClient>.Instance.GetJson(url);
 
 			// バージョングループJSON文字列解析
-			ParseVersionGroupJson(json);
+			return ParseVersionGroupJson(json);
 		}
 		#endregion
 
@@ -176,7 +86,8 @@ namespace PokeAPI
 		/// バージョングループ JSON解析
 		/// </summary>
 		/// <param name="json">JSON文字列</param>
-		private void ParseVersionGroupJson(string json)
+		/// <returns>解析データ</returns>
+		private VersionGroupData ParseVersionGroupJson(string json)
 		{
 			JObject obj = JObject.Parse(json);
 
@@ -185,6 +96,8 @@ namespace PokeAPI
 			// ディクショナリに追加
 			versionGroupDataIDKey.Add(data.ID, data);
 			versionGroupDataNameKey.Add(data.Name.ToUpper(), data);
+
+			return data;
 		}
 		#endregion
 	}
