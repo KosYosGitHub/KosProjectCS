@@ -50,46 +50,6 @@ namespace PokeAPITool
 		}
 		#endregion
 
-		// private メソッド
-
-		#region 画面表示
-		/// <summary>
-		/// 画面表示
-		/// </summary>
-		private void ShowData()
-		{
-			RegionData data = Singleton<PokeAPIToolModel>.Instance.RegionDetailList.GetRegion(regionName);
-
-			idData.Text = $"{data.ID}";							// ID
-			nameData.Text = data.Name;							// 名称
-			mainGenerationData.Text = data.MainGeneration.Name;	// 主な世代
-
-			// 言語ごとの名称
-			namesDataView.Rows.Clear();
-			foreach(NameData language in data.Names) {
-				namesDataView.Rows.Add(language.Language.Name, language.Name);
-			}
-
-			// 場所
-			locationDataView.Rows.Clear();
-			foreach(NamedAPIResourceData location in data.Locations) {
-				locationDataView.Rows.Add(location.Name);
-			}
-
-			// 図鑑
-			pokedexDataView.Rows.Clear();
-			foreach(NamedAPIResourceData pokedex in data.Pokedexes) {
-				pokedexDataView.Rows.Add(pokedex.Name);
-			}
-
-			// バージョングループ
-			versionGroupDataView.Rows.Clear();
-			foreach(NamedAPIResourceData versionGroup in data.VersionGroups) {
-				versionGroupDataView.Rows.Add(versionGroup.Name);
-			}
-		}
-		#endregion
-
 		#region 主な世代詳細ボタン クリック
 		/// <summary>
 		/// 主な世代詳細ボタン クリック
@@ -100,6 +60,29 @@ namespace PokeAPITool
 		{
 			GenerationDetailDialog dialog = new GenerationDetailDialog();
 			dialog.GenerationName = mainGenerationData.Text;
+			dialog.ShowDialog(this);
+		}
+		#endregion
+
+		#region 図鑑詳細ボタン クリック
+		/// <summary>
+		/// 図鑑詳細ボタン クリック
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void buttonPokedexDetail_Click(object sender, EventArgs e)
+		{
+			// 対象行確認
+			if(pokedexDataView.Rows.Count <= 0) {
+				return;
+			}
+
+			// 選択行取得
+			DataGridViewRow row = pokedexDataView.SelectedRows[0];
+
+			// 選択行の情報表示
+			PokedexDetailDialog dialog = new PokedexDetailDialog();
+			dialog.PokedexName = row.Cells[0].Value.ToString();
 			dialog.ShowDialog(this);
 		}
 		#endregion
@@ -147,6 +130,46 @@ namespace PokeAPITool
 			LanguageDetailDialog dialog = new LanguageDetailDialog();
 			dialog.LanguageName = row.Cells[0].Value.ToString();
 			dialog.ShowDialog(this);
+		}
+		#endregion
+
+		// private メソッド
+
+		#region 画面表示
+		/// <summary>
+		/// 画面表示
+		/// </summary>
+		private void ShowData()
+		{
+			RegionData data = Singleton<PokeAPIToolModel>.Instance.RegionDetailList.GetRegion(regionName);
+
+			idData.Text = $"{data.ID}";							// ID
+			nameData.Text = data.Name;							// 名称
+			mainGenerationData.Text = data.MainGeneration.Name;	// 主な世代
+
+			// 言語ごとの名称
+			namesDataView.Rows.Clear();
+			foreach(NameData language in data.Names) {
+				namesDataView.Rows.Add(language.Language.Name, language.Name);
+			}
+
+			// 場所
+			locationDataView.Rows.Clear();
+			foreach(NamedAPIResourceData location in data.Locations) {
+				locationDataView.Rows.Add(location.Name);
+			}
+
+			// 図鑑
+			pokedexDataView.Rows.Clear();
+			foreach(NamedAPIResourceData pokedex in data.Pokedexes) {
+				pokedexDataView.Rows.Add(pokedex.Name);
+			}
+
+			// バージョングループ
+			versionGroupDataView.Rows.Clear();
+			foreach(NamedAPIResourceData versionGroup in data.VersionGroups) {
+				versionGroupDataView.Rows.Add(versionGroup.Name);
+			}
 		}
 		#endregion
 	}

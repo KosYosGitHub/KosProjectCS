@@ -171,6 +171,7 @@
 			this.buttonPokedexDetail.TabIndex = 12;
 			this.buttonPokedexDetail.Text = "詳細";
 			this.buttonPokedexDetail.UseVisualStyleBackColor = true;
+			this.buttonPokedexDetail.Click += new System.EventHandler(this.buttonPokedexDetail_Click);
 			// 
 			// pokedexDataView
 			// 

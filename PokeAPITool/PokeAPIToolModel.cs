@@ -40,5 +40,10 @@ namespace PokeAPITool
 		/// <summary>地方詳細リスト</summary>
 		public PokeAPI.Region RegionDetailList => Singleton<PokeAPI.Region>.Instance;
 		#endregion
+
+		#region 図鑑詳細リスト
+		/// <summary>図鑑詳細リスト</summary>
+		public PokeAPI.Pokedex PokedexDetailList => Singleton<PokeAPI.Pokedex>.Instance;
+		#endregion
 	}
 }
