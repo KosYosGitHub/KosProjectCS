@@ -46,9 +46,19 @@ namespace PokeAPITool
 		public PokeAPI.Generation GenerationDetailList => Singleton<PokeAPI.Generation>.Instance;
 		#endregion
 
+		#region 地方リスト
+		/// <summary>地方リスト</summary>
+		public PokeAPI.RegionList RegionList => Singleton<PokeAPI.RegionList>.Instance;
+		#endregion
+
 		#region 地方詳細リスト
 		/// <summary>地方詳細リスト</summary>
 		public PokeAPI.Region RegionDetailList => Singleton<PokeAPI.Region>.Instance;
+		#endregion
+
+		#region 図鑑リスト
+		/// <summary>図鑑リスト</summary>
+		public PokeAPI.PokedexList PokedexList => Singleton<PokeAPI.PokedexList>.Instance;
 		#endregion
 
 		#region 図鑑詳細リスト

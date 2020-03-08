@@ -74,5 +74,33 @@ namespace PokeAPITool
 			dialog.ShowDialog(this);
 		}
 		#endregion
+
+		#region 地方ボタン クリック
+		/// <summary>
+		/// 地方ボタン クリック
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void buttonRegion_Click(object sender, EventArgs e)
+		{
+			RegionListDialog dialog = new RegionListDialog();
+
+			dialog.ShowDialog(this);
+		}
+		#endregion
+
+		#region ポケモン図鑑ボタン クリック
+		/// <summary>
+		/// ポケモン図鑑ボタン クリック
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void butonPokedex_Click(object sender, EventArgs e)
+		{
+			PokedexListDialog dialog = new PokedexListDialog();
+
+			dialog.ShowDialog(this);
+		}
+		#endregion
 	}
 }

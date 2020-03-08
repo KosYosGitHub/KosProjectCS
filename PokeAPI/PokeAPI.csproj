@@ -60,6 +60,7 @@
     <Compile Include="Nature.cs" />
     <Compile Include="PokeAPIClient.cs" />
     <Compile Include="Pokedex.cs" />
+    <Compile Include="PokedexList.cs" />
     <Compile Include="Pokemon\CharacteristicsData.cs" />
     <Compile Include="Pokemon\EggGroupData.cs" />
     <Compile Include="Pokemon\GenderData.cs" />
@@ -73,6 +74,7 @@
     <Compile Include="Pokemon\TypePokemonData.cs" />
     <Compile Include="Pokemon\TypeRelationsData.cs" />
     <Compile Include="Region.cs" />
+    <Compile Include="RegionList.cs" />
     <Compile Include="ResourceLists\APIResourceListData.cs" />
     <Compile Include="Type.cs" />
     <Compile Include="Utility\LanguageData.cs" />

@@ -3,10 +3,7 @@ using System.Linq;
 
 namespace PokeAPI
 {
-	/// <summary>
-	/// 世代リスト
-	/// </summary>
-	public class GenerationList : PokeAPIBase
+	public class PokedexList : PokeAPIBase
 	{
 		// public プロパティ
 
@@ -21,7 +18,7 @@ namespace PokeAPI
 		/// <summary>
 		/// コンストラクタ
 		/// </summary>
-		public GenerationList() : base("generation")
+		public PokedexList() : base("pokedex")
 		{
 			GetNamedAPIResourceList();
 		}

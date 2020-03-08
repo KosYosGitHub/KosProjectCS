@@ -70,8 +70,10 @@ namespace PokeAPI
 		/// <param name="token">JSONトークン</param>
 		private void Parse(JToken token)
 		{
-			Name = (token["name"] as JValue).ToString();		// 名称
-			URL = (token["url"] as JValue).ToString();			// URL
+			if(token.HasValues) {
+				Name = (token["name"] as JValue).ToString();
+				URL = (token["url"] as JValue).ToString();
+			}
 		}
 		#endregion
 	}

@@ -83,6 +83,12 @@
     <Compile Include="PokedexDetailDialog.Designer.cs">
       <DependentUpon>PokedexDetailDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="PokedexListDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PokedexListDialog.Designer.cs">
+      <DependentUpon>PokedexListDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegionDetailDialog.cs">
@@ -90,6 +96,12 @@
     </Compile>
     <Compile Include="RegionDetailDialog.Designer.cs">
       <DependentUpon>RegionDetailDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegionListDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegionListDialog.Designer.cs">
+      <DependentUpon>RegionListDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="VersionDetailDialog.cs">
       <SubType>Form</SubType>
@@ -133,6 +145,9 @@
     <EmbeddedResource Include="PokedexDetailDialog.resx">
       <DependentUpon>PokedexDetailDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PokedexListDialog.resx">
+      <DependentUpon>PokedexListDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -144,6 +159,9 @@
     </Compile>
     <EmbeddedResource Include="RegionDetailDialog.resx">
       <DependentUpon>RegionDetailDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegionListDialog.resx">
+      <DependentUpon>RegionListDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VersionDetailDialog.resx">
       <DependentUpon>VersionDetailDialog.cs</DependentUpon>

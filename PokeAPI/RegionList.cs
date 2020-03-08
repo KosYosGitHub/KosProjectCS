@@ -4,9 +4,9 @@ using System.Linq;
 namespace PokeAPI
 {
 	/// <summary>
-	/// 世代リスト
+	/// 地方リスト
 	/// </summary>
-	public class GenerationList : PokeAPIBase
+	public class RegionList : PokeAPIBase
 	{
 		// public プロパティ
 
@@ -21,7 +21,7 @@ namespace PokeAPI
 		/// <summary>
 		/// コンストラクタ
 		/// </summary>
-		public GenerationList() : base("generation")
+		public RegionList() : base("region")
 		{
 			GetNamedAPIResourceList();
 		}

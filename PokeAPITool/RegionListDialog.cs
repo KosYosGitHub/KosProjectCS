@@ -4,16 +4,12 @@ using Generic;
 
 namespace PokeAPITool
 {
-	public partial class GenerationListDialog : Form
+	public partial class RegionListDialog : Form
 	{
-		// public イベント
-
-		#region コンストラクタ
-		public GenerationListDialog()
+		public RegionListDialog()
 		{
 			InitializeComponent();
 		}
-		#endregion
 
 		// private イベント
 
@@ -23,29 +19,29 @@ namespace PokeAPITool
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void GenerationListDialog_Load(object sender, EventArgs e)
+		private void RegionListDialog_Load(object sender, EventArgs e)
 		{
 			ShowData();
 		}
 		#endregion
 
-		#region 世代リスト 選択変更
+		#region リスト 選択変更
 		/// <summary>
-		/// 世代リスト 選択変更
+		/// リスト 選択変更
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void generationDataView_SelectionChanged(object sender, EventArgs e)
+		private void listDataView_SelectionChanged(object sender, EventArgs e)
 		{
-			if(generationDataView.SelectedRows.Count <= 0) {
+			if(listDataView.SelectedRows.Count <= 0) {
 				return;
 			}
 
 			// 選択行取得
-			DataGridViewRow row = generationDataView.SelectedRows[0];
+			DataGridViewRow row = listDataView.SelectedRows[0];
 
 			nameData.Text = row.Cells[0].Value.ToString();
-			urlData.Text = Singleton<PokeAPIToolModel>.Instance.GenerationList.GetURL(nameData.Text);
+			urlData.Text = Singleton<PokeAPIToolModel>.Instance.RegionList.GetURL(nameData.Text);
 		}
 		#endregion
 
@@ -57,8 +53,8 @@ namespace PokeAPITool
 		/// <param name="e"></param>
 		private void detailButton_Click(object sender, EventArgs e)
 		{
-			GenerationDetailDialog dialog = new GenerationDetailDialog();
-			dialog.GenerationName = nameData.Text;
+			RegionDetailDialog dialog = new RegionDetailDialog();
+			dialog.RegionName = nameData.Text;
 			dialog.ShowDialog(this);
 		}
 		#endregion
@@ -72,10 +68,10 @@ namespace PokeAPITool
 		private void ShowData()
 		{
 			// 一度クリア
-			generationDataView.Rows.Clear();
+			listDataView.Rows.Clear();
 
-			foreach(string name in Singleton<PokeAPIToolModel>.Instance.GenerationList.Names) {
-				generationDataView.Rows.Add(name);
+			foreach(string name in Singleton<PokeAPIToolModel>.Instance.RegionList.Names) {
+				listDataView.Rows.Add(name);
 			}
 		}
 		#endregion
