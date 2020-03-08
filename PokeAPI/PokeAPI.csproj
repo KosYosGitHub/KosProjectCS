@@ -47,6 +47,7 @@
     <Compile Include="Characteristic.cs" />
     <Compile Include="CommonModels\APIResourceData.cs" />
     <Compile Include="CommonModels\DescriptionData.cs" />
+    <Compile Include="CommonModels\GenerationGameIndexData.cs" />
     <Compile Include="EggGroup.cs" />
     <Compile Include="Games\GenerationData.cs" />
     <Compile Include="Gender.cs" />
@@ -65,7 +66,11 @@
     <Compile Include="Pokemon\NatureData.cs" />
     <Compile Include="Pokemon\NatureStatChangeData.cs" />
     <Compile Include="Pokemon\PokemonSpeciesGenderData.cs" />
+    <Compile Include="Pokemon\TypeData.cs" />
+    <Compile Include="Pokemon\TypePokemonData.cs" />
+    <Compile Include="Pokemon\TypeRelationsData.cs" />
     <Compile Include="ResourceLists\APIResourceListData.cs" />
+    <Compile Include="Type.cs" />
     <Compile Include="Utility\LanguageData.cs" />
     <Compile Include="ResourceLists\NamedAPIResourceListData.cs" />
     <Compile Include="CommonModels\NameData.cs" />
