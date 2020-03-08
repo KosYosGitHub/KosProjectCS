@@ -54,6 +54,43 @@ namespace PokeAPITool
 		}
 		#endregion
 
+		#region バージョングループ詳細ボタン クリック
+		/// <summary>
+		/// バージョングループ詳細ボタン クリック
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void buttonVersionGroupDetail_Click(object sender, EventArgs e)
+		{
+			VersionGroupDetailDialog dialog = new VersionGroupDetailDialog();
+			dialog.VersionGroupName = versionGroupData.Text;
+			dialog.ShowDialog(this);
+		}
+		#endregion
+
+		#region 言語詳細ボタン クリック
+		/// <summary>
+		/// 言語詳細ボタン クリック
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void buttonLanguageDetail_Click(object sender, EventArgs e)
+		{
+			// 対象行確認
+			if(languageNameView.Rows.Count <= 0) {
+				return;
+			}
+
+			// 選択行取得
+			DataGridViewRow row = languageNameView.SelectedRows[0];
+
+			// 選択言語の情報表示
+			LanguageDetailDialog dialog = new LanguageDetailDialog();
+			dialog.LanguageName = row.Cells[0].Value.ToString();
+			dialog.ShowDialog(this);
+		}
+		#endregion
+
 		// private メソッド
 
 		#region 画面表示

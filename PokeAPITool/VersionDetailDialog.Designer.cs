@@ -114,6 +114,7 @@
 			this.buttonVersionGroupDetail.TabIndex = 6;
 			this.buttonVersionGroupDetail.Text = "詳細";
 			this.buttonVersionGroupDetail.UseVisualStyleBackColor = true;
+			this.buttonVersionGroupDetail.Click += new System.EventHandler(this.buttonVersionGroupDetail_Click);
 			// 
 			// buttonLanguageDetail
 			// 
@@ -123,6 +124,7 @@
 			this.buttonLanguageDetail.TabIndex = 9;
 			this.buttonLanguageDetail.Text = "詳細";
 			this.buttonLanguageDetail.UseVisualStyleBackColor = true;
+			this.buttonLanguageDetail.Click += new System.EventHandler(this.buttonLanguageDetail_Click);
 			// 
 			// languageNameView
 			// 
