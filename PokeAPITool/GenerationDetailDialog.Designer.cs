@@ -58,7 +58,7 @@
 			this.languageNameView = new System.Windows.Forms.DataGridView();
 			this.LanguageColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.LanguageNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.button1 = new System.Windows.Forms.Button();
+			this.buttonLanguageDetail = new System.Windows.Forms.Button();
 			nameCaption = new System.Windows.Forms.Label();
 			idCaption = new System.Windows.Forms.Label();
 			mainRegionCaption = new System.Windows.Forms.Label();
@@ -408,21 +408,22 @@
 			this.LanguageNameColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
 			this.LanguageNameColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
 			// 
-			// button1
+			// buttonLanguageDetail
 			// 
-			this.button1.Location = new System.Drawing.Point(529, 237);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(39, 24);
-			this.button1.TabIndex = 24;
-			this.button1.Text = "詳細";
-			this.button1.UseVisualStyleBackColor = true;
+			this.buttonLanguageDetail.Location = new System.Drawing.Point(529, 237);
+			this.buttonLanguageDetail.Name = "buttonLanguageDetail";
+			this.buttonLanguageDetail.Size = new System.Drawing.Size(39, 24);
+			this.buttonLanguageDetail.TabIndex = 24;
+			this.buttonLanguageDetail.Text = "詳細";
+			this.buttonLanguageDetail.UseVisualStyleBackColor = true;
+			this.buttonLanguageDetail.Click += new System.EventHandler(this.buttonLanguageDetail_Click);
 			// 
 			// GenerationDetailDialog
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(742, 508);
-			this.Controls.Add(this.button1);
+			this.Controls.Add(this.buttonLanguageDetail);
 			this.Controls.Add(this.languageNameView);
 			this.Controls.Add(namesCaption);
 			this.Controls.Add(this.buttonAbilityDetail);
@@ -486,6 +487,6 @@
 		private System.Windows.Forms.DataGridView languageNameView;
 		private System.Windows.Forms.DataGridViewTextBoxColumn LanguageColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn LanguageNameColumn;
-		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.Button buttonLanguageDetail;
 	}
 }

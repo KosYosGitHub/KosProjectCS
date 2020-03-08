@@ -74,13 +74,13 @@ namespace PokeAPI
 			// 初回呼出時
 			if(firstCall) {
 				Count = (int)obj["count"];
+				Results = new List<NamedAPIResourceData>();
 			}
 
 			// 次ページのURLを取得
 			string next = (obj["next"] as JValue).ToString();
 
 			// 結果リストを解析
-			Results = new List<NamedAPIResourceData>();
 			NamedAPIResourceData.ParseList(obj, "results", Results);
 
 			// 次ページがあれば再起呼出

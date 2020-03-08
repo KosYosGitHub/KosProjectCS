@@ -297,6 +297,7 @@
 			this.buttonVersionDetail.TabIndex = 11;
 			this.buttonVersionDetail.Text = "詳細";
 			this.buttonVersionDetail.UseVisualStyleBackColor = true;
+			this.buttonVersionDetail.Click += new System.EventHandler(this.buttonVersionDetail_Click);
 			// 
 			// buttonRegionDetail
 			// 

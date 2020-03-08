@@ -73,6 +73,12 @@
     <Compile Include="PokeAPIToolModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VersionDetailDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VersionDetailDialog.Designer.cs">
+      <DependentUpon>VersionDetailDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="VersionGroupDetailDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +112,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="VersionDetailDialog.resx">
+      <DependentUpon>VersionDetailDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VersionGroupDetailDialog.resx">
       <DependentUpon>VersionGroupDetailDialog.cs</DependentUpon>
     </EmbeddedResource>

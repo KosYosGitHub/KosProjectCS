@@ -40,6 +40,29 @@ namespace PokeAPITool
 		}
 		#endregion
 
+		#region 言語詳細 クリック
+		/// <summary>
+		/// 言語詳細 クリック
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void buttonLanguageDetail_Click(object sender, EventArgs e)
+		{
+			// 対象行確認
+			if(languageNameView.Rows.Count <= 0) {
+				return;
+			}
+
+			// 選択行取得
+			DataGridViewRow row = languageNameView.SelectedRows[0];
+
+			// 選択言語の情報表示
+			LanguageDetailDialog dialog = new LanguageDetailDialog();
+			dialog.LanguageName = row.Cells[0].Value.ToString();
+			dialog.ShowDialog(this);
+		}
+		#endregion
+
 		// private メンバ変数
 
 		#region 世代名

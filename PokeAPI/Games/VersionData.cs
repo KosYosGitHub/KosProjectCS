@@ -57,9 +57,9 @@ namespace PokeAPI
 		/// <param name="token">JSONトークン</param>
 		public void Parse(JToken token)
 		{
-			ID = (int)token["id"];							// ID
-			Name = (token["name"] as JValue).ToString();	// 名称
-			VersionGroup = new NamedAPIResourceData(token);	// バージョングループ
+			ID = (int)token["id"];												// ID
+			Name = (token["name"] as JValue).ToString();						// 名称
+			VersionGroup = new NamedAPIResourceData(token["version_group"]);	// バージョングループ
 
 			// 言語ごとの名称
 			Names = new List<NameData>();

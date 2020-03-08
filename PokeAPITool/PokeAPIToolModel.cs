@@ -26,6 +26,11 @@ namespace PokeAPITool
 		public PokeAPI.VersionGroup VersionGroupDetailList => Singleton<PokeAPI.VersionGroup>.Instance;
 		#endregion
 
+		#region バージョン詳細リスト
+		/// <summary>バージョン詳細リスト</summary>
+		public PokeAPI.Version VersionDetailList => Singleton<PokeAPI.Version>.Instance;
+		#endregion
+
 		#region 世代詳細リスト
 		/// <summary>世代詳細リスト</summary>
 		public PokeAPI.Generation GenerationDetailList => Singleton<PokeAPI.Generation>.Instance;
