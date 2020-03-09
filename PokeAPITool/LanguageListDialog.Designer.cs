@@ -73,7 +73,7 @@
 			this.languageDataView.RowHeadersVisible = false;
 			this.languageDataView.RowTemplate.Height = 21;
 			this.languageDataView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.languageDataView.Size = new System.Drawing.Size(122, 358);
+			this.languageDataView.Size = new System.Drawing.Size(122, 705);
 			this.languageDataView.TabIndex = 0;
 			this.languageDataView.SelectionChanged += new System.EventHandler(this.languageDataView_SelectionChanged);
 			// 
@@ -90,7 +90,7 @@
 			this.nameData.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 			this.nameData.Location = new System.Drawing.Point(144, 29);
 			this.nameData.Name = "nameData";
-			this.nameData.Size = new System.Drawing.Size(117, 19);
+			this.nameData.Size = new System.Drawing.Size(852, 19);
 			this.nameData.TabIndex = 2;
 			// 
 			// urlData
@@ -98,7 +98,7 @@
 			this.urlData.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 			this.urlData.Location = new System.Drawing.Point(144, 72);
 			this.urlData.Name = "urlData";
-			this.urlData.Size = new System.Drawing.Size(304, 19);
+			this.urlData.Size = new System.Drawing.Size(852, 19);
 			this.urlData.TabIndex = 4;
 			// 
 			// detailButton
@@ -115,7 +115,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(475, 384);
+			this.ClientSize = new System.Drawing.Size(1008, 729);
 			this.Controls.Add(this.detailButton);
 			this.Controls.Add(this.urlData);
 			this.Controls.Add(urlCaption);
@@ -124,7 +124,7 @@
 			this.Controls.Add(this.languageDataView);
 			this.Name = "LanguageListDialog";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-			this.Text = "言語リスト";
+			this.Text = "言語(Language)";
 			this.Load += new System.EventHandler(this.LanguageList_Load);
 			((System.ComponentModel.ISupportInitialize)(this.languageDataView)).EndInit();
 			this.ResumeLayout(false);

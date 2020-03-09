@@ -1,6 +1,6 @@
 ﻿namespace PokeAPITool
 {
-	partial class VersionGroupListDialog
+	partial class PokemonSpeciesListDialog
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -29,20 +29,20 @@
 		{
 			System.Windows.Forms.Label urlCaption;
 			System.Windows.Forms.Label nameCaption;
-			this.versionGroupDataView = new System.Windows.Forms.DataGridView();
 			this.detailButton = new System.Windows.Forms.Button();
 			this.urlData = new System.Windows.Forms.Label();
 			this.nameData = new System.Windows.Forms.Label();
-			this.VersionGroupColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.listDataView = new System.Windows.Forms.DataGridView();
+			this.PokemonSpeciesColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			urlCaption = new System.Windows.Forms.Label();
 			nameCaption = new System.Windows.Forms.Label();
-			((System.ComponentModel.ISupportInitialize)(this.versionGroupDataView)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.listDataView)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// urlCaption
 			// 
 			urlCaption.AutoSize = true;
-			urlCaption.Location = new System.Drawing.Point(214, 59);
+			urlCaption.Location = new System.Drawing.Point(158, 59);
 			urlCaption.Name = "urlCaption";
 			urlCaption.Size = new System.Drawing.Size(27, 12);
 			urlCaption.TabIndex = 3;
@@ -51,35 +51,15 @@
 			// nameCaption
 			// 
 			nameCaption.AutoSize = true;
-			nameCaption.Location = new System.Drawing.Point(214, 12);
+			nameCaption.Location = new System.Drawing.Point(158, 12);
 			nameCaption.Name = "nameCaption";
 			nameCaption.Size = new System.Drawing.Size(29, 12);
 			nameCaption.TabIndex = 1;
 			nameCaption.Text = "名称";
 			// 
-			// versionGroupDataView
-			// 
-			this.versionGroupDataView.AllowUserToAddRows = false;
-			this.versionGroupDataView.AllowUserToDeleteRows = false;
-			this.versionGroupDataView.AllowUserToResizeColumns = false;
-			this.versionGroupDataView.AllowUserToResizeRows = false;
-			this.versionGroupDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.versionGroupDataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.VersionGroupColumn});
-			this.versionGroupDataView.Location = new System.Drawing.Point(12, 12);
-			this.versionGroupDataView.MultiSelect = false;
-			this.versionGroupDataView.Name = "versionGroupDataView";
-			this.versionGroupDataView.ReadOnly = true;
-			this.versionGroupDataView.RowHeadersVisible = false;
-			this.versionGroupDataView.RowTemplate.Height = 21;
-			this.versionGroupDataView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.versionGroupDataView.Size = new System.Drawing.Size(196, 705);
-			this.versionGroupDataView.TabIndex = 0;
-			this.versionGroupDataView.SelectionChanged += new System.EventHandler(this.versionGroupDataView_SelectionChanged);
-			// 
 			// detailButton
 			// 
-			this.detailButton.Location = new System.Drawing.Point(216, 102);
+			this.detailButton.Location = new System.Drawing.Point(160, 102);
 			this.detailButton.Name = "detailButton";
 			this.detailButton.Size = new System.Drawing.Size(50, 23);
 			this.detailButton.TabIndex = 5;
@@ -90,29 +70,49 @@
 			// urlData
 			// 
 			this.urlData.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.urlData.Location = new System.Drawing.Point(216, 71);
+			this.urlData.Location = new System.Drawing.Point(160, 71);
 			this.urlData.Name = "urlData";
-			this.urlData.Size = new System.Drawing.Size(780, 19);
+			this.urlData.Size = new System.Drawing.Size(836, 19);
 			this.urlData.TabIndex = 4;
 			// 
 			// nameData
 			// 
 			this.nameData.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.nameData.Location = new System.Drawing.Point(216, 28);
+			this.nameData.Location = new System.Drawing.Point(160, 28);
 			this.nameData.Name = "nameData";
-			this.nameData.Size = new System.Drawing.Size(780, 19);
+			this.nameData.Size = new System.Drawing.Size(836, 19);
 			this.nameData.TabIndex = 2;
 			// 
-			// VersionGroupColumn
+			// listDataView
 			// 
-			this.VersionGroupColumn.HeaderText = "バージョングループ";
-			this.VersionGroupColumn.Name = "VersionGroupColumn";
-			this.VersionGroupColumn.ReadOnly = true;
-			this.VersionGroupColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-			this.VersionGroupColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-			this.VersionGroupColumn.Width = 150;
+			this.listDataView.AllowUserToAddRows = false;
+			this.listDataView.AllowUserToDeleteRows = false;
+			this.listDataView.AllowUserToResizeColumns = false;
+			this.listDataView.AllowUserToResizeRows = false;
+			this.listDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.listDataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.PokemonSpeciesColumn});
+			this.listDataView.Location = new System.Drawing.Point(12, 12);
+			this.listDataView.MultiSelect = false;
+			this.listDataView.Name = "listDataView";
+			this.listDataView.ReadOnly = true;
+			this.listDataView.RowHeadersVisible = false;
+			this.listDataView.RowTemplate.Height = 21;
+			this.listDataView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+			this.listDataView.Size = new System.Drawing.Size(140, 705);
+			this.listDataView.TabIndex = 0;
+			this.listDataView.SelectionChanged += new System.EventHandler(this.listDataView_SelectionChanged);
 			// 
-			// VersionGroupListDialog
+			// PokemonSpeciesColumn
+			// 
+			this.PokemonSpeciesColumn.HeaderText = "ポケモン種";
+			this.PokemonSpeciesColumn.Name = "PokemonSpeciesColumn";
+			this.PokemonSpeciesColumn.ReadOnly = true;
+			this.PokemonSpeciesColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+			this.PokemonSpeciesColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+			this.PokemonSpeciesColumn.Width = 120;
+			// 
+			// PokemonSpeciesListDialog
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -122,12 +122,12 @@
 			this.Controls.Add(urlCaption);
 			this.Controls.Add(this.nameData);
 			this.Controls.Add(nameCaption);
-			this.Controls.Add(this.versionGroupDataView);
-			this.Name = "VersionGroupListDialog";
+			this.Controls.Add(this.listDataView);
+			this.Name = "PokemonSpeciesListDialog";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-			this.Text = "バージョングループ(VersionGroup)";
-			this.Load += new System.EventHandler(this.VersionGroupListDialog_Load);
-			((System.ComponentModel.ISupportInitialize)(this.versionGroupDataView)).EndInit();
+			this.Text = "ポケモン種(PokemonSpecies)";
+			this.Load += new System.EventHandler(this.PokemonSpeciesListDialog_Load);
+			((System.ComponentModel.ISupportInitialize)(this.listDataView)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -135,10 +135,10 @@
 
 		#endregion
 
-		private System.Windows.Forms.DataGridView versionGroupDataView;
 		private System.Windows.Forms.Button detailButton;
 		private System.Windows.Forms.Label urlData;
 		private System.Windows.Forms.Label nameData;
-		private System.Windows.Forms.DataGridViewTextBoxColumn VersionGroupColumn;
+		private System.Windows.Forms.DataGridView listDataView;
+		private System.Windows.Forms.DataGridViewTextBoxColumn PokemonSpeciesColumn;
 	}
 }

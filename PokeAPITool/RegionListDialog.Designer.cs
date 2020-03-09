@@ -39,6 +39,24 @@
 			((System.ComponentModel.ISupportInitialize)(this.listDataView)).BeginInit();
 			this.SuspendLayout();
 			// 
+			// urlCaption
+			// 
+			urlCaption.AutoSize = true;
+			urlCaption.Location = new System.Drawing.Point(158, 59);
+			urlCaption.Name = "urlCaption";
+			urlCaption.Size = new System.Drawing.Size(27, 12);
+			urlCaption.TabIndex = 3;
+			urlCaption.Text = "URL";
+			// 
+			// nameCaption
+			// 
+			nameCaption.AutoSize = true;
+			nameCaption.Location = new System.Drawing.Point(158, 12);
+			nameCaption.Name = "nameCaption";
+			nameCaption.Size = new System.Drawing.Size(29, 12);
+			nameCaption.TabIndex = 1;
+			nameCaption.Text = "名称";
+			// 
 			// listDataView
 			// 
 			this.listDataView.AllowUserToAddRows = false;
@@ -55,7 +73,7 @@
 			this.listDataView.RowHeadersVisible = false;
 			this.listDataView.RowTemplate.Height = 21;
 			this.listDataView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.listDataView.Size = new System.Drawing.Size(140, 200);
+			this.listDataView.Size = new System.Drawing.Size(140, 705);
 			this.listDataView.TabIndex = 0;
 			this.listDataView.SelectionChanged += new System.EventHandler(this.listDataView_SelectionChanged);
 			// 
@@ -83,40 +101,22 @@
 			this.urlData.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 			this.urlData.Location = new System.Drawing.Point(160, 71);
 			this.urlData.Name = "urlData";
-			this.urlData.Size = new System.Drawing.Size(248, 19);
+			this.urlData.Size = new System.Drawing.Size(836, 19);
 			this.urlData.TabIndex = 4;
-			// 
-			// urlCaption
-			// 
-			urlCaption.AutoSize = true;
-			urlCaption.Location = new System.Drawing.Point(158, 59);
-			urlCaption.Name = "urlCaption";
-			urlCaption.Size = new System.Drawing.Size(27, 12);
-			urlCaption.TabIndex = 3;
-			urlCaption.Text = "URL";
 			// 
 			// nameData
 			// 
 			this.nameData.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 			this.nameData.Location = new System.Drawing.Point(160, 28);
 			this.nameData.Name = "nameData";
-			this.nameData.Size = new System.Drawing.Size(173, 19);
+			this.nameData.Size = new System.Drawing.Size(836, 19);
 			this.nameData.TabIndex = 2;
-			// 
-			// nameCaption
-			// 
-			nameCaption.AutoSize = true;
-			nameCaption.Location = new System.Drawing.Point(158, 12);
-			nameCaption.Name = "nameCaption";
-			nameCaption.Size = new System.Drawing.Size(29, 12);
-			nameCaption.TabIndex = 1;
-			nameCaption.Text = "名称";
 			// 
 			// RegionListDialog
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(422, 223);
+			this.ClientSize = new System.Drawing.Size(1008, 729);
 			this.Controls.Add(this.detailButton);
 			this.Controls.Add(this.urlData);
 			this.Controls.Add(urlCaption);
@@ -125,7 +125,7 @@
 			this.Controls.Add(this.listDataView);
 			this.Name = "RegionListDialog";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-			this.Text = "地方";
+			this.Text = "地方(Region)";
 			this.Load += new System.EventHandler(this.RegionListDialog_Load);
 			((System.ComponentModel.ISupportInitialize)(this.listDataView)).EndInit();
 			this.ResumeLayout(false);

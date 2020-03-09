@@ -73,7 +73,7 @@
 			this.listDataView.RowHeadersVisible = false;
 			this.listDataView.RowTemplate.Height = 21;
 			this.listDataView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.listDataView.Size = new System.Drawing.Size(140, 342);
+			this.listDataView.Size = new System.Drawing.Size(140, 705);
 			this.listDataView.TabIndex = 0;
 			this.listDataView.SelectionChanged += new System.EventHandler(this.listDataView_SelectionChanged);
 			// 
@@ -101,7 +101,7 @@
 			this.urlData.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 			this.urlData.Location = new System.Drawing.Point(160, 71);
 			this.urlData.Name = "urlData";
-			this.urlData.Size = new System.Drawing.Size(248, 19);
+			this.urlData.Size = new System.Drawing.Size(836, 19);
 			this.urlData.TabIndex = 4;
 			// 
 			// nameData
@@ -109,14 +109,14 @@
 			this.nameData.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 			this.nameData.Location = new System.Drawing.Point(160, 28);
 			this.nameData.Name = "nameData";
-			this.nameData.Size = new System.Drawing.Size(173, 19);
+			this.nameData.Size = new System.Drawing.Size(836, 19);
 			this.nameData.TabIndex = 2;
 			// 
 			// PokedexListDialog
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(421, 366);
+			this.ClientSize = new System.Drawing.Size(1008, 729);
 			this.Controls.Add(this.detailButton);
 			this.Controls.Add(this.urlData);
 			this.Controls.Add(urlCaption);
@@ -125,7 +125,7 @@
 			this.Controls.Add(this.listDataView);
 			this.Name = "PokedexListDialog";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-			this.Text = "ポケモン図鑑";
+			this.Text = "ポケモン図鑑(Pokedex)";
 			this.Load += new System.EventHandler(this.PokedexListDialog_Load);
 			((System.ComponentModel.ISupportInitialize)(this.listDataView)).EndInit();
 			this.ResumeLayout(false);

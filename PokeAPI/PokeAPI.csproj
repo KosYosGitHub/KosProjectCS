@@ -62,7 +62,9 @@
     <Compile Include="PokeAPIClient.cs" />
     <Compile Include="Pokedex.cs" />
     <Compile Include="PokedexList.cs" />
-    <Compile Include="PokemonSpeciesData.cs" />
+    <Compile Include="PokemonSpecies.cs" />
+    <Compile Include="PokemonSpeciesList.cs" />
+    <Compile Include="Pokemon\PokemonSpeciesData.cs" />
     <Compile Include="Pokemon\CharacteristicsData.cs" />
     <Compile Include="Pokemon\EggGroupData.cs" />
     <Compile Include="Pokemon\GenderData.cs" />
@@ -72,7 +74,7 @@
     <Compile Include="Pokemon\MoveBattleStylePreferenceData.cs" />
     <Compile Include="Pokemon\NatureData.cs" />
     <Compile Include="Pokemon\NatureStatChangeData.cs" />
-    <Compile Include="Pokemon\PalParkEncounterArea.cs" />
+    <Compile Include="Pokemon\PalParkEncounterAreaData.cs" />
     <Compile Include="Pokemon\PokemonSpeciesDexEntryData.cs" />
     <Compile Include="Pokemon\PokemonSpeciesGenderData.cs" />
     <Compile Include="Pokemon\PokemonSpeciesVariety.cs" />

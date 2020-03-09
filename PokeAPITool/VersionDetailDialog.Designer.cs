@@ -76,7 +76,7 @@
 			// namesCaption
 			// 
 			namesCaption.AutoSize = true;
-			namesCaption.Location = new System.Drawing.Point(12, 68);
+			namesCaption.Location = new System.Drawing.Point(333, 9);
 			namesCaption.Name = "namesCaption";
 			namesCaption.Size = new System.Drawing.Size(75, 12);
 			namesCaption.TabIndex = 7;
@@ -118,7 +118,7 @@
 			// 
 			// buttonLanguageDetail
 			// 
-			this.buttonLanguageDetail.Location = new System.Drawing.Point(14, 237);
+			this.buttonLanguageDetail.Location = new System.Drawing.Point(335, 178);
 			this.buttonLanguageDetail.Name = "buttonLanguageDetail";
 			this.buttonLanguageDetail.Size = new System.Drawing.Size(39, 24);
 			this.buttonLanguageDetail.TabIndex = 9;
@@ -136,7 +136,7 @@
 			this.languageNameView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.LanguageColumn,
             this.LanguageNameColumn});
-			this.languageNameView.Location = new System.Drawing.Point(14, 83);
+			this.languageNameView.Location = new System.Drawing.Point(335, 24);
 			this.languageNameView.MultiSelect = false;
 			this.languageNameView.Name = "languageNameView";
 			this.languageNameView.ReadOnly = true;
@@ -167,7 +167,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(329, 270);
+			this.ClientSize = new System.Drawing.Size(1008, 729);
 			this.Controls.Add(this.buttonLanguageDetail);
 			this.Controls.Add(this.languageNameView);
 			this.Controls.Add(namesCaption);
@@ -180,7 +180,7 @@
 			this.Controls.Add(idCaption);
 			this.Name = "VersionDetailDialog";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-			this.Text = "バージョン";
+			this.Text = "バージョン(Version)";
 			this.Load += new System.EventHandler(this.VersionDetailDialog_Load);
 			((System.ComponentModel.ISupportInitialize)(this.languageNameView)).EndInit();
 			this.ResumeLayout(false);

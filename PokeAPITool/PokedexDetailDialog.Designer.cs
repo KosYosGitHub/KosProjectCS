@@ -107,7 +107,7 @@
 			// namesCaption
 			// 
 			namesCaption.AutoSize = true;
-			namesCaption.Location = new System.Drawing.Point(281, 9);
+			namesCaption.Location = new System.Drawing.Point(250, 84);
 			namesCaption.Name = "namesCaption";
 			namesCaption.Size = new System.Drawing.Size(75, 12);
 			namesCaption.TabIndex = 11;
@@ -116,7 +116,7 @@
 			// descriptionCaption
 			// 
 			descriptionCaption.AutoSize = true;
-			descriptionCaption.Location = new System.Drawing.Point(490, 8);
+			descriptionCaption.Location = new System.Drawing.Point(454, 84);
 			descriptionCaption.Name = "descriptionCaption";
 			descriptionCaption.Size = new System.Drawing.Size(75, 12);
 			descriptionCaption.TabIndex = 14;
@@ -125,7 +125,7 @@
 			// versionGroupCaption
 			// 
 			versionGroupCaption.AutoSize = true;
-			versionGroupCaption.Location = new System.Drawing.Point(281, 205);
+			versionGroupCaption.Location = new System.Drawing.Point(248, 290);
 			versionGroupCaption.Name = "versionGroupCaption";
 			versionGroupCaption.Size = new System.Drawing.Size(88, 12);
 			versionGroupCaption.TabIndex = 17;
@@ -142,7 +142,7 @@
 			// 
 			// buttonNameLanguageDetail
 			// 
-			this.buttonNameLanguageDetail.Location = new System.Drawing.Point(283, 178);
+			this.buttonNameLanguageDetail.Location = new System.Drawing.Point(252, 253);
 			this.buttonNameLanguageDetail.Name = "buttonNameLanguageDetail";
 			this.buttonNameLanguageDetail.Size = new System.Drawing.Size(39, 24);
 			this.buttonNameLanguageDetail.TabIndex = 13;
@@ -159,7 +159,7 @@
 			this.namesDataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.LanguageColumn,
             this.LanguageNameColumn});
-			this.namesDataView.Location = new System.Drawing.Point(283, 24);
+			this.namesDataView.Location = new System.Drawing.Point(252, 99);
 			this.namesDataView.MultiSelect = false;
 			this.namesDataView.Name = "namesDataView";
 			this.namesDataView.ReadOnly = true;
@@ -220,7 +220,7 @@
 			// 
 			// buttonDescriptionLanguageDetail
 			// 
-			this.buttonDescriptionLanguageDetail.Location = new System.Drawing.Point(492, 177);
+			this.buttonDescriptionLanguageDetail.Location = new System.Drawing.Point(456, 253);
 			this.buttonDescriptionLanguageDetail.Name = "buttonDescriptionLanguageDetail";
 			this.buttonDescriptionLanguageDetail.Size = new System.Drawing.Size(39, 24);
 			this.buttonDescriptionLanguageDetail.TabIndex = 16;
@@ -237,7 +237,7 @@
 			this.descriptionsDataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2});
-			this.descriptionsDataView.Location = new System.Drawing.Point(492, 23);
+			this.descriptionsDataView.Location = new System.Drawing.Point(456, 99);
 			this.descriptionsDataView.MultiSelect = false;
 			this.descriptionsDataView.Name = "descriptionsDataView";
 			this.descriptionsDataView.ReadOnly = true;
@@ -267,7 +267,7 @@
 			// 
 			// buttonVersionGroupDetail
 			// 
-			this.buttonVersionGroupDetail.Location = new System.Drawing.Point(281, 374);
+			this.buttonVersionGroupDetail.Location = new System.Drawing.Point(250, 688);
 			this.buttonVersionGroupDetail.Name = "buttonVersionGroupDetail";
 			this.buttonVersionGroupDetail.Size = new System.Drawing.Size(39, 24);
 			this.buttonVersionGroupDetail.TabIndex = 19;
@@ -283,14 +283,14 @@
 			this.versionGroupDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.versionGroupDataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.VersionGroupColumn});
-			this.versionGroupDataView.Location = new System.Drawing.Point(283, 220);
+			this.versionGroupDataView.Location = new System.Drawing.Point(252, 305);
 			this.versionGroupDataView.MultiSelect = false;
 			this.versionGroupDataView.Name = "versionGroupDataView";
 			this.versionGroupDataView.ReadOnly = true;
 			this.versionGroupDataView.RowHeadersVisible = false;
 			this.versionGroupDataView.RowTemplate.Height = 21;
 			this.versionGroupDataView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.versionGroupDataView.Size = new System.Drawing.Size(198, 153);
+			this.versionGroupDataView.Size = new System.Drawing.Size(198, 382);
 			this.versionGroupDataView.TabIndex = 18;
 			// 
 			// VersionGroupColumn
@@ -319,7 +319,7 @@
 			this.pokemonDataView.RowHeadersVisible = false;
 			this.pokemonDataView.RowTemplate.Height = 21;
 			this.pokemonDataView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.pokemonDataView.Size = new System.Drawing.Size(234, 274);
+			this.pokemonDataView.Size = new System.Drawing.Size(234, 588);
 			this.pokemonDataView.TabIndex = 9;
 			// 
 			// dataGridViewTextBoxColumn3
@@ -342,7 +342,7 @@
 			// 
 			// button1
 			// 
-			this.button1.Location = new System.Drawing.Point(12, 374);
+			this.button1.Location = new System.Drawing.Point(15, 693);
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(39, 24);
 			this.button1.TabIndex = 10;
@@ -353,7 +353,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(917, 414);
+			this.ClientSize = new System.Drawing.Size(1008, 729);
 			this.Controls.Add(this.button1);
 			this.Controls.Add(this.pokemonDataView);
 			this.Controls.Add(pokemonCaption);
@@ -376,7 +376,7 @@
 			this.Controls.Add(idCaption);
 			this.Name = "PokedexDetailDialog";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-			this.Text = "ポケモン図鑑";
+			this.Text = "ポケモン図鑑(Pokedex)";
 			this.Load += new System.EventHandler(this.PokedexDetailDialog_Load);
 			((System.ComponentModel.ISupportInitialize)(this.namesDataView)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.descriptionsDataView)).EndInit();

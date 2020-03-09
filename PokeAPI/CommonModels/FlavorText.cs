@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
 
 //--- MITライセンスに基づくコメント ---
@@ -10,9 +7,9 @@ using Newtonsoft.Json.Linq;
 // 作成: James Newton-King
 //-------------------------------------
 
-namespace PokeAPI.CommonModels
+namespace PokeAPI
 {
-	/// <summary>味テキストデータクラス</summary>
+	/// <summary>フレーバーテキストデータクラス</summary>
 	public class FlavorTextData
 	{
 		// public static メソッド
@@ -28,7 +25,7 @@ namespace PokeAPI.CommonModels
 		{
 			JArray fields = token[name] as JArray;
 			if(fields == null) {
-				throw new ArgumentException("要素が見つかりません。", nameof(name));
+				throw new ArgumentException("要素が見つかりません。", name);
 			}
 
 			foreach(JObject field in fields) {
@@ -39,8 +36,8 @@ namespace PokeAPI.CommonModels
 
 		// public プロパティ
 
-		#region 味テキスト
-		/// <summary>味テキスト</summary>
+		#region フレーバーテキスト
+		/// <summary>フレーバーテキスト</summary>
 		public string FlavorText { get; internal set; } = string.Empty;
 		#endregion
 
@@ -63,6 +60,22 @@ namespace PokeAPI.CommonModels
 		/// <param name="token">JSONトークン</param>
 		public FlavorTextData(JToken token)
 		{
+			Parse(token);
+		}
+		#endregion
+
+		// private メソッド
+
+		#region JSON解析
+		/// <summary>
+		/// JSON解析
+		/// </summary>
+		/// <param name="token">JSONトークン</param>
+		private void Parse(JToken token)
+		{
+			FlavorText = (token["flavor_text"] as JValue).ToString();
+			Language = new NamedAPIResourceData(token["language"]);
+			Version = new NamedAPIResourceData(token["version"]);
 		}
 		#endregion
 	}

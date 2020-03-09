@@ -12,7 +12,7 @@ namespace PokeAPI
 	/// <summary>
 	/// パルパーク エンカウントエリアデータクラス
 	/// </summary>
-	public class PalParkEncounterArea
+	public class PalParkEncounterAreaData
 	{
 		// public static メソッド
 
@@ -23,15 +23,15 @@ namespace PokeAPI
 		/// <param name="token">JSONトークン</param>
 		/// <param name="name">名称</param>
 		/// <param name="list">格納先リスト</param>
-		public static void ParseList(JToken token, string name, List<PalParkEncounterArea> list)
+		public static void ParseList(JToken token, string name, List<PalParkEncounterAreaData> list)
 		{
 			JArray fields = token[name] as JArray;
 			if(fields == null) {
-				throw new ArgumentException("要素が見つかりません。", nameof(name));
+				throw new ArgumentException("要素が見つかりません。", name);
 			}
 
 			foreach(JObject field in fields) {
-				list.Add(new PalParkEncounterArea(field));
+				list.Add(new PalParkEncounterAreaData(field));
 			}
 		}
 		#endregion
@@ -60,7 +60,7 @@ namespace PokeAPI
 		/// コンストラクタ
 		/// </summary>
 		/// <param name="token">JSONトークン</param>
-		public PalParkEncounterArea(JToken token)
+		public PalParkEncounterAreaData(JToken token)
 		{
 			Parse(token);
 		}

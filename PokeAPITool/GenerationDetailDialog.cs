@@ -40,6 +40,20 @@ namespace PokeAPITool
 		}
 		#endregion
 
+		#region 主な地方ボタン クリック
+		/// <summary>
+		/// 主な地方ボタン クリック
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void buttonMainRegionCaption_Click(object sender, EventArgs e)
+		{
+			RegionDetailDialog dialog = new RegionDetailDialog();
+			dialog.RegionName = mainRegionData.Text;
+			dialog.Show(this);
+		}
+		#endregion
+
 		#region バージョングループ詳細ボタン クリック
 		/// <summary>
 		/// バージョングループ詳細ボタン クリック

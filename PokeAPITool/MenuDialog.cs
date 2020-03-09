@@ -102,5 +102,19 @@ namespace PokeAPITool
 			dialog.ShowDialog(this);
 		}
 		#endregion
+
+		#region ポケモン種ボタン クリック
+		/// <summary>
+		/// ポケモン種ボタン クリック
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void buttonPokemonSpecies_Click(object sender, EventArgs e)
+		{
+			PokemonSpeciesListDialog dialog = new PokemonSpeciesListDialog();
+
+			dialog.ShowDialog(this);
+		}
+		#endregion
 	}
 }

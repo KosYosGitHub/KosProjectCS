@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Newtonsoft.Json.Linq;
 
 //--- MITライセンスに基づくコメント ---
@@ -27,7 +28,7 @@ namespace PokeAPI
 		{
 			JArray fields = token[name] as JArray;
 			if(fields == null) {
-				throw new ArgumentException("要素が見つかりません。", nameof(name));
+				throw new ArgumentException("要素が見つかりません。", name);
 			}
 
 			foreach(JObject field in fields) {

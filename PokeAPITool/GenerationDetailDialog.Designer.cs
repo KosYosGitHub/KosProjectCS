@@ -29,7 +29,6 @@
 		{
 			System.Windows.Forms.Label nameCaption;
 			System.Windows.Forms.Label idCaption;
-			System.Windows.Forms.Label mainRegionCaption;
 			System.Windows.Forms.Label versionGroupCaption;
 			System.Windows.Forms.Label pokemonCaption;
 			System.Windows.Forms.Label typeCaption;
@@ -39,7 +38,7 @@
 			this.nameData = new System.Windows.Forms.Label();
 			this.idData = new System.Windows.Forms.Label();
 			this.mainRegionData = new System.Windows.Forms.Label();
-			this.buttonMainRegionDetail = new System.Windows.Forms.Button();
+			this.buttonMainRegionCaption = new System.Windows.Forms.Button();
 			this.versionGroupDataView = new System.Windows.Forms.DataGridView();
 			this.VersionGroupColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.buttonVersionGroupDetail = new System.Windows.Forms.Button();
@@ -61,7 +60,6 @@
 			this.buttonLanguageDetail = new System.Windows.Forms.Button();
 			nameCaption = new System.Windows.Forms.Label();
 			idCaption = new System.Windows.Forms.Label();
-			mainRegionCaption = new System.Windows.Forms.Label();
 			versionGroupCaption = new System.Windows.Forms.Label();
 			pokemonCaption = new System.Windows.Forms.Label();
 			typeCaption = new System.Windows.Forms.Label();
@@ -79,7 +77,7 @@
 			// nameCaption
 			// 
 			nameCaption.AutoSize = true;
-			nameCaption.Location = new System.Drawing.Point(12, 25);
+			nameCaption.Location = new System.Drawing.Point(12, 24);
 			nameCaption.Name = "nameCaption";
 			nameCaption.Size = new System.Drawing.Size(29, 12);
 			nameCaption.TabIndex = 2;
@@ -94,22 +92,13 @@
 			idCaption.TabIndex = 0;
 			idCaption.Text = "ID";
 			// 
-			// mainRegionCaption
-			// 
-			mainRegionCaption.AutoSize = true;
-			mainRegionCaption.Location = new System.Drawing.Point(12, 43);
-			mainRegionCaption.Name = "mainRegionCaption";
-			mainRegionCaption.Size = new System.Drawing.Size(51, 12);
-			mainRegionCaption.TabIndex = 4;
-			mainRegionCaption.Text = "主な地方";
-			// 
 			// versionGroupCaption
 			// 
 			versionGroupCaption.AutoSize = true;
-			versionGroupCaption.Location = new System.Drawing.Point(381, 68);
+			versionGroupCaption.Location = new System.Drawing.Point(798, 402);
 			versionGroupCaption.Name = "versionGroupCaption";
 			versionGroupCaption.Size = new System.Drawing.Size(88, 12);
-			versionGroupCaption.TabIndex = 7;
+			versionGroupCaption.TabIndex = 21;
 			versionGroupCaption.Text = "バージョングループ";
 			// 
 			// pokemonCaption
@@ -118,49 +107,49 @@
 			pokemonCaption.Location = new System.Drawing.Point(12, 68);
 			pokemonCaption.Name = "pokemonCaption";
 			pokemonCaption.Size = new System.Drawing.Size(42, 12);
-			pokemonCaption.TabIndex = 10;
+			pokemonCaption.TabIndex = 6;
 			pokemonCaption.Text = "ポケモン";
 			// 
 			// typeCaption
 			// 
 			typeCaption.AutoSize = true;
-			typeCaption.Location = new System.Drawing.Point(381, 267);
+			typeCaption.Location = new System.Drawing.Point(650, 68);
 			typeCaption.Name = "typeCaption";
 			typeCaption.Size = new System.Drawing.Size(31, 12);
-			typeCaption.TabIndex = 13;
+			typeCaption.TabIndex = 15;
 			typeCaption.Text = "タイプ";
 			// 
 			// moveCaption
 			// 
 			moveCaption.AutoSize = true;
-			moveCaption.Location = new System.Drawing.Point(135, 68);
+			moveCaption.Location = new System.Drawing.Point(143, 68);
 			moveCaption.Name = "moveCaption";
 			moveCaption.Size = new System.Drawing.Size(17, 12);
-			moveCaption.TabIndex = 16;
+			moveCaption.TabIndex = 9;
 			moveCaption.Text = "技";
 			// 
 			// abilityCaption
 			// 
 			abilityCaption.AutoSize = true;
-			abilityCaption.Location = new System.Drawing.Point(258, 68);
+			abilityCaption.Location = new System.Drawing.Point(520, 68);
 			abilityCaption.Name = "abilityCaption";
 			abilityCaption.Size = new System.Drawing.Size(29, 12);
-			abilityCaption.TabIndex = 19;
+			abilityCaption.TabIndex = 12;
 			abilityCaption.Text = "特性";
 			// 
 			// namesCaption
 			// 
 			namesCaption.AutoSize = true;
-			namesCaption.Location = new System.Drawing.Point(527, 68);
+			namesCaption.Location = new System.Drawing.Point(796, 68);
 			namesCaption.Name = "namesCaption";
 			namesCaption.Size = new System.Drawing.Size(75, 12);
-			namesCaption.TabIndex = 22;
+			namesCaption.TabIndex = 18;
 			namesCaption.Text = "言語毎の名称";
 			// 
 			// nameData
 			// 
 			this.nameData.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.nameData.Location = new System.Drawing.Point(68, 25);
+			this.nameData.Location = new System.Drawing.Point(78, 26);
 			this.nameData.Name = "nameData";
 			this.nameData.Size = new System.Drawing.Size(153, 15);
 			this.nameData.TabIndex = 3;
@@ -168,7 +157,7 @@
 			// idData
 			// 
 			this.idData.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.idData.Location = new System.Drawing.Point(68, 9);
+			this.idData.Location = new System.Drawing.Point(78, 8);
 			this.idData.Name = "idData";
 			this.idData.Size = new System.Drawing.Size(30, 15);
 			this.idData.TabIndex = 1;
@@ -176,19 +165,20 @@
 			// mainRegionData
 			// 
 			this.mainRegionData.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.mainRegionData.Location = new System.Drawing.Point(68, 42);
+			this.mainRegionData.Location = new System.Drawing.Point(78, 44);
 			this.mainRegionData.Name = "mainRegionData";
 			this.mainRegionData.Size = new System.Drawing.Size(55, 15);
 			this.mainRegionData.TabIndex = 5;
 			// 
-			// buttonMainRegionDetail
+			// buttonMainRegionCaption
 			// 
-			this.buttonMainRegionDetail.Location = new System.Drawing.Point(126, 39);
-			this.buttonMainRegionDetail.Name = "buttonMainRegionDetail";
-			this.buttonMainRegionDetail.Size = new System.Drawing.Size(39, 24);
-			this.buttonMainRegionDetail.TabIndex = 6;
-			this.buttonMainRegionDetail.Text = "詳細";
-			this.buttonMainRegionDetail.UseVisualStyleBackColor = true;
+			this.buttonMainRegionCaption.Location = new System.Drawing.Point(12, 39);
+			this.buttonMainRegionCaption.Name = "buttonMainRegionCaption";
+			this.buttonMainRegionCaption.Size = new System.Drawing.Size(63, 24);
+			this.buttonMainRegionCaption.TabIndex = 4;
+			this.buttonMainRegionCaption.Text = "主な地方";
+			this.buttonMainRegionCaption.UseVisualStyleBackColor = true;
+			this.buttonMainRegionCaption.Click += new System.EventHandler(this.buttonMainRegionCaption_Click);
 			// 
 			// versionGroupDataView
 			// 
@@ -199,15 +189,15 @@
 			this.versionGroupDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.versionGroupDataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.VersionGroupColumn});
-			this.versionGroupDataView.Location = new System.Drawing.Point(383, 83);
+			this.versionGroupDataView.Location = new System.Drawing.Point(798, 417);
 			this.versionGroupDataView.MultiSelect = false;
 			this.versionGroupDataView.Name = "versionGroupDataView";
 			this.versionGroupDataView.ReadOnly = true;
 			this.versionGroupDataView.RowHeadersVisible = false;
 			this.versionGroupDataView.RowTemplate.Height = 21;
 			this.versionGroupDataView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.versionGroupDataView.Size = new System.Drawing.Size(140, 153);
-			this.versionGroupDataView.TabIndex = 8;
+			this.versionGroupDataView.Size = new System.Drawing.Size(198, 270);
+			this.versionGroupDataView.TabIndex = 22;
 			// 
 			// VersionGroupColumn
 			// 
@@ -220,10 +210,10 @@
 			// 
 			// buttonVersionGroupDetail
 			// 
-			this.buttonVersionGroupDetail.Location = new System.Drawing.Point(381, 237);
+			this.buttonVersionGroupDetail.Location = new System.Drawing.Point(798, 693);
 			this.buttonVersionGroupDetail.Name = "buttonVersionGroupDetail";
 			this.buttonVersionGroupDetail.Size = new System.Drawing.Size(39, 24);
-			this.buttonVersionGroupDetail.TabIndex = 9;
+			this.buttonVersionGroupDetail.TabIndex = 23;
 			this.buttonVersionGroupDetail.Text = "詳細";
 			this.buttonVersionGroupDetail.UseVisualStyleBackColor = true;
 			this.buttonVersionGroupDetail.Click += new System.EventHandler(this.buttonVersionGroupDetail_Click);
@@ -244,8 +234,8 @@
 			this.pokemonDataView.RowHeadersVisible = false;
 			this.pokemonDataView.RowTemplate.Height = 21;
 			this.pokemonDataView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.pokemonDataView.Size = new System.Drawing.Size(117, 379);
-			this.pokemonDataView.TabIndex = 11;
+			this.pokemonDataView.Size = new System.Drawing.Size(125, 604);
+			this.pokemonDataView.TabIndex = 7;
 			// 
 			// pokemonColumn
 			// 
@@ -257,10 +247,10 @@
 			// 
 			// buttonPokemonDetail
 			// 
-			this.buttonPokemonDetail.Location = new System.Drawing.Point(12, 463);
+			this.buttonPokemonDetail.Location = new System.Drawing.Point(14, 693);
 			this.buttonPokemonDetail.Name = "buttonPokemonDetail";
 			this.buttonPokemonDetail.Size = new System.Drawing.Size(39, 24);
-			this.buttonPokemonDetail.TabIndex = 12;
+			this.buttonPokemonDetail.TabIndex = 8;
 			this.buttonPokemonDetail.Text = "詳細";
 			this.buttonPokemonDetail.UseVisualStyleBackColor = true;
 			// 
@@ -273,15 +263,15 @@
 			this.typeDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.typeDataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.typeColumn});
-			this.typeDataView.Location = new System.Drawing.Point(383, 282);
+			this.typeDataView.Location = new System.Drawing.Point(652, 83);
 			this.typeDataView.MultiSelect = false;
 			this.typeDataView.Name = "typeDataView";
 			this.typeDataView.ReadOnly = true;
 			this.typeDataView.RowHeadersVisible = false;
 			this.typeDataView.RowTemplate.Height = 21;
 			this.typeDataView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.typeDataView.Size = new System.Drawing.Size(140, 180);
-			this.typeDataView.TabIndex = 14;
+			this.typeDataView.Size = new System.Drawing.Size(140, 604);
+			this.typeDataView.TabIndex = 16;
 			// 
 			// typeColumn
 			// 
@@ -293,10 +283,10 @@
 			// 
 			// buttonTypeDetail
 			// 
-			this.buttonTypeDetail.Location = new System.Drawing.Point(383, 463);
+			this.buttonTypeDetail.Location = new System.Drawing.Point(652, 693);
 			this.buttonTypeDetail.Name = "buttonTypeDetail";
 			this.buttonTypeDetail.Size = new System.Drawing.Size(39, 24);
-			this.buttonTypeDetail.TabIndex = 15;
+			this.buttonTypeDetail.TabIndex = 17;
 			this.buttonTypeDetail.Text = "詳細";
 			this.buttonTypeDetail.UseVisualStyleBackColor = true;
 			// 
@@ -309,15 +299,15 @@
 			this.moveDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.moveDataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.moveColumn});
-			this.moveDataView.Location = new System.Drawing.Point(137, 83);
+			this.moveDataView.Location = new System.Drawing.Point(145, 83);
 			this.moveDataView.MultiSelect = false;
 			this.moveDataView.Name = "moveDataView";
 			this.moveDataView.ReadOnly = true;
 			this.moveDataView.RowHeadersVisible = false;
 			this.moveDataView.RowTemplate.Height = 21;
 			this.moveDataView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.moveDataView.Size = new System.Drawing.Size(117, 379);
-			this.moveDataView.TabIndex = 17;
+			this.moveDataView.Size = new System.Drawing.Size(371, 604);
+			this.moveDataView.TabIndex = 10;
 			// 
 			// moveColumn
 			// 
@@ -326,13 +316,14 @@
 			this.moveColumn.ReadOnly = true;
 			this.moveColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
 			this.moveColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+			this.moveColumn.Width = 350;
 			// 
 			// buttonMoveDetail
 			// 
-			this.buttonMoveDetail.Location = new System.Drawing.Point(137, 463);
+			this.buttonMoveDetail.Location = new System.Drawing.Point(145, 693);
 			this.buttonMoveDetail.Name = "buttonMoveDetail";
 			this.buttonMoveDetail.Size = new System.Drawing.Size(39, 24);
-			this.buttonMoveDetail.TabIndex = 18;
+			this.buttonMoveDetail.TabIndex = 11;
 			this.buttonMoveDetail.Text = "詳細";
 			this.buttonMoveDetail.UseVisualStyleBackColor = true;
 			// 
@@ -345,15 +336,15 @@
 			this.abilityDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.abilityDataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.abilityColumn});
-			this.abilityDataView.Location = new System.Drawing.Point(260, 83);
+			this.abilityDataView.Location = new System.Drawing.Point(522, 83);
 			this.abilityDataView.MultiSelect = false;
 			this.abilityDataView.Name = "abilityDataView";
 			this.abilityDataView.ReadOnly = true;
 			this.abilityDataView.RowHeadersVisible = false;
 			this.abilityDataView.RowTemplate.Height = 21;
 			this.abilityDataView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.abilityDataView.Size = new System.Drawing.Size(117, 379);
-			this.abilityDataView.TabIndex = 20;
+			this.abilityDataView.Size = new System.Drawing.Size(125, 604);
+			this.abilityDataView.TabIndex = 13;
 			// 
 			// abilityColumn
 			// 
@@ -365,10 +356,10 @@
 			// 
 			// buttonAbilityDetail
 			// 
-			this.buttonAbilityDetail.Location = new System.Drawing.Point(260, 463);
+			this.buttonAbilityDetail.Location = new System.Drawing.Point(522, 693);
 			this.buttonAbilityDetail.Name = "buttonAbilityDetail";
 			this.buttonAbilityDetail.Size = new System.Drawing.Size(39, 24);
-			this.buttonAbilityDetail.TabIndex = 21;
+			this.buttonAbilityDetail.TabIndex = 14;
 			this.buttonAbilityDetail.Text = "詳細";
 			this.buttonAbilityDetail.UseVisualStyleBackColor = true;
 			// 
@@ -382,15 +373,15 @@
 			this.languageNameView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.LanguageColumn,
             this.LanguageNameColumn});
-			this.languageNameView.Location = new System.Drawing.Point(529, 83);
+			this.languageNameView.Location = new System.Drawing.Point(798, 83);
 			this.languageNameView.MultiSelect = false;
 			this.languageNameView.Name = "languageNameView";
 			this.languageNameView.ReadOnly = true;
 			this.languageNameView.RowHeadersVisible = false;
 			this.languageNameView.RowTemplate.Height = 21;
 			this.languageNameView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.languageNameView.Size = new System.Drawing.Size(198, 153);
-			this.languageNameView.TabIndex = 23;
+			this.languageNameView.Size = new System.Drawing.Size(198, 270);
+			this.languageNameView.TabIndex = 19;
 			// 
 			// LanguageColumn
 			// 
@@ -411,10 +402,10 @@
 			// 
 			// buttonLanguageDetail
 			// 
-			this.buttonLanguageDetail.Location = new System.Drawing.Point(529, 237);
+			this.buttonLanguageDetail.Location = new System.Drawing.Point(798, 359);
 			this.buttonLanguageDetail.Name = "buttonLanguageDetail";
 			this.buttonLanguageDetail.Size = new System.Drawing.Size(39, 24);
-			this.buttonLanguageDetail.TabIndex = 24;
+			this.buttonLanguageDetail.TabIndex = 20;
 			this.buttonLanguageDetail.Text = "詳細";
 			this.buttonLanguageDetail.UseVisualStyleBackColor = true;
 			this.buttonLanguageDetail.Click += new System.EventHandler(this.buttonLanguageDetail_Click);
@@ -423,7 +414,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(742, 508);
+			this.ClientSize = new System.Drawing.Size(1008, 729);
 			this.Controls.Add(this.buttonLanguageDetail);
 			this.Controls.Add(this.languageNameView);
 			this.Controls.Add(namesCaption);
@@ -442,16 +433,15 @@
 			this.Controls.Add(pokemonCaption);
 			this.Controls.Add(this.versionGroupDataView);
 			this.Controls.Add(versionGroupCaption);
-			this.Controls.Add(this.buttonMainRegionDetail);
+			this.Controls.Add(this.buttonMainRegionCaption);
 			this.Controls.Add(this.mainRegionData);
 			this.Controls.Add(this.nameData);
 			this.Controls.Add(this.idData);
-			this.Controls.Add(mainRegionCaption);
 			this.Controls.Add(nameCaption);
 			this.Controls.Add(idCaption);
 			this.Name = "GenerationDetailDialog";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-			this.Text = "世代";
+			this.Text = "世代(Generation)";
 			this.Load += new System.EventHandler(this.GenerationDetailDialog_Load);
 			((System.ComponentModel.ISupportInitialize)(this.versionGroupDataView)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pokemonDataView)).EndInit();
@@ -469,7 +459,7 @@
 		private System.Windows.Forms.Label nameData;
 		private System.Windows.Forms.Label idData;
 		private System.Windows.Forms.Label mainRegionData;
-		private System.Windows.Forms.Button buttonMainRegionDetail;
+		private System.Windows.Forms.Button buttonMainRegionCaption;
 		private System.Windows.Forms.DataGridView versionGroupDataView;
 		private System.Windows.Forms.DataGridViewTextBoxColumn VersionGroupColumn;
 		private System.Windows.Forms.Button buttonVersionGroupDetail;
@@ -480,7 +470,6 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn typeColumn;
 		private System.Windows.Forms.Button buttonTypeDetail;
 		private System.Windows.Forms.DataGridView moveDataView;
-		private System.Windows.Forms.DataGridViewTextBoxColumn moveColumn;
 		private System.Windows.Forms.Button buttonMoveDetail;
 		private System.Windows.Forms.DataGridView abilityDataView;
 		private System.Windows.Forms.DataGridViewTextBoxColumn abilityColumn;
@@ -489,5 +478,6 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn LanguageColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn LanguageNameColumn;
 		private System.Windows.Forms.Button buttonLanguageDetail;
+		private System.Windows.Forms.DataGridViewTextBoxColumn moveColumn;
 	}
 }

@@ -73,7 +73,7 @@
 			this.versionDataView.RowHeadersVisible = false;
 			this.versionDataView.RowTemplate.Height = 21;
 			this.versionDataView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.versionDataView.Size = new System.Drawing.Size(140, 426);
+			this.versionDataView.Size = new System.Drawing.Size(140, 705);
 			this.versionDataView.TabIndex = 0;
 			this.versionDataView.SelectionChanged += new System.EventHandler(this.versionDataView_SelectionChanged);
 			// 
@@ -101,7 +101,7 @@
 			this.urlData.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 			this.urlData.Location = new System.Drawing.Point(160, 71);
 			this.urlData.Name = "urlData";
-			this.urlData.Size = new System.Drawing.Size(304, 19);
+			this.urlData.Size = new System.Drawing.Size(836, 19);
 			this.urlData.TabIndex = 4;
 			// 
 			// nameData
@@ -109,14 +109,14 @@
 			this.nameData.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 			this.nameData.Location = new System.Drawing.Point(160, 28);
 			this.nameData.Name = "nameData";
-			this.nameData.Size = new System.Drawing.Size(173, 19);
+			this.nameData.Size = new System.Drawing.Size(836, 19);
 			this.nameData.TabIndex = 2;
 			// 
 			// VersionListDialog
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(480, 450);
+			this.ClientSize = new System.Drawing.Size(1008, 729);
 			this.Controls.Add(this.detailButton);
 			this.Controls.Add(this.urlData);
 			this.Controls.Add(urlCaption);
@@ -125,7 +125,7 @@
 			this.Controls.Add(this.versionDataView);
 			this.Name = "VersionListDialog";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-			this.Text = "バージョン";
+			this.Text = "バージョン(Version)";
 			this.Load += new System.EventHandler(this.VersionListDialog_Load);
 			((System.ComponentModel.ISupportInitialize)(this.versionDataView)).EndInit();
 			this.ResumeLayout(false);

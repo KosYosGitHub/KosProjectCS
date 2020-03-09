@@ -33,6 +33,7 @@
 			this.buttonGeneration = new System.Windows.Forms.Button();
 			this.buttonRegion = new System.Windows.Forms.Button();
 			this.butonPokedex = new System.Windows.Forms.Button();
+			this.buttonPokemonSpecies = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// buttonLanguage
@@ -95,11 +96,22 @@
 			this.butonPokedex.UseVisualStyleBackColor = true;
 			this.butonPokedex.Click += new System.EventHandler(this.butonPokedex_Click);
 			// 
+			// buttonPokemonSpecies
+			// 
+			this.buttonPokemonSpecies.Location = new System.Drawing.Point(99, 95);
+			this.buttonPokemonSpecies.Name = "buttonPokemonSpecies";
+			this.buttonPokemonSpecies.Size = new System.Drawing.Size(80, 35);
+			this.buttonPokemonSpecies.TabIndex = 6;
+			this.buttonPokemonSpecies.Text = "ポケモン種";
+			this.buttonPokemonSpecies.UseVisualStyleBackColor = true;
+			this.buttonPokemonSpecies.Click += new System.EventHandler(this.buttonPokemonSpecies_Click);
+			// 
 			// MenuDialog
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.ClientSize = new System.Drawing.Size(1008, 729);
+			this.Controls.Add(this.buttonPokemonSpecies);
 			this.Controls.Add(this.butonPokedex);
 			this.Controls.Add(this.buttonRegion);
 			this.Controls.Add(this.buttonGeneration);
@@ -107,6 +119,7 @@
 			this.Controls.Add(this.buttonVersionGroup);
 			this.Controls.Add(this.buttonLanguage);
 			this.Name = "MenuDialog";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "PokeAPI ツール";
 			this.ResumeLayout(false);
 
@@ -120,6 +133,7 @@
 		private System.Windows.Forms.Button buttonGeneration;
 		private System.Windows.Forms.Button buttonRegion;
 		private System.Windows.Forms.Button butonPokedex;
+		private System.Windows.Forms.Button buttonPokemonSpecies;
 	}
 }
 

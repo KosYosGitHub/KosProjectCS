@@ -154,7 +154,7 @@
 			this.versionDataView.RowHeadersVisible = false;
 			this.versionDataView.RowTemplate.Height = 21;
 			this.versionDataView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.versionDataView.Size = new System.Drawing.Size(122, 143);
+			this.versionDataView.Size = new System.Drawing.Size(122, 184);
 			this.versionDataView.TabIndex = 10;
 			// 
 			// VersionColumn
@@ -223,7 +223,7 @@
 			this.regionsDataView.RowHeadersVisible = false;
 			this.regionsDataView.RowTemplate.Height = 21;
 			this.regionsDataView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.regionsDataView.Size = new System.Drawing.Size(122, 143);
+			this.regionsDataView.Size = new System.Drawing.Size(122, 184);
 			this.regionsDataView.TabIndex = 13;
 			// 
 			// regionColumn
@@ -250,7 +250,7 @@
 			this.pokedexDataView.RowHeadersVisible = false;
 			this.pokedexDataView.RowTemplate.Height = 21;
 			this.pokedexDataView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.pokedexDataView.Size = new System.Drawing.Size(122, 143);
+			this.pokedexDataView.Size = new System.Drawing.Size(122, 184);
 			this.pokedexDataView.TabIndex = 16;
 			// 
 			// pokedexColumn
@@ -277,7 +277,7 @@
 			this.moveLearnMethodDataView.RowHeadersVisible = false;
 			this.moveLearnMethodDataView.RowTemplate.Height = 21;
 			this.moveLearnMethodDataView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.moveLearnMethodDataView.Size = new System.Drawing.Size(171, 143);
+			this.moveLearnMethodDataView.Size = new System.Drawing.Size(171, 184);
 			this.moveLearnMethodDataView.TabIndex = 19;
 			// 
 			// moveDataMethodColumn
@@ -291,7 +291,7 @@
 			// 
 			// buttonVersionDetail
 			// 
-			this.buttonVersionDetail.Location = new System.Drawing.Point(13, 246);
+			this.buttonVersionDetail.Location = new System.Drawing.Point(12, 292);
 			this.buttonVersionDetail.Name = "buttonVersionDetail";
 			this.buttonVersionDetail.Size = new System.Drawing.Size(39, 24);
 			this.buttonVersionDetail.TabIndex = 11;
@@ -301,7 +301,7 @@
 			// 
 			// buttonRegionDetail
 			// 
-			this.buttonRegionDetail.Location = new System.Drawing.Point(146, 246);
+			this.buttonRegionDetail.Location = new System.Drawing.Point(146, 292);
 			this.buttonRegionDetail.Name = "buttonRegionDetail";
 			this.buttonRegionDetail.Size = new System.Drawing.Size(39, 24);
 			this.buttonRegionDetail.TabIndex = 14;
@@ -311,7 +311,7 @@
 			// 
 			// buttonPokedexDetail
 			// 
-			this.buttonPokedexDetail.Location = new System.Drawing.Point(274, 246);
+			this.buttonPokedexDetail.Location = new System.Drawing.Point(274, 292);
 			this.buttonPokedexDetail.Name = "buttonPokedexDetail";
 			this.buttonPokedexDetail.Size = new System.Drawing.Size(39, 24);
 			this.buttonPokedexDetail.TabIndex = 17;
@@ -321,7 +321,7 @@
 			// 
 			// buttonMoveLearnMethod
 			// 
-			this.buttonMoveLearnMethod.Location = new System.Drawing.Point(404, 246);
+			this.buttonMoveLearnMethod.Location = new System.Drawing.Point(404, 292);
 			this.buttonMoveLearnMethod.Name = "buttonMoveLearnMethod";
 			this.buttonMoveLearnMethod.Size = new System.Drawing.Size(39, 24);
 			this.buttonMoveLearnMethod.TabIndex = 20;
@@ -332,7 +332,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(617, 280);
+			this.ClientSize = new System.Drawing.Size(1008, 729);
 			this.Controls.Add(this.buttonMoveLearnMethod);
 			this.Controls.Add(this.buttonPokedexDetail);
 			this.Controls.Add(this.buttonRegionDetail);
@@ -356,7 +356,7 @@
 			this.Controls.Add(idCaption);
 			this.Name = "VersionGroupDetailDialog";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-			this.Text = "バージョングループ詳細";
+			this.Text = "バージョングループ(VersionGroup)";
 			this.Load += new System.EventHandler(this.VersionGroupDetail_Load);
 			((System.ComponentModel.ISupportInitialize)(this.versionDataView)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.regionsDataView)).EndInit();
