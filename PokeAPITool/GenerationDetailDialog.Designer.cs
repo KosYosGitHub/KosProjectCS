@@ -77,7 +77,7 @@
 			// nameCaption
 			// 
 			nameCaption.AutoSize = true;
-			nameCaption.Location = new System.Drawing.Point(12, 24);
+			nameCaption.Location = new System.Drawing.Point(12, 30);
 			nameCaption.Name = "nameCaption";
 			nameCaption.Size = new System.Drawing.Size(29, 12);
 			nameCaption.TabIndex = 2;
@@ -104,7 +104,7 @@
 			// pokemonCaption
 			// 
 			pokemonCaption.AutoSize = true;
-			pokemonCaption.Location = new System.Drawing.Point(12, 68);
+			pokemonCaption.Location = new System.Drawing.Point(12, 83);
 			pokemonCaption.Name = "pokemonCaption";
 			pokemonCaption.Size = new System.Drawing.Size(42, 12);
 			pokemonCaption.TabIndex = 6;
@@ -113,7 +113,7 @@
 			// typeCaption
 			// 
 			typeCaption.AutoSize = true;
-			typeCaption.Location = new System.Drawing.Point(650, 68);
+			typeCaption.Location = new System.Drawing.Point(650, 83);
 			typeCaption.Name = "typeCaption";
 			typeCaption.Size = new System.Drawing.Size(31, 12);
 			typeCaption.TabIndex = 15;
@@ -122,7 +122,7 @@
 			// moveCaption
 			// 
 			moveCaption.AutoSize = true;
-			moveCaption.Location = new System.Drawing.Point(143, 68);
+			moveCaption.Location = new System.Drawing.Point(143, 83);
 			moveCaption.Name = "moveCaption";
 			moveCaption.Size = new System.Drawing.Size(17, 12);
 			moveCaption.TabIndex = 9;
@@ -131,7 +131,7 @@
 			// abilityCaption
 			// 
 			abilityCaption.AutoSize = true;
-			abilityCaption.Location = new System.Drawing.Point(520, 68);
+			abilityCaption.Location = new System.Drawing.Point(520, 83);
 			abilityCaption.Name = "abilityCaption";
 			abilityCaption.Size = new System.Drawing.Size(29, 12);
 			abilityCaption.TabIndex = 12;
@@ -140,7 +140,7 @@
 			// namesCaption
 			// 
 			namesCaption.AutoSize = true;
-			namesCaption.Location = new System.Drawing.Point(796, 68);
+			namesCaption.Location = new System.Drawing.Point(796, 83);
 			namesCaption.Name = "namesCaption";
 			namesCaption.Size = new System.Drawing.Size(75, 12);
 			namesCaption.TabIndex = 18;
@@ -149,7 +149,7 @@
 			// nameData
 			// 
 			this.nameData.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.nameData.Location = new System.Drawing.Point(78, 26);
+			this.nameData.Location = new System.Drawing.Point(88, 29);
 			this.nameData.Name = "nameData";
 			this.nameData.Size = new System.Drawing.Size(153, 15);
 			this.nameData.TabIndex = 3;
@@ -157,7 +157,7 @@
 			// idData
 			// 
 			this.idData.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.idData.Location = new System.Drawing.Point(78, 8);
+			this.idData.Location = new System.Drawing.Point(88, 8);
 			this.idData.Name = "idData";
 			this.idData.Size = new System.Drawing.Size(30, 15);
 			this.idData.TabIndex = 1;
@@ -165,16 +165,16 @@
 			// mainRegionData
 			// 
 			this.mainRegionData.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.mainRegionData.Location = new System.Drawing.Point(78, 44);
+			this.mainRegionData.Location = new System.Drawing.Point(88, 50);
 			this.mainRegionData.Name = "mainRegionData";
 			this.mainRegionData.Size = new System.Drawing.Size(55, 15);
 			this.mainRegionData.TabIndex = 5;
 			// 
 			// buttonMainRegionCaption
 			// 
-			this.buttonMainRegionCaption.Location = new System.Drawing.Point(12, 39);
+			this.buttonMainRegionCaption.Location = new System.Drawing.Point(14, 45);
 			this.buttonMainRegionCaption.Name = "buttonMainRegionCaption";
-			this.buttonMainRegionCaption.Size = new System.Drawing.Size(63, 24);
+			this.buttonMainRegionCaption.Size = new System.Drawing.Size(64, 24);
 			this.buttonMainRegionCaption.TabIndex = 4;
 			this.buttonMainRegionCaption.Text = "主な地方";
 			this.buttonMainRegionCaption.UseVisualStyleBackColor = true;
@@ -227,14 +227,14 @@
 			this.pokemonDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.pokemonDataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.pokemonColumn});
-			this.pokemonDataView.Location = new System.Drawing.Point(14, 83);
+			this.pokemonDataView.Location = new System.Drawing.Point(14, 100);
 			this.pokemonDataView.MultiSelect = false;
 			this.pokemonDataView.Name = "pokemonDataView";
 			this.pokemonDataView.ReadOnly = true;
 			this.pokemonDataView.RowHeadersVisible = false;
 			this.pokemonDataView.RowTemplate.Height = 21;
 			this.pokemonDataView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.pokemonDataView.Size = new System.Drawing.Size(125, 604);
+			this.pokemonDataView.Size = new System.Drawing.Size(125, 587);
 			this.pokemonDataView.TabIndex = 7;
 			// 
 			// pokemonColumn
@@ -263,14 +263,14 @@
 			this.typeDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.typeDataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.typeColumn});
-			this.typeDataView.Location = new System.Drawing.Point(652, 83);
+			this.typeDataView.Location = new System.Drawing.Point(652, 100);
 			this.typeDataView.MultiSelect = false;
 			this.typeDataView.Name = "typeDataView";
 			this.typeDataView.ReadOnly = true;
 			this.typeDataView.RowHeadersVisible = false;
 			this.typeDataView.RowTemplate.Height = 21;
 			this.typeDataView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.typeDataView.Size = new System.Drawing.Size(140, 604);
+			this.typeDataView.Size = new System.Drawing.Size(140, 587);
 			this.typeDataView.TabIndex = 16;
 			// 
 			// typeColumn
@@ -299,14 +299,14 @@
 			this.moveDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.moveDataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.moveColumn});
-			this.moveDataView.Location = new System.Drawing.Point(145, 83);
+			this.moveDataView.Location = new System.Drawing.Point(145, 100);
 			this.moveDataView.MultiSelect = false;
 			this.moveDataView.Name = "moveDataView";
 			this.moveDataView.ReadOnly = true;
 			this.moveDataView.RowHeadersVisible = false;
 			this.moveDataView.RowTemplate.Height = 21;
 			this.moveDataView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.moveDataView.Size = new System.Drawing.Size(371, 604);
+			this.moveDataView.Size = new System.Drawing.Size(371, 587);
 			this.moveDataView.TabIndex = 10;
 			// 
 			// moveColumn
@@ -336,14 +336,14 @@
 			this.abilityDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.abilityDataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.abilityColumn});
-			this.abilityDataView.Location = new System.Drawing.Point(522, 83);
+			this.abilityDataView.Location = new System.Drawing.Point(522, 100);
 			this.abilityDataView.MultiSelect = false;
 			this.abilityDataView.Name = "abilityDataView";
 			this.abilityDataView.ReadOnly = true;
 			this.abilityDataView.RowHeadersVisible = false;
 			this.abilityDataView.RowTemplate.Height = 21;
 			this.abilityDataView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.abilityDataView.Size = new System.Drawing.Size(125, 604);
+			this.abilityDataView.Size = new System.Drawing.Size(125, 587);
 			this.abilityDataView.TabIndex = 13;
 			// 
 			// abilityColumn
@@ -373,14 +373,14 @@
 			this.languageNameView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.LanguageColumn,
             this.LanguageNameColumn});
-			this.languageNameView.Location = new System.Drawing.Point(798, 83);
+			this.languageNameView.Location = new System.Drawing.Point(798, 100);
 			this.languageNameView.MultiSelect = false;
 			this.languageNameView.Name = "languageNameView";
 			this.languageNameView.ReadOnly = true;
 			this.languageNameView.RowHeadersVisible = false;
 			this.languageNameView.RowTemplate.Height = 21;
 			this.languageNameView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.languageNameView.Size = new System.Drawing.Size(198, 270);
+			this.languageNameView.Size = new System.Drawing.Size(198, 253);
 			this.languageNameView.TabIndex = 19;
 			// 
 			// LanguageColumn

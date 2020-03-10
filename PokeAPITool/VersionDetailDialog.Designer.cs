@@ -49,7 +49,7 @@
 			// nameCaption
 			// 
 			nameCaption.AutoSize = true;
-			nameCaption.Location = new System.Drawing.Point(12, 25);
+			nameCaption.Location = new System.Drawing.Point(12, 33);
 			nameCaption.Name = "nameCaption";
 			nameCaption.Size = new System.Drawing.Size(29, 12);
 			nameCaption.TabIndex = 2;
@@ -67,7 +67,7 @@
 			// versionGroupCaption
 			// 
 			versionGroupCaption.AutoSize = true;
-			versionGroupCaption.Location = new System.Drawing.Point(12, 42);
+			versionGroupCaption.Location = new System.Drawing.Point(12, 57);
 			versionGroupCaption.Name = "versionGroupCaption";
 			versionGroupCaption.Size = new System.Drawing.Size(88, 12);
 			versionGroupCaption.TabIndex = 4;
@@ -85,7 +85,7 @@
 			// nameData
 			// 
 			this.nameData.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.nameData.Location = new System.Drawing.Point(106, 24);
+			this.nameData.Location = new System.Drawing.Point(106, 32);
 			this.nameData.Name = "nameData";
 			this.nameData.Size = new System.Drawing.Size(153, 15);
 			this.nameData.TabIndex = 3;
@@ -101,14 +101,14 @@
 			// versionGroupData
 			// 
 			this.versionGroupData.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.versionGroupData.Location = new System.Drawing.Point(106, 40);
+			this.versionGroupData.Location = new System.Drawing.Point(106, 56);
 			this.versionGroupData.Name = "versionGroupData";
 			this.versionGroupData.Size = new System.Drawing.Size(153, 15);
 			this.versionGroupData.TabIndex = 5;
 			// 
 			// buttonVersionGroupDetail
 			// 
-			this.buttonVersionGroupDetail.Location = new System.Drawing.Point(261, 35);
+			this.buttonVersionGroupDetail.Location = new System.Drawing.Point(262, 51);
 			this.buttonVersionGroupDetail.Name = "buttonVersionGroupDetail";
 			this.buttonVersionGroupDetail.Size = new System.Drawing.Size(39, 24);
 			this.buttonVersionGroupDetail.TabIndex = 6;

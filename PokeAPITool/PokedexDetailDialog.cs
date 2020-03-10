@@ -54,6 +54,93 @@ namespace PokeAPITool
 		}
 		#endregion
 
+		#region 地方ボタン クリック
+		/// <summary>
+		/// 地方ボタン クリック
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void buttonRegion_Click(object sender, EventArgs e)
+		{
+			if(regionData.Text == string.Empty) {
+				return;
+			}
+
+			RegionDetailDialog dialog = new RegionDetailDialog();
+			dialog.RegionName = regionData.Text;
+			dialog.ShowDialog(this);
+		}
+		#endregion
+
+		#region 言語ごとの名称 詳細ボタン クリック
+		/// <summary>
+		/// 言語ごとの名称 詳細ボタン クリック
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void buttonNameLanguageDetail_Click(object sender, EventArgs e)
+		{
+			// 対象行確認
+			if(namesDataView.Rows.Count <= 0) {
+				return;
+			}
+
+			// 選択行取得
+			DataGridViewRow row = namesDataView.SelectedRows[0];
+
+			// 選択言語の情報表示
+			LanguageDetailDialog dialog = new LanguageDetailDialog();
+			dialog.LanguageName = row.Cells[0].Value.ToString();
+			dialog.ShowDialog(this);
+		}
+		#endregion
+
+		#region 言語ごとの説明 詳細ボタン
+		/// <summary>
+		/// 言語ごとの説明 詳細ボタン
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void buttonDescriptionLanguageDetail_Click(object sender, EventArgs e)
+		{
+			// 対象行確認
+			if(descriptionsDataView.Rows.Count <= 0) {
+				return;
+			}
+
+			// 選択行取得
+			DataGridViewRow row = descriptionsDataView.SelectedRows[0];
+
+			// 選択言語の情報表示
+			LanguageDetailDialog dialog = new LanguageDetailDialog();
+			dialog.LanguageName = row.Cells[0].Value.ToString();
+			dialog.ShowDialog(this);
+		}
+		#endregion
+
+		#region バージョングループ 詳細ボタン
+		/// <summary>
+		/// バージョングループ 詳細ボタン
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void buttonVersionGroupDetail_Click(object sender, EventArgs e)
+		{
+			// 対象行確認
+			if(versionGroupDataView.Rows.Count <= 0) {
+				return;
+			}
+
+			// 選択行取得
+			DataGridViewRow row = versionGroupDataView.SelectedRows[0];
+
+			// 選択言語の情報表示
+			VersionGroupDetailDialog dialog = new VersionGroupDetailDialog();
+			dialog.VersionGroupName = row.Cells[0].Value.ToString();
+			dialog.ShowDialog(this);
+		}
+		#endregion
+
 		// private メソッド
 
 		#region 画面表示

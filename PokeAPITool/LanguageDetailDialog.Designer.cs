@@ -63,7 +63,7 @@
 			// nameCaption
 			// 
 			nameCaption.AutoSize = true;
-			nameCaption.Location = new System.Drawing.Point(13, 31);
+			nameCaption.Location = new System.Drawing.Point(13, 39);
 			nameCaption.Name = "nameCaption";
 			nameCaption.Size = new System.Drawing.Size(29, 12);
 			nameCaption.TabIndex = 2;
@@ -72,7 +72,7 @@
 			// officialCaption
 			// 
 			officialCaption.AutoSize = true;
-			officialCaption.Location = new System.Drawing.Point(13, 49);
+			officialCaption.Location = new System.Drawing.Point(13, 65);
 			officialCaption.Name = "officialCaption";
 			officialCaption.Size = new System.Drawing.Size(53, 12);
 			officialCaption.TabIndex = 4;
@@ -81,7 +81,7 @@
 			// iso639Caption
 			// 
 			iso639Caption.AutoSize = true;
-			iso639Caption.Location = new System.Drawing.Point(13, 67);
+			iso639Caption.Location = new System.Drawing.Point(12, 91);
 			iso639Caption.Name = "iso639Caption";
 			iso639Caption.Size = new System.Drawing.Size(41, 12);
 			iso639Caption.TabIndex = 6;
@@ -90,7 +90,7 @@
 			// iso3166Caption
 			// 
 			iso3166Caption.AutoSize = true;
-			iso3166Caption.Location = new System.Drawing.Point(13, 85);
+			iso3166Caption.Location = new System.Drawing.Point(13, 117);
 			iso3166Caption.Name = "iso3166Caption";
 			iso3166Caption.Size = new System.Drawing.Size(47, 12);
 			iso3166Caption.TabIndex = 8;
@@ -116,7 +116,7 @@
 			// nameData
 			// 
 			this.nameData.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.nameData.Location = new System.Drawing.Point(70, 30);
+			this.nameData.Location = new System.Drawing.Point(70, 38);
 			this.nameData.Name = "nameData";
 			this.nameData.Size = new System.Drawing.Size(100, 15);
 			this.nameData.TabIndex = 3;
@@ -124,7 +124,7 @@
 			// officialData
 			// 
 			this.officialData.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.officialData.Location = new System.Drawing.Point(70, 48);
+			this.officialData.Location = new System.Drawing.Point(70, 64);
 			this.officialData.Name = "officialData";
 			this.officialData.Size = new System.Drawing.Size(40, 15);
 			this.officialData.TabIndex = 5;
@@ -132,7 +132,7 @@
 			// iso639Data
 			// 
 			this.iso639Data.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.iso639Data.Location = new System.Drawing.Point(70, 66);
+			this.iso639Data.Location = new System.Drawing.Point(70, 90);
 			this.iso639Data.Name = "iso639Data";
 			this.iso639Data.Size = new System.Drawing.Size(30, 15);
 			this.iso639Data.TabIndex = 7;
@@ -140,7 +140,7 @@
 			// iso3166Data
 			// 
 			this.iso3166Data.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.iso3166Data.Location = new System.Drawing.Point(70, 84);
+			this.iso3166Data.Location = new System.Drawing.Point(70, 116);
 			this.iso3166Data.Name = "iso3166Data";
 			this.iso3166Data.Size = new System.Drawing.Size(30, 15);
 			this.iso3166Data.TabIndex = 9;
@@ -186,9 +186,9 @@
 			// 
 			this.languageDetailButton.Location = new System.Drawing.Point(197, 171);
 			this.languageDetailButton.Name = "languageDetailButton";
-			this.languageDetailButton.Size = new System.Drawing.Size(75, 23);
+			this.languageDetailButton.Size = new System.Drawing.Size(52, 23);
 			this.languageDetailButton.TabIndex = 12;
-			this.languageDetailButton.Text = "言語詳細";
+			this.languageDetailButton.Text = "詳細";
 			this.languageDetailButton.UseVisualStyleBackColor = true;
 			this.languageDetailButton.Click += new System.EventHandler(this.languageDetailButton_Click);
 			// 

@@ -69,7 +69,7 @@
 			// nameCaption
 			// 
 			nameCaption.AutoSize = true;
-			nameCaption.Location = new System.Drawing.Point(12, 25);
+			nameCaption.Location = new System.Drawing.Point(12, 33);
 			nameCaption.Name = "nameCaption";
 			nameCaption.Size = new System.Drawing.Size(29, 12);
 			nameCaption.TabIndex = 2;
@@ -87,7 +87,7 @@
 			// orderCaption
 			// 
 			orderCaption.AutoSize = true;
-			orderCaption.Location = new System.Drawing.Point(11, 41);
+			orderCaption.Location = new System.Drawing.Point(11, 57);
 			orderCaption.Name = "orderCaption";
 			orderCaption.Size = new System.Drawing.Size(56, 12);
 			orderCaption.TabIndex = 4;
@@ -96,7 +96,7 @@
 			// generationCaption
 			// 
 			generationCaption.AutoSize = true;
-			generationCaption.Location = new System.Drawing.Point(12, 57);
+			generationCaption.Location = new System.Drawing.Point(10, 83);
 			generationCaption.Name = "generationCaption";
 			generationCaption.Size = new System.Drawing.Size(29, 12);
 			generationCaption.TabIndex = 6;
@@ -105,7 +105,7 @@
 			// versionsCaption
 			// 
 			versionsCaption.AutoSize = true;
-			versionsCaption.Location = new System.Drawing.Point(12, 87);
+			versionsCaption.Location = new System.Drawing.Point(12, 101);
 			versionsCaption.Name = "versionsCaption";
 			versionsCaption.Size = new System.Drawing.Size(50, 12);
 			versionsCaption.TabIndex = 9;
@@ -114,7 +114,7 @@
 			// regionsCaption
 			// 
 			regionsCaption.AutoSize = true;
-			regionsCaption.Location = new System.Drawing.Point(144, 87);
+			regionsCaption.Location = new System.Drawing.Point(144, 101);
 			regionsCaption.Name = "regionsCaption";
 			regionsCaption.Size = new System.Drawing.Size(29, 12);
 			regionsCaption.TabIndex = 12;
@@ -123,7 +123,7 @@
 			// pokedexesCaption
 			// 
 			pokedexesCaption.AutoSize = true;
-			pokedexesCaption.Location = new System.Drawing.Point(273, 87);
+			pokedexesCaption.Location = new System.Drawing.Point(273, 101);
 			pokedexesCaption.Name = "pokedexesCaption";
 			pokedexesCaption.Size = new System.Drawing.Size(29, 12);
 			pokedexesCaption.TabIndex = 15;
@@ -132,7 +132,7 @@
 			// moveLearnMethodsCaption
 			// 
 			moveLearnMethodsCaption.AutoSize = true;
-			moveLearnMethodsCaption.Location = new System.Drawing.Point(402, 87);
+			moveLearnMethodsCaption.Location = new System.Drawing.Point(402, 101);
 			moveLearnMethodsCaption.Name = "moveLearnMethodsCaption";
 			moveLearnMethodsCaption.Size = new System.Drawing.Size(75, 12);
 			moveLearnMethodsCaption.TabIndex = 18;
@@ -147,7 +147,7 @@
 			this.versionDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.versionDataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.VersionColumn});
-			this.versionDataView.Location = new System.Drawing.Point(14, 102);
+			this.versionDataView.Location = new System.Drawing.Point(14, 116);
 			this.versionDataView.MultiSelect = false;
 			this.versionDataView.Name = "versionDataView";
 			this.versionDataView.ReadOnly = true;
@@ -176,7 +176,7 @@
 			// nameData
 			// 
 			this.nameData.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.nameData.Location = new System.Drawing.Point(73, 24);
+			this.nameData.Location = new System.Drawing.Point(73, 32);
 			this.nameData.Name = "nameData";
 			this.nameData.Size = new System.Drawing.Size(153, 15);
 			this.nameData.TabIndex = 3;
@@ -184,7 +184,7 @@
 			// orderData
 			// 
 			this.orderData.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.orderData.Location = new System.Drawing.Point(73, 40);
+			this.orderData.Location = new System.Drawing.Point(73, 56);
 			this.orderData.Name = "orderData";
 			this.orderData.Size = new System.Drawing.Size(30, 15);
 			this.orderData.TabIndex = 5;
@@ -192,14 +192,14 @@
 			// generationData
 			// 
 			this.generationData.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.generationData.Location = new System.Drawing.Point(73, 56);
+			this.generationData.Location = new System.Drawing.Point(73, 80);
 			this.generationData.Name = "generationData";
 			this.generationData.Size = new System.Drawing.Size(100, 15);
 			this.generationData.TabIndex = 7;
 			// 
 			// buttonGenerationDetail
 			// 
-			this.buttonGenerationDetail.Location = new System.Drawing.Point(174, 52);
+			this.buttonGenerationDetail.Location = new System.Drawing.Point(175, 75);
 			this.buttonGenerationDetail.Name = "buttonGenerationDetail";
 			this.buttonGenerationDetail.Size = new System.Drawing.Size(39, 24);
 			this.buttonGenerationDetail.TabIndex = 8;
@@ -216,7 +216,7 @@
 			this.regionsDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.regionsDataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.regionColumn});
-			this.regionsDataView.Location = new System.Drawing.Point(146, 102);
+			this.regionsDataView.Location = new System.Drawing.Point(146, 116);
 			this.regionsDataView.MultiSelect = false;
 			this.regionsDataView.Name = "regionsDataView";
 			this.regionsDataView.ReadOnly = true;
@@ -243,7 +243,7 @@
 			this.pokedexDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.pokedexDataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.pokedexColumn});
-			this.pokedexDataView.Location = new System.Drawing.Point(274, 102);
+			this.pokedexDataView.Location = new System.Drawing.Point(274, 116);
 			this.pokedexDataView.MultiSelect = false;
 			this.pokedexDataView.Name = "pokedexDataView";
 			this.pokedexDataView.ReadOnly = true;
@@ -270,7 +270,7 @@
 			this.moveLearnMethodDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.moveLearnMethodDataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.moveDataMethodColumn});
-			this.moveLearnMethodDataView.Location = new System.Drawing.Point(404, 102);
+			this.moveLearnMethodDataView.Location = new System.Drawing.Point(404, 116);
 			this.moveLearnMethodDataView.MultiSelect = false;
 			this.moveLearnMethodDataView.Name = "moveLearnMethodDataView";
 			this.moveLearnMethodDataView.ReadOnly = true;
@@ -291,7 +291,7 @@
 			// 
 			// buttonVersionDetail
 			// 
-			this.buttonVersionDetail.Location = new System.Drawing.Point(12, 292);
+			this.buttonVersionDetail.Location = new System.Drawing.Point(12, 306);
 			this.buttonVersionDetail.Name = "buttonVersionDetail";
 			this.buttonVersionDetail.Size = new System.Drawing.Size(39, 24);
 			this.buttonVersionDetail.TabIndex = 11;
@@ -301,7 +301,7 @@
 			// 
 			// buttonRegionDetail
 			// 
-			this.buttonRegionDetail.Location = new System.Drawing.Point(146, 292);
+			this.buttonRegionDetail.Location = new System.Drawing.Point(146, 306);
 			this.buttonRegionDetail.Name = "buttonRegionDetail";
 			this.buttonRegionDetail.Size = new System.Drawing.Size(39, 24);
 			this.buttonRegionDetail.TabIndex = 14;
@@ -311,7 +311,7 @@
 			// 
 			// buttonPokedexDetail
 			// 
-			this.buttonPokedexDetail.Location = new System.Drawing.Point(274, 292);
+			this.buttonPokedexDetail.Location = new System.Drawing.Point(274, 306);
 			this.buttonPokedexDetail.Name = "buttonPokedexDetail";
 			this.buttonPokedexDetail.Size = new System.Drawing.Size(39, 24);
 			this.buttonPokedexDetail.TabIndex = 17;
@@ -321,7 +321,7 @@
 			// 
 			// buttonMoveLearnMethod
 			// 
-			this.buttonMoveLearnMethod.Location = new System.Drawing.Point(404, 292);
+			this.buttonMoveLearnMethod.Location = new System.Drawing.Point(404, 306);
 			this.buttonMoveLearnMethod.Name = "buttonMoveLearnMethod";
 			this.buttonMoveLearnMethod.Size = new System.Drawing.Size(39, 24);
 			this.buttonMoveLearnMethod.TabIndex = 20;
