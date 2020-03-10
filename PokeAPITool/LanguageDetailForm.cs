@@ -8,32 +8,19 @@ namespace PokeAPITool
 	/// <summary>
 	/// 言語詳細画面
 	/// </summary>
-	public partial class LanguageDetailDialog : Form
+	public partial class LanguageDetailForm : DetailForm
 	{
-		// public プロパティ
-
-		#region 言語名
-		/// <summary>言語名</summary>
-		public string LanguageName { set { languageName = value; } }
-		#endregion
-
 		// public イベント
 
 		#region コンストラクタ
 		/// <summary>
 		/// コンストラクタ
 		/// </summary>
-		public LanguageDetailDialog()
+		public LanguageDetailForm(string titleText, string apiName) : base(titleText, apiName)
 		{
+			// コンポーネントの初期化
 			InitializeComponent();
 		}
-		#endregion
-
-		// private メンバ変数
-
-		#region 言語名
-		/// <summary>言語名</summary>
-		private string languageName = string.Empty;
 		#endregion
 
 		// private イベント
@@ -46,7 +33,8 @@ namespace PokeAPITool
 		/// <param name="e"></param>
 		private void LanguageDetail_Load(object sender, EventArgs e)
 		{
-			ShowLanguageDetail();
+			// データの表示
+			ShowData();
 		}
 		#endregion
 
@@ -67,9 +55,7 @@ namespace PokeAPITool
 			DataGridViewRow row = languageNameView.SelectedRows[0];
 
 			// 選択言語の情報表示
-			LanguageDetailDialog dialog = new LanguageDetailDialog();
-			dialog.LanguageName = row.Cells[0].Value.ToString();
-			dialog.ShowDialog(this);
+			DetailForm.ShowDialog(titleText, row.Cells[0].Value.ToString(), typeof(LanguageDetailForm), this);
 		}
 		#endregion
 
@@ -79,15 +65,17 @@ namespace PokeAPITool
 		/// <summary>
 		/// 画面にデータ表示
 		/// </summary>
-		private void ShowLanguageDetail()
+		protected override void ShowData()
 		{
-			// 言語詳細情報の取得
-			LanguageData data = Singleton<PokeAPIToolModel>.Instance.LanguageDetailList.GetLanguage(languageName);
+			base.ShowData();
 
-			idData.Text = $"{data.ID}";				// ID
-			nameData.Text = data.Name;				// 名称
-			officialData.Text = $"{data.Official}";	// 公式言語
-			iso639Data.Text = data.ISO639;			// ISO639
+			// 言語詳細情報の取得
+			LanguageData data = Singleton<PokeAPIToolModel>.Instance.LanguageDetailList.GetLanguage(apiName);
+
+			idData.Text = $"{data.ID}";             // ID
+			nameData.Text = data.Name;              // 名称
+			officialData.Text = $"{data.Official}"; // 公式言語
+			iso639Data.Text = data.ISO639;          // ISO639
 			iso3166Data.Text = data.ISO3166;        // ISO3166
 
 			// 言語別名称

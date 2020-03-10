@@ -1,36 +1,21 @@
 ﻿using System;
-using System.Windows.Forms;
 using Generic;
 using PokeAPI;
 
 namespace PokeAPITool
 {
-	public partial class PokemonSpeciesDetailDialog : Form
+	public partial class PokemonSpeciesDetailForm : DetailForm
 	{
-		// public プロパティ
-
-		#region ポケモン種名
-		/// <summary>ポケモン種名</summary>
-		public string PokemonSpeciesName { set { pokemonSpeciesName = value; } }
-		#endregion
-
 		// public イベント
 
 		#region コンストラクタ
 		/// <summary>
 		/// コンストラクタ
 		/// </summary>
-		public PokemonSpeciesDetailDialog()
+		public PokemonSpeciesDetailForm(string titleText, string apiName) : base(titleText, apiName)
 		{
 			InitializeComponent();
 		}
-		#endregion
-
-		// private メンバ変数
-
-		#region ポケモン種名
-		/// <summary>ポケモン種名</summary>
-		private string pokemonSpeciesName = string.Empty;
 		#endregion
 
 		// private イベント
@@ -47,15 +32,17 @@ namespace PokeAPITool
 		}
 		#endregion
 
-		// private メソッド
+		// protected メソッド
 
 		#region 画面表示
 		/// <summary>
 		/// 画面表示
 		/// </summary>
-		private void ShowData()
+		protected override void ShowData()
 		{
-			PokemonSpeciesData data = Singleton<PokeAPIToolModel>.Instance.PokemonSpeciesDetailList.GetPokemonSpecies(pokemonSpeciesName);
+			base.ShowData();
+
+			PokemonSpeciesData data = Singleton<PokeAPIToolModel>.Instance.PokemonSpeciesDetailList.GetPokemonSpecies(apiName);
 
 			idData.Text = $"{data.ID}";                                     // ID
 			nameData.Text = data.Name;                                      // 名称

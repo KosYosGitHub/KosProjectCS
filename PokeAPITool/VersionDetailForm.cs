@@ -1,43 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using Generic;
 using PokeAPI;
 
 namespace PokeAPITool
 {
-	public partial class VersionDetailDialog : Form
+	public partial class VersionDetailForm : DetailForm
 	{
-		// public プロパティ
-
-		#region バージョン名
-		/// <summary>バージョン名</summary>
-		public string VersionName { set { versionName = value; } }
-		#endregion
-
 		// public イベント
 
 		#region コンストラクタ
 		/// <summary>
 		/// コンストラクタ
 		/// </summary>
-		public VersionDetailDialog()
+		public VersionDetailForm(string titleText, string apiName) : base(titleText, apiName)
 		{
 			InitializeComponent();
 		}
-		#endregion
-
-		// private メンバ変数
-
-		#region バージョン名
-		/// <summary>バージョン名</summary>
-		private string versionName = string.Empty;
 		#endregion
 
 		// private イベント
@@ -62,9 +40,6 @@ namespace PokeAPITool
 		/// <param name="e"></param>
 		private void buttonVersionGroupDetail_Click(object sender, EventArgs e)
 		{
-			VersionGroupDetailDialog dialog = new VersionGroupDetailDialog();
-			dialog.VersionGroupName = versionGroupData.Text;
-			dialog.ShowDialog(this);
 		}
 		#endregion
 
@@ -76,18 +51,6 @@ namespace PokeAPITool
 		/// <param name="e"></param>
 		private void buttonLanguageDetail_Click(object sender, EventArgs e)
 		{
-			// 対象行確認
-			if(languageNameView.Rows.Count <= 0) {
-				return;
-			}
-
-			// 選択行取得
-			DataGridViewRow row = languageNameView.SelectedRows[0];
-
-			// 選択言語の情報表示
-			LanguageDetailDialog dialog = new LanguageDetailDialog();
-			dialog.LanguageName = row.Cells[0].Value.ToString();
-			dialog.ShowDialog(this);
 		}
 		#endregion
 
@@ -97,9 +60,11 @@ namespace PokeAPITool
 		/// <summary>
 		/// 画面表示
 		/// </summary>
-		private void ShowData()
+		protected override void ShowData()
 		{
-			VersionData data = Singleton<PokeAPIToolModel>.Instance.VersionDetailList.GetVersion(versionName);
+			base.ShowData();
+
+			VersionData data = Singleton<PokeAPIToolModel>.Instance.VersionDetailList.GetVersion(apiName);
 
 			idData.Text = $"{data.ID}";						// ID
 			nameData.Text = data.Name;						// 名称

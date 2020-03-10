@@ -1,43 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using Generic;
 using PokeAPI;
 
 namespace PokeAPITool
 {
-	public partial class PokedexDetailDialog : Form
+	/// <summary>
+	/// ポケモン図鑑詳細フォーム
+	/// </summary>
+	public partial class PokedexDetailForm : DetailForm
 	{
-		// public プロパティ
-
-		#region 図鑑名
-		/// <summary>図鑑名</summary>
-		public string PokedexName { set { pokedexName = value; } }
-		#endregion
-
 		// public イベント
 
 		#region コンストラクタ
 		/// <summary>
 		/// コンストラクタ
 		/// </summary>
-		public PokedexDetailDialog()
+		public PokedexDetailForm(string titleText, string apiName) : base(titleText, apiName)
 		{
 			InitializeComponent();
 		}
-		#endregion
-
-		// private メンバ変数
-
-		#region 図鑑名
-		/// <summary>図鑑名</summary>
-		private string pokedexName = string.Empty;
 		#endregion
 
 		// private イベント
@@ -62,13 +43,6 @@ namespace PokeAPITool
 		/// <param name="e"></param>
 		private void buttonRegion_Click(object sender, EventArgs e)
 		{
-			if(regionData.Text == string.Empty) {
-				return;
-			}
-
-			RegionDetailDialog dialog = new RegionDetailDialog();
-			dialog.RegionName = regionData.Text;
-			dialog.ShowDialog(this);
 		}
 		#endregion
 
@@ -80,18 +54,6 @@ namespace PokeAPITool
 		/// <param name="e"></param>
 		private void buttonNameLanguageDetail_Click(object sender, EventArgs e)
 		{
-			// 対象行確認
-			if(namesDataView.Rows.Count <= 0) {
-				return;
-			}
-
-			// 選択行取得
-			DataGridViewRow row = namesDataView.SelectedRows[0];
-
-			// 選択言語の情報表示
-			LanguageDetailDialog dialog = new LanguageDetailDialog();
-			dialog.LanguageName = row.Cells[0].Value.ToString();
-			dialog.ShowDialog(this);
 		}
 		#endregion
 
@@ -103,18 +65,6 @@ namespace PokeAPITool
 		/// <param name="e"></param>
 		private void buttonDescriptionLanguageDetail_Click(object sender, EventArgs e)
 		{
-			// 対象行確認
-			if(descriptionsDataView.Rows.Count <= 0) {
-				return;
-			}
-
-			// 選択行取得
-			DataGridViewRow row = descriptionsDataView.SelectedRows[0];
-
-			// 選択言語の情報表示
-			LanguageDetailDialog dialog = new LanguageDetailDialog();
-			dialog.LanguageName = row.Cells[0].Value.ToString();
-			dialog.ShowDialog(this);
 		}
 		#endregion
 
@@ -126,18 +76,6 @@ namespace PokeAPITool
 		/// <param name="e"></param>
 		private void buttonVersionGroupDetail_Click(object sender, EventArgs e)
 		{
-			// 対象行確認
-			if(versionGroupDataView.Rows.Count <= 0) {
-				return;
-			}
-
-			// 選択行取得
-			DataGridViewRow row = versionGroupDataView.SelectedRows[0];
-
-			// 選択言語の情報表示
-			VersionGroupDetailDialog dialog = new VersionGroupDetailDialog();
-			dialog.VersionGroupName = row.Cells[0].Value.ToString();
-			dialog.ShowDialog(this);
 		}
 		#endregion
 
@@ -147,9 +85,11 @@ namespace PokeAPITool
 		/// <summary>
 		/// 画面表示
 		/// </summary>
-		private void ShowData()
+		protected override void ShowData()
 		{
-			PokedexData data = Singleton<PokeAPIToolModel>.Instance.PokedexDetailList.GetPokedex(pokedexName);
+			base.ShowData();
+
+			PokedexData data = Singleton<PokeAPIToolModel>.Instance.PokedexDetailList.GetPokedex(apiName);
 
 			idData.Text = $"{data.ID}";
 			nameData.Text = data.Name;

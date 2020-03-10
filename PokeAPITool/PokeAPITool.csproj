@@ -46,17 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GenerationDetailDialog.cs">
+    <Compile Include="DetailForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GenerationDetailDialog.Designer.cs">
-      <DependentUpon>GenerationDetailDialog.cs</DependentUpon>
+    <Compile Include="DetailForm.Designer.cs">
+      <DependentUpon>DetailForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GenerationListDialog.cs">
+    <Compile Include="GenerationDetailForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GenerationListDialog.Designer.cs">
-      <DependentUpon>GenerationListDialog.cs</DependentUpon>
+    <Compile Include="GenerationDetailForm.Designer.cs">
+      <DependentUpon>GenerationDetailForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ItemListDialog.cs">
       <SubType>Form</SubType>
@@ -64,17 +64,11 @@
     <Compile Include="ItemListDialog.Designer.cs">
       <DependentUpon>ItemListDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="LanguageDetailDialog.cs">
+    <Compile Include="LanguageDetailForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LanguageDetailDialog.Designer.cs">
-      <DependentUpon>LanguageDetailDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="LanguageListDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="LanguageListDialog.Designer.cs">
-      <DependentUpon>LanguageListDialog.cs</DependentUpon>
+    <Compile Include="LanguageDetailForm.Designer.cs">
+      <DependentUpon>LanguageDetailForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuDialog.cs">
       <SubType>Form</SubType>
@@ -82,24 +76,18 @@
     <Compile Include="MenuDialog.Designer.cs">
       <DependentUpon>MenuDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="NamedAPIResourceListDialog.cs">
+    <Compile Include="NamedAPIResourceListForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NamedAPIResourceListDialog.Designer.cs">
-      <DependentUpon>NamedAPIResourceListDialog.cs</DependentUpon>
+    <Compile Include="NamedAPIResourceListForm.Designer.cs">
+      <DependentUpon>NamedAPIResourceListForm.cs</DependentUpon>
     </Compile>
     <Compile Include="PokeAPIToolModel.cs" />
-    <Compile Include="PokedexDetailDialog.cs">
+    <Compile Include="PokedexDetailForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PokedexDetailDialog.Designer.cs">
-      <DependentUpon>PokedexDetailDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PokedexListDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PokedexListDialog.Designer.cs">
-      <DependentUpon>PokedexListDialog.cs</DependentUpon>
+    <Compile Include="PokedexDetailForm.Designer.cs">
+      <DependentUpon>PokedexDetailForm.cs</DependentUpon>
     </Compile>
     <Compile Include="PokemonListDialog.cs">
       <SubType>Form</SubType>
@@ -107,91 +95,58 @@
     <Compile Include="PokemonListDialog.Designer.cs">
       <DependentUpon>PokemonListDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="PokemonSpeciesDetailDialog.cs">
+    <Compile Include="PokemonSpeciesDetailForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PokemonSpeciesDetailDialog.Designer.cs">
-      <DependentUpon>PokemonSpeciesDetailDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PokemonSpeciesListDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PokemonSpeciesListDialog.Designer.cs">
-      <DependentUpon>PokemonSpeciesListDialog.cs</DependentUpon>
+    <Compile Include="PokemonSpeciesDetailForm.Designer.cs">
+      <DependentUpon>PokemonSpeciesDetailForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RegionDetailDialog.cs">
+    <Compile Include="RegionDetailForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RegionDetailDialog.Designer.cs">
-      <DependentUpon>RegionDetailDialog.cs</DependentUpon>
+    <Compile Include="RegionDetailForm.Designer.cs">
+      <DependentUpon>RegionDetailForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="RegionListDialog.cs">
+    <Compile Include="VersionDetailForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RegionListDialog.Designer.cs">
-      <DependentUpon>RegionListDialog.cs</DependentUpon>
+    <Compile Include="VersionDetailForm.Designer.cs">
+      <DependentUpon>VersionDetailForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="VersionDetailDialog.cs">
+    <Compile Include="VersionGroupDetailForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VersionDetailDialog.Designer.cs">
-      <DependentUpon>VersionDetailDialog.cs</DependentUpon>
+    <Compile Include="VersionGroupDetailForm.Designer.cs">
+      <DependentUpon>VersionGroupDetailForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="VersionGroupDetailDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VersionGroupDetailDialog.Designer.cs">
-      <DependentUpon>VersionGroupDetailDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="VersionGroupListDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VersionGroupListDialog.Designer.cs">
-      <DependentUpon>VersionGroupListDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="VersionListDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VersionListDialog.Designer.cs">
-      <DependentUpon>VersionListDialog.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="GenerationDetailDialog.resx">
-      <DependentUpon>GenerationDetailDialog.cs</DependentUpon>
+    <EmbeddedResource Include="DetailForm.resx">
+      <DependentUpon>DetailForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GenerationListDialog.resx">
-      <DependentUpon>GenerationListDialog.cs</DependentUpon>
+    <EmbeddedResource Include="GenerationDetailForm.resx">
+      <DependentUpon>GenerationDetailForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ItemListDialog.resx">
       <DependentUpon>ItemListDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LanguageDetailDialog.resx">
-      <DependentUpon>LanguageDetailDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LanguageListDialog.resx">
-      <DependentUpon>LanguageListDialog.cs</DependentUpon>
+    <EmbeddedResource Include="LanguageDetailForm.resx">
+      <DependentUpon>LanguageDetailForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuDialog.resx">
       <DependentUpon>MenuDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NamedAPIResourceListDialog.resx">
-      <DependentUpon>NamedAPIResourceListDialog.cs</DependentUpon>
+    <EmbeddedResource Include="NamedAPIResourceListForm.resx">
+      <DependentUpon>NamedAPIResourceListForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PokedexDetailDialog.resx">
-      <DependentUpon>PokedexDetailDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PokedexListDialog.resx">
-      <DependentUpon>PokedexListDialog.cs</DependentUpon>
+    <EmbeddedResource Include="PokedexDetailForm.resx">
+      <DependentUpon>PokedexDetailForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PokemonListDialog.resx">
       <DependentUpon>PokemonListDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PokemonSpeciesDetailDialog.resx">
-      <DependentUpon>PokemonSpeciesDetailDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PokemonSpeciesListDialog.resx">
-      <DependentUpon>PokemonSpeciesListDialog.cs</DependentUpon>
+    <EmbeddedResource Include="PokemonSpeciesDetailForm.resx">
+      <DependentUpon>PokemonSpeciesDetailForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -202,23 +157,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="RegionDetailDialog.resx">
-      <DependentUpon>RegionDetailDialog.cs</DependentUpon>
+    <EmbeddedResource Include="RegionDetailForm.resx">
+      <DependentUpon>RegionDetailForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RegionListDialog.resx">
-      <DependentUpon>RegionListDialog.cs</DependentUpon>
+    <EmbeddedResource Include="VersionDetailForm.resx">
+      <DependentUpon>VersionDetailForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VersionDetailDialog.resx">
-      <DependentUpon>VersionDetailDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VersionGroupDetailDialog.resx">
-      <DependentUpon>VersionGroupDetailDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VersionGroupListDialog.resx">
-      <DependentUpon>VersionGroupListDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VersionListDialog.resx">
-      <DependentUpon>VersionListDialog.cs</DependentUpon>
+    <EmbeddedResource Include="VersionGroupDetailForm.resx">
+      <DependentUpon>VersionGroupDetailForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

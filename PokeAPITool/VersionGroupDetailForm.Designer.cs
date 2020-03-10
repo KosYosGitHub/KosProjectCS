@@ -1,6 +1,6 @@
 ﻿namespace PokeAPITool
 {
-	partial class VersionGroupDetailDialog
+	partial class VersionGroupDetailForm
 	{
 		/// <summary>
 		/// Required designer variable.

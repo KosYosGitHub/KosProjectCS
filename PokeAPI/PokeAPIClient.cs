@@ -30,7 +30,7 @@ namespace PokeAPI
 		{
 			// PokeAPIではないURLの場合はGETしない
 			if(!url.Contains("pokeapi")) {
-				throw new ArgumentException("PokeAPIのURLではありません。", nameof(url));
+				throw new ArgumentException("PokeAPIのURLではありません。", url);
 			}
 
 			return Singleton<HttpClient>.Instance.GetStringAsync(url).Result;

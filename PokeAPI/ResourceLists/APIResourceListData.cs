@@ -65,7 +65,7 @@ namespace PokeAPI
 			APIResourceData.ParseList(obj, "results", Results);
 
 			// 次ページがあれば再起呼出
-			if(next != null) {
+			if(!string.IsNullOrEmpty(next)) {
 				string nextJson = Singleton<PokeAPIClient>.Instance.GetJson(next);
 				ParseList(nextJson, false);
 			}

@@ -4,6 +4,43 @@ namespace PokeAPITool
 {
 	public class PokeAPIToolModel
 	{
+		// public 定数
+
+		#region 言語タイトル
+		/// <summary>言語タイトル</summary>
+		public const string TitleLanguage = "言語(Language)";
+		#endregion
+
+		#region バージョングループタイトル
+		/// <summary>バージョングループタイトル</summary>
+		public const string TitleVersionGroup = "バージョングループ(VersionGroup)";
+		#endregion
+
+		#region バージョンタイトル
+		/// <summary>バージョンタイトル</summary>
+		public const string TitleVersion = "バージョン(Version)";
+		#endregion
+
+		#region 世代タイトル
+		/// <summary>世代タイトル</summary>
+		public const string TitleGeneration = "世代(Generation)";
+		#endregion
+
+		#region 地方タイトル
+		/// <summary>地方タイトル</summary>
+		public const string TitleRegion = "地方(Region)";
+		#endregion
+
+		#region ポケモン図鑑タイトル
+		/// <summary>ポケモン図鑑タイトル</summary>
+		public const string TitlePokedex = "ポケモン図鑑(Pokedex)";
+		#endregion
+
+		#region ポケモン種タイトル
+		/// <summary>ポケモン種タイトル</summary>
+		public const string TitlePokemonSpecies = "ポケモン種(PokemonSpecies)";
+		#endregion
+
 		// public プロパティ
 
 		#region 言語リスト

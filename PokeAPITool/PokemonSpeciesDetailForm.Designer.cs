@@ -1,6 +1,6 @@
 ﻿namespace PokeAPITool
 {
-	partial class PokemonSpeciesDetailDialog
+	partial class PokemonSpeciesDetailForm
 	{
 		/// <summary>
 		/// Required designer variable.

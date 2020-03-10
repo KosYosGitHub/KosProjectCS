@@ -1,6 +1,6 @@
 ﻿namespace PokeAPITool
 {
-	partial class LanguageDetailDialog
+	partial class LanguageDetailForm
 	{
 		/// <summary>
 		/// Required designer variable.

@@ -1,6 +1,6 @@
 ﻿namespace PokeAPITool
 {
-	partial class GenerationDetailDialog
+	partial class GenerationDetailForm
 	{
 		/// <summary>
 		/// Required designer variable.

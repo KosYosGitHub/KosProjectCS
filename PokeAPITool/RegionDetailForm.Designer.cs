@@ -1,6 +1,6 @@
 ﻿namespace PokeAPITool
 {
-	partial class RegionDetailDialog
+	partial class RegionDetailForm
 	{
 		/// <summary>
 		/// Required designer variable.

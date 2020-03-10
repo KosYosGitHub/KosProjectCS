@@ -8,32 +8,18 @@ namespace PokeAPITool
 	/// <summary>
 	/// 地方詳細ダイアログ
 	/// </summary>
-	public partial class RegionDetailDialog : Form
+	public partial class RegionDetailForm : DetailForm
 	{
-		// public プロパティ
-
-		#region 地方名
-		/// <summary>地方名</summary>
-		public string RegionName { set { regionName = value; } }
-		#endregion
-
 		// public イベント
 
 		#region コンストラクタ
 		/// <summary>
 		/// コンストラクタ
 		/// </summary>
-		public RegionDetailDialog()
+		public RegionDetailForm(string titleText, string apiName) : base(titleText, apiName)
 		{
 			InitializeComponent();
 		}
-		#endregion
-
-		// private メンバ変数
-
-		#region 地方名
-		/// <summary>地方名</summary>
-		private string regionName = string.Empty;
 		#endregion
 
 		// private イベント
@@ -58,9 +44,6 @@ namespace PokeAPITool
 		/// <param name="e"></param>
 		private void buttonGenerationDetail_Click(object sender, EventArgs e)
 		{
-			GenerationDetailDialog dialog = new GenerationDetailDialog();
-			dialog.GenerationName = mainGenerationData.Text;
-			dialog.ShowDialog(this);
 		}
 		#endregion
 
@@ -72,18 +55,6 @@ namespace PokeAPITool
 		/// <param name="e"></param>
 		private void buttonPokedexDetail_Click(object sender, EventArgs e)
 		{
-			// 対象行確認
-			if(pokedexDataView.Rows.Count <= 0) {
-				return;
-			}
-
-			// 選択行取得
-			DataGridViewRow row = pokedexDataView.SelectedRows[0];
-
-			// 選択行の情報表示
-			PokedexDetailDialog dialog = new PokedexDetailDialog();
-			dialog.PokedexName = row.Cells[0].Value.ToString();
-			dialog.ShowDialog(this);
 		}
 		#endregion
 
@@ -95,18 +66,6 @@ namespace PokeAPITool
 		/// <param name="e"></param>
 		private void buttonVersionGroupDetail_Click(object sender, EventArgs e)
 		{
-			// 対象行確認
-			if(versionGroupDataView.Rows.Count <= 0) {
-				return;
-			}
-
-			// 選択行取得
-			DataGridViewRow row = versionGroupDataView.SelectedRows[0];
-
-			// 選択情報表示
-			VersionGroupDetailDialog dialog = new VersionGroupDetailDialog();
-			dialog.VersionGroupName = row.Cells[0].Value.ToString();
-			dialog.ShowDialog(this);
 		}
 		#endregion
 
@@ -118,18 +77,6 @@ namespace PokeAPITool
 		/// <param name="e"></param>
 		private void buttonNamesDetail_Click(object sender, EventArgs e)
 		{
-			// 対象行確認
-			if(namesDataView.Rows.Count <= 0) {
-				return;
-			}
-
-			// 選択行取得
-			DataGridViewRow row = namesDataView.SelectedRows[0];
-
-			// 選択言語の情報表示
-			LanguageDetailDialog dialog = new LanguageDetailDialog();
-			dialog.LanguageName = row.Cells[0].Value.ToString();
-			dialog.ShowDialog(this);
 		}
 		#endregion
 
@@ -139,9 +86,9 @@ namespace PokeAPITool
 		/// <summary>
 		/// 画面表示
 		/// </summary>
-		private void ShowData()
+		protected override void ShowData()
 		{
-			RegionData data = Singleton<PokeAPIToolModel>.Instance.RegionDetailList.GetRegion(regionName);
+			RegionData data = Singleton<PokeAPIToolModel>.Instance.RegionDetailList.GetRegion(apiName);
 
 			idData.Text = $"{data.ID}";							// ID
 			nameData.Text = data.Name;							// 名称

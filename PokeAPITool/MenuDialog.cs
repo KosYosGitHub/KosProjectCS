@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using Generic;
 
 namespace PokeAPITool
 {
@@ -27,9 +28,7 @@ namespace PokeAPITool
 		/// <param name="e"></param>
 		private void buttonLanguage_Click(object sender, EventArgs e)
 		{
-			LanguageListDialog dialog = new LanguageListDialog();
-
-			dialog.ShowDialog(this);
+			NamedAPIResourceListForm.ShowDialog(PokeAPIToolModel.TitleLanguage, typeof(LanguageDetailForm), Singleton<PokeAPIToolModel>.Instance.LanguageList, this);;
 		}
 		#endregion
 
@@ -41,9 +40,7 @@ namespace PokeAPITool
 		/// <param name="e"></param>
 		private void buttonVersionGroup_Click(object sender, EventArgs e)
 		{
-			VersionGroupListDialog dialog = new VersionGroupListDialog();
-
-			dialog.ShowDialog(this);
+			NamedAPIResourceListForm.ShowDialog(PokeAPIToolModel.TitleVersionGroup, typeof(VersionGroupDetailForm), Singleton<PokeAPIToolModel>.Instance.VersionGroupList, this);
 		}
 		#endregion
 
@@ -55,9 +52,7 @@ namespace PokeAPITool
 		/// <param name="e"></param>
 		private void buttonVersion_Click(object sender, EventArgs e)
 		{
-			VersionListDialog dialog = new VersionListDialog();
-
-			dialog.ShowDialog(this);
+			NamedAPIResourceListForm.ShowDialog(PokeAPIToolModel.TitleVersion, typeof(VersionDetailForm), Singleton<PokeAPIToolModel>.Instance.VersionList, this);
 		}
 		#endregion
 
@@ -69,9 +64,7 @@ namespace PokeAPITool
 		/// <param name="e"></param>
 		private void buttonGeneration_Click(object sender, EventArgs e)
 		{
-			GenerationListDialog dialog = new GenerationListDialog();
-
-			dialog.ShowDialog(this);
+			NamedAPIResourceListForm.ShowDialog(PokeAPIToolModel.TitleGeneration, typeof(GenerationDetailForm), Singleton<PokeAPIToolModel>.Instance.GenerationList, this);
 		}
 		#endregion
 
@@ -83,9 +76,7 @@ namespace PokeAPITool
 		/// <param name="e"></param>
 		private void buttonRegion_Click(object sender, EventArgs e)
 		{
-			RegionListDialog dialog = new RegionListDialog();
-
-			dialog.ShowDialog(this);
+			NamedAPIResourceListForm.ShowDialog(PokeAPIToolModel.TitleRegion, typeof(RegionDetailForm), Singleton<PokeAPIToolModel>.Instance.RegionList, this);
 		}
 		#endregion
 
@@ -97,9 +88,7 @@ namespace PokeAPITool
 		/// <param name="e"></param>
 		private void butonPokedex_Click(object sender, EventArgs e)
 		{
-			PokedexListDialog dialog = new PokedexListDialog();
-
-			dialog.ShowDialog(this);
+			NamedAPIResourceListForm.ShowDialog(PokeAPIToolModel.TitlePokedex, typeof(PokedexDetailForm), Singleton<PokeAPIToolModel>.Instance.PokedexList, this);
 		}
 		#endregion
 
@@ -111,9 +100,7 @@ namespace PokeAPITool
 		/// <param name="e"></param>
 		private void buttonPokemonSpecies_Click(object sender, EventArgs e)
 		{
-			PokemonSpeciesListDialog dialog = new PokemonSpeciesListDialog();
-
-			dialog.ShowDialog(this);
+			NamedAPIResourceListForm.ShowDialog(PokeAPIToolModel.TitlePokemonSpecies, typeof(PokemonSpeciesDetailForm), Singleton<PokeAPIToolModel>.Instance.PokemonSpeciesList, this);
 		}
 		#endregion
 

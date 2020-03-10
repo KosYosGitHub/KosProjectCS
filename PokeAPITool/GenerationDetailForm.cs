@@ -5,25 +5,21 @@ using PokeAPI;
 
 namespace PokeAPITool
 {
-	public partial class GenerationDetailDialog : Form
+	/// <summary>
+	/// 世代詳細画面
+	/// </summary>
+	public partial class GenerationDetailForm : DetailForm
 	{
-		// public プロパティ
-
-		#region 世代名
-		/// <summary>世代名</summary>
-		public string GenerationName { set { generationName = value; } }
-		#endregion
-
 		// public イベント
 
 		#region コンストラクタ
 		/// <summary>
 		/// コンストラクタ
 		/// </summary>
-		public GenerationDetailDialog()
-				{
-					InitializeComponent();
-				}
+		public GenerationDetailForm(string titleText, string apiName) : base(titleText, apiName)
+		{
+			InitializeComponent();
+		}
 		#endregion
 
 		// private イベント
@@ -48,9 +44,6 @@ namespace PokeAPITool
 		/// <param name="e"></param>
 		private void buttonMainRegionCaption_Click(object sender, EventArgs e)
 		{
-			RegionDetailDialog dialog = new RegionDetailDialog();
-			dialog.RegionName = mainRegionData.Text;
-			dialog.Show(this);
 		}
 		#endregion
 
@@ -62,18 +55,6 @@ namespace PokeAPITool
 		/// <param name="e"></param>
 		private void buttonVersionGroupDetail_Click(object sender, EventArgs e)
 		{
-			// 対象行確認
-			if(versionGroupDataView.Rows.Count <= 0) {
-				return;
-			}
-
-			// 選択行取得
-			DataGridViewRow row = versionGroupDataView.SelectedRows[0];
-
-			// 選択言語の情報表示
-			VersionGroupDetailDialog dialog = new VersionGroupDetailDialog();
-			dialog.VersionGroupName = row.Cells[0].Value.ToString();
-			dialog.ShowDialog(this);
 		}
 		#endregion
 
@@ -85,26 +66,7 @@ namespace PokeAPITool
 		/// <param name="e"></param>
 		private void buttonLanguageDetail_Click(object sender, EventArgs e)
 		{
-			// 対象行確認
-			if(languageNameView.Rows.Count <= 0) {
-				return;
-			}
-
-			// 選択行取得
-			DataGridViewRow row = languageNameView.SelectedRows[0];
-
-			// 選択言語の情報表示
-			LanguageDetailDialog dialog = new LanguageDetailDialog();
-			dialog.LanguageName = row.Cells[0].Value.ToString();
-			dialog.ShowDialog(this);
 		}
-		#endregion
-
-		// private メンバ変数
-
-		#region 世代名
-		/// <summary>世代名</summary>
-		private string generationName = string.Empty;
 		#endregion
 
 		// private メソッド
@@ -113,9 +75,11 @@ namespace PokeAPITool
 		/// <summary>
 		/// 画面表示
 		/// </summary>
-		private void ShowData()
+		protected override void ShowData()
 		{
-			GenerationData data = Singleton<PokeAPIToolModel>.Instance.GenerationDetailList.GetGeneration(generationName);
+			base.ShowData();
+
+			GenerationData data = Singleton<PokeAPIToolModel>.Instance.GenerationDetailList.GetGeneration(apiName);
 
 			idData.Text = $"{data.ID}";					// ID
 			nameData.Text = data.Name;					// 名称

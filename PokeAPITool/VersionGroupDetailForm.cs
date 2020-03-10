@@ -5,32 +5,21 @@ using PokeAPI;
 
 namespace PokeAPITool
 {
-	public partial class VersionGroupDetailDialog : Form
+	/// <summary>
+	/// バージョングループ詳細画面
+	/// </summary>
+	public partial class VersionGroupDetailForm : DetailForm
 	{
-		// public プロパティ
-
-		#region バージョングループ名
-		/// <summary>バージョングループ名</summary>
-		public string VersionGroupName { set { versionGroupName = value; } }
-		#endregion
-
 		// public イベント
 
 		#region コンストラクタ
 		/// <summary>
 		/// コンストラクタ
 		/// </summary>
-		public VersionGroupDetailDialog()
+		public VersionGroupDetailForm(string titleText, string apiName) : base(titleText, apiName)
 		{
 			InitializeComponent();
 		}
-		#endregion
-
-		// private メンバ変数
-
-		#region バージョングループ名
-		/// <summary>バージョングループ名</summary>
-		private string versionGroupName = string.Empty;
 		#endregion
 
 		// private イベント
@@ -55,9 +44,6 @@ namespace PokeAPITool
 		/// <param name="e"></param>
 		private void buttonGenerationDetail_Click(object sender, EventArgs e)
 		{
-			GenerationDetailDialog dialog = new GenerationDetailDialog();
-			dialog.GenerationName = generationData.Text;
-			dialog.ShowDialog(this);
 		}
 		#endregion
 
@@ -69,18 +55,6 @@ namespace PokeAPITool
 		/// <param name="e"></param>
 		private void buttonVersionDetail_Click(object sender, EventArgs e)
 		{
-			// 対象行確認
-			if(versionDataView.Rows.Count <= 0) {
-				return;
-			}
-
-			// 選択行取得
-			DataGridViewRow row = versionDataView.SelectedRows[0];
-
-			// 選択行の情報表示
-			VersionDetailDialog dialog = new VersionDetailDialog();
-			dialog.VersionName = row.Cells[0].Value.ToString();
-			dialog.ShowDialog(this);
 		}
 		#endregion
 
@@ -92,18 +66,6 @@ namespace PokeAPITool
 		/// <param name="e"></param>
 		private void buttonRegionDetail_Click(object sender, EventArgs e)
 		{
-			// 対象行確認
-			if(regionsDataView.Rows.Count <= 0) {
-				return;
-			}
-
-			// 選択行取得
-			DataGridViewRow row = regionsDataView.SelectedRows[0];
-
-			// 選択行の情報表示
-			RegionDetailDialog dialog = new RegionDetailDialog();
-			dialog.RegionName = row.Cells[0].Value.ToString();
-			dialog.ShowDialog(this);
 		}
 		#endregion
 
@@ -115,18 +77,6 @@ namespace PokeAPITool
 		/// <param name="e"></param>
 		private void buttonPokedexDetail_Click(object sender, EventArgs e)
 		{
-			// 対象行確認
-			if(pokedexDataView.Rows.Count <= 0) {
-				return;
-			}
-
-			// 選択行取得
-			DataGridViewRow row = pokedexDataView.SelectedRows[0];
-
-			// 選択行の情報表示
-			PokedexDetailDialog dialog = new PokedexDetailDialog();
-			dialog.PokedexName = row.Cells[0].Value.ToString();
-			dialog.ShowDialog(this);
 		}
 		#endregion
 
@@ -136,13 +86,15 @@ namespace PokeAPITool
 		/// <summary>
 		/// 画面にデータ表示
 		/// </summary>
-		private void ShowData()
+		protected override void ShowData()
 		{
-			VersionGroupData data = Singleton<PokeAPIToolModel>.Instance.VersionGroupDetailList.GetVersionGroup(versionGroupName);
+			base.ShowData();
 
-			idData.Text = $"{data.ID}";						// ID
-			nameData.Text = data.Name;						// 名称
-			orderData.Text = $"{data.Order}";				// ソート順番
+			VersionGroupData data = Singleton<PokeAPIToolModel>.Instance.VersionGroupDetailList.GetVersionGroup(apiName);
+
+			idData.Text = $"{data.ID}";                     // ID
+			nameData.Text = data.Name;                      // 名称
+			orderData.Text = $"{data.Order}";               // ソート順番
 			generationData.Text = data.Generation.Name;     // 世代
 
 			// バージョン

@@ -1,6 +1,6 @@
 ﻿namespace PokeAPITool
 {
-	partial class NamedAPIResourceListDialog
+	partial class DetailForm
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -29,14 +29,14 @@
 		{
 			this.SuspendLayout();
 			// 
-			// NamedAPIResourceListDialog
+			// DetailForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1008, 729);
-			this.Name = "NamedAPIResourceListDialog";
+			this.Name = "DetailForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-			this.Text = "NamedAPIResourceListDialog";
+			this.Text = "DetailForm";
 			this.ResumeLayout(false);
 
 		}
