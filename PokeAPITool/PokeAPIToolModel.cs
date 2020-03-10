@@ -75,5 +75,15 @@ namespace PokeAPITool
 		/// <summary>ポケモン種詳細リスト</summary>
 		public PokeAPI.PokemonSpecies PokemonSpeciesDetailList = Singleton<PokeAPI.PokemonSpecies>.Instance;
 		#endregion
+
+		#region ポケモンリスト
+		/// <summary>ポケモンリスト</summary>
+		public PokeAPI.PokemonList PokemonList => Singleton<PokeAPI.PokemonList>.Instance;
+		#endregion
+
+		#region アイテムリスト
+		/// <summary>アイテムリスト</summary>
+		public PokeAPI.ItemList ItemList => Singleton<PokeAPI.ItemList>.Instance;
+		#endregion
 	}
 }

@@ -58,6 +58,12 @@
     <Compile Include="GenerationListDialog.Designer.cs">
       <DependentUpon>GenerationListDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="ItemListDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemListDialog.Designer.cs">
+      <DependentUpon>ItemListDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="LanguageDetailDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +82,12 @@
     <Compile Include="MenuDialog.Designer.cs">
       <DependentUpon>MenuDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="NamedAPIResourceListDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NamedAPIResourceListDialog.Designer.cs">
+      <DependentUpon>NamedAPIResourceListDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="PokeAPIToolModel.cs" />
     <Compile Include="PokedexDetailDialog.cs">
       <SubType>Form</SubType>
@@ -88,6 +100,12 @@
     </Compile>
     <Compile Include="PokedexListDialog.Designer.cs">
       <DependentUpon>PokedexListDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PokemonListDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PokemonListDialog.Designer.cs">
+      <DependentUpon>PokemonListDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="PokemonSpeciesDetailDialog.cs">
       <SubType>Form</SubType>
@@ -145,6 +163,9 @@
     <EmbeddedResource Include="GenerationListDialog.resx">
       <DependentUpon>GenerationListDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ItemListDialog.resx">
+      <DependentUpon>ItemListDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LanguageDetailDialog.resx">
       <DependentUpon>LanguageDetailDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -154,11 +175,17 @@
     <EmbeddedResource Include="MenuDialog.resx">
       <DependentUpon>MenuDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NamedAPIResourceListDialog.resx">
+      <DependentUpon>NamedAPIResourceListDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PokedexDetailDialog.resx">
       <DependentUpon>PokedexDetailDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PokedexListDialog.resx">
       <DependentUpon>PokedexListDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PokemonListDialog.resx">
+      <DependentUpon>PokemonListDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PokemonSpeciesDetailDialog.resx">
       <DependentUpon>PokemonSpeciesDetailDialog.cs</DependentUpon>

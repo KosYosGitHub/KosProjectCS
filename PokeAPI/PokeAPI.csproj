@@ -55,6 +55,7 @@
     <Compile Include="Generation.cs" />
     <Compile Include="GenerationList.cs" />
     <Compile Include="GrowthRate.cs" />
+    <Compile Include="ItemList.cs" />
     <Compile Include="Language.cs" />
     <Compile Include="LanguageList.cs" />
     <Compile Include="Locations\RegionData.cs" />
@@ -62,6 +63,7 @@
     <Compile Include="PokeAPIClient.cs" />
     <Compile Include="Pokedex.cs" />
     <Compile Include="PokedexList.cs" />
+    <Compile Include="PokemonList.cs" />
     <Compile Include="PokemonSpecies.cs" />
     <Compile Include="PokemonSpeciesList.cs" />
     <Compile Include="Pokemon\PokemonSpeciesData.cs" />
@@ -108,6 +110,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Items\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -5,9 +5,9 @@ using Generic;
 namespace PokeAPITool
 {
 	/// <summary>
-	/// ポケモン種リスト画面
+	/// アイテムリスト画面
 	/// </summary>
-	public partial class PokemonSpeciesListDialog : Form
+	public partial class ItemListDialog : Form
 	{
 		// public イベント
 
@@ -15,7 +15,7 @@ namespace PokeAPITool
 		/// <summary>
 		/// コンストラクタ
 		/// </summary>
-		public PokemonSpeciesListDialog()
+		public ItemListDialog()
 		{
 			InitializeComponent();
 		}
@@ -29,7 +29,7 @@ namespace PokeAPITool
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void PokemonSpeciesListDialog_Load(object sender, EventArgs e)
+		private void ItemListDialog_Load(object sender, EventArgs e)
 		{
 			ShowData();
 		}
@@ -51,21 +51,7 @@ namespace PokeAPITool
 			DataGridViewRow row = listDataView.SelectedRows[0];
 
 			nameData.Text = row.Cells[0].Value.ToString();
-			urlData.Text = Singleton<PokeAPIToolModel>.Instance.PokemonSpeciesList.GetURL(nameData.Text);
-		}
-		#endregion
-
-		#region 詳細ボタン クリック
-		/// <summary>
-		/// 詳細ボタン クリック
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		private void detailButton_Click(object sender, EventArgs e)
-		{
-			PokemonSpeciesDetailDialog dialog = new PokemonSpeciesDetailDialog();
-			dialog.PokemonSpeciesName = nameData.Text;
-			dialog.ShowDialog(this);
+			urlData.Text = Singleton<PokeAPIToolModel>.Instance.ItemList.GetURL(nameData.Text);
 		}
 		#endregion
 
@@ -80,7 +66,7 @@ namespace PokeAPITool
 			// 一度クリア
 			listDataView.Rows.Clear();
 
-			foreach(string name in Singleton<PokeAPIToolModel>.Instance.PokemonSpeciesList.Names) {
+			foreach(string name in Singleton<PokeAPIToolModel>.Instance.ItemList.Names) {
 				listDataView.Rows.Add(name);
 			}
 		}

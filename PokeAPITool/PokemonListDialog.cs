@@ -1,13 +1,17 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using Generic;
 
 namespace PokeAPITool
 {
-	/// <summary>
-	/// ポケモン種リスト画面
-	/// </summary>
-	public partial class PokemonSpeciesListDialog : Form
+	public partial class PokemonListDialog : Form
 	{
 		// public イベント
 
@@ -15,7 +19,7 @@ namespace PokeAPITool
 		/// <summary>
 		/// コンストラクタ
 		/// </summary>
-		public PokemonSpeciesListDialog()
+		public PokemonListDialog()
 		{
 			InitializeComponent();
 		}
@@ -29,7 +33,7 @@ namespace PokeAPITool
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void PokemonSpeciesListDialog_Load(object sender, EventArgs e)
+		private void PokemonListDialog_Load(object sender, EventArgs e)
 		{
 			ShowData();
 		}
@@ -51,21 +55,7 @@ namespace PokeAPITool
 			DataGridViewRow row = listDataView.SelectedRows[0];
 
 			nameData.Text = row.Cells[0].Value.ToString();
-			urlData.Text = Singleton<PokeAPIToolModel>.Instance.PokemonSpeciesList.GetURL(nameData.Text);
-		}
-		#endregion
-
-		#region 詳細ボタン クリック
-		/// <summary>
-		/// 詳細ボタン クリック
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		private void detailButton_Click(object sender, EventArgs e)
-		{
-			PokemonSpeciesDetailDialog dialog = new PokemonSpeciesDetailDialog();
-			dialog.PokemonSpeciesName = nameData.Text;
-			dialog.ShowDialog(this);
+			urlData.Text = Singleton<PokeAPIToolModel>.Instance.PokemonList.GetURL(nameData.Text);
 		}
 		#endregion
 
@@ -80,7 +70,7 @@ namespace PokeAPITool
 			// 一度クリア
 			listDataView.Rows.Clear();
 
-			foreach(string name in Singleton<PokeAPIToolModel>.Instance.PokemonSpeciesList.Names) {
+			foreach(string name in Singleton<PokeAPIToolModel>.Instance.PokemonList.Names) {
 				listDataView.Rows.Add(name);
 			}
 		}

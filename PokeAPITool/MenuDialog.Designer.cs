@@ -34,6 +34,8 @@
 			this.buttonRegion = new System.Windows.Forms.Button();
 			this.butonPokedex = new System.Windows.Forms.Button();
 			this.buttonPokemonSpecies = new System.Windows.Forms.Button();
+			this.buttonItem = new System.Windows.Forms.Button();
+			this.buttonPokemon = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// buttonLanguage
@@ -106,11 +108,33 @@
 			this.buttonPokemonSpecies.UseVisualStyleBackColor = true;
 			this.buttonPokemonSpecies.Click += new System.EventHandler(this.buttonPokemonSpecies_Click);
 			// 
+			// buttonItem
+			// 
+			this.buttonItem.Location = new System.Drawing.Point(12, 136);
+			this.buttonItem.Name = "buttonItem";
+			this.buttonItem.Size = new System.Drawing.Size(80, 35);
+			this.buttonItem.TabIndex = 8;
+			this.buttonItem.Text = "アイテム";
+			this.buttonItem.UseVisualStyleBackColor = true;
+			this.buttonItem.Click += new System.EventHandler(this.buttonItem_Click);
+			// 
+			// buttonPokemon
+			// 
+			this.buttonPokemon.Location = new System.Drawing.Point(185, 95);
+			this.buttonPokemon.Name = "buttonPokemon";
+			this.buttonPokemon.Size = new System.Drawing.Size(80, 35);
+			this.buttonPokemon.TabIndex = 7;
+			this.buttonPokemon.Text = "ポケモン";
+			this.buttonPokemon.UseVisualStyleBackColor = true;
+			this.buttonPokemon.Click += new System.EventHandler(this.buttonPokemon_Click);
+			// 
 			// MenuDialog
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1008, 729);
+			this.Controls.Add(this.buttonPokemon);
+			this.Controls.Add(this.buttonItem);
 			this.Controls.Add(this.buttonPokemonSpecies);
 			this.Controls.Add(this.butonPokedex);
 			this.Controls.Add(this.buttonRegion);
@@ -134,6 +158,8 @@
 		private System.Windows.Forms.Button buttonRegion;
 		private System.Windows.Forms.Button butonPokedex;
 		private System.Windows.Forms.Button buttonPokemonSpecies;
+		private System.Windows.Forms.Button buttonItem;
+		private System.Windows.Forms.Button buttonPokemon;
 	}
 }
 
