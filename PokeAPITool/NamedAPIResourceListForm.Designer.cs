@@ -30,10 +30,10 @@
 			System.Windows.Forms.Label urlCaption;
 			System.Windows.Forms.Label nameCaption;
 			this.listDataView = new System.Windows.Forms.DataGridView();
-			this.PokemonColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.detailButton = new System.Windows.Forms.Button();
 			this.urlData = new System.Windows.Forms.Label();
 			this.nameData = new System.Windows.Forms.Label();
+			this.NameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			urlCaption = new System.Windows.Forms.Label();
 			nameCaption = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.listDataView)).BeginInit();
@@ -65,7 +65,7 @@
 			this.listDataView.AllowUserToResizeRows = false;
 			this.listDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.listDataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.PokemonColumn});
+            this.NameColumn});
 			this.listDataView.Location = new System.Drawing.Point(12, 12);
 			this.listDataView.MultiSelect = false;
 			this.listDataView.Name = "listDataView";
@@ -76,15 +76,6 @@
 			this.listDataView.Size = new System.Drawing.Size(345, 705);
 			this.listDataView.TabIndex = 0;
 			this.listDataView.SelectionChanged += new System.EventHandler(this.listDataView_SelectionChanged);
-			// 
-			// PokemonColumn
-			// 
-			this.PokemonColumn.HeaderText = "XXXXX";
-			this.PokemonColumn.Name = "PokemonColumn";
-			this.PokemonColumn.ReadOnly = true;
-			this.PokemonColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-			this.PokemonColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-			this.PokemonColumn.Width = 300;
 			// 
 			// detailButton
 			// 
@@ -112,6 +103,15 @@
 			this.nameData.Size = new System.Drawing.Size(631, 19);
 			this.nameData.TabIndex = 2;
 			// 
+			// NameColumn
+			// 
+			this.NameColumn.HeaderText = "XXXXX";
+			this.NameColumn.Name = "NameColumn";
+			this.NameColumn.ReadOnly = true;
+			this.NameColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+			this.NameColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+			this.NameColumn.Width = 300;
+			// 
 			// NamedAPIResourceListForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -137,9 +137,9 @@
 		#endregion
 
 		private System.Windows.Forms.DataGridView listDataView;
-		private System.Windows.Forms.DataGridViewTextBoxColumn PokemonColumn;
 		private System.Windows.Forms.Button detailButton;
 		private System.Windows.Forms.Label urlData;
 		private System.Windows.Forms.Label nameData;
+		private System.Windows.Forms.DataGridViewTextBoxColumn NameColumn;
 	}
 }
