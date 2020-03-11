@@ -58,9 +58,12 @@
     <Compile Include="ItemList.cs" />
     <Compile Include="Language.cs" />
     <Compile Include="LanguageList.cs" />
+    <Compile Include="LocationAreaList.cs" />
+    <Compile Include="LocationList.cs" />
     <Compile Include="Locations\RegionData.cs" />
     <Compile Include="NamedAPIResourceList.cs" />
     <Compile Include="Nature.cs" />
+    <Compile Include="PalParkAreaList.cs" />
     <Compile Include="PokeAPIClient.cs" />
     <Compile Include="Pokedex.cs" />
     <Compile Include="PokedexList.cs" />

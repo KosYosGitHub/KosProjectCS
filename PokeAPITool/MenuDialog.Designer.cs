@@ -36,6 +36,9 @@
 			this.buttonPokemonSpecies = new System.Windows.Forms.Button();
 			this.buttonItem = new System.Windows.Forms.Button();
 			this.buttonPokemon = new System.Windows.Forms.Button();
+			this.buttonLocation = new System.Windows.Forms.Button();
+			this.buttonLocationArea = new System.Windows.Forms.Button();
+			this.buttonPalParkArea = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// buttonLanguage
@@ -93,7 +96,7 @@
 			this.butonPokedex.Location = new System.Drawing.Point(13, 95);
 			this.butonPokedex.Name = "butonPokedex";
 			this.butonPokedex.Size = new System.Drawing.Size(80, 35);
-			this.butonPokedex.TabIndex = 5;
+			this.butonPokedex.TabIndex = 8;
 			this.butonPokedex.Text = "ポケモン図鑑";
 			this.butonPokedex.UseVisualStyleBackColor = true;
 			this.butonPokedex.Click += new System.EventHandler(this.butonPokedex_Click);
@@ -103,7 +106,7 @@
 			this.buttonPokemonSpecies.Location = new System.Drawing.Point(99, 95);
 			this.buttonPokemonSpecies.Name = "buttonPokemonSpecies";
 			this.buttonPokemonSpecies.Size = new System.Drawing.Size(80, 35);
-			this.buttonPokemonSpecies.TabIndex = 6;
+			this.buttonPokemonSpecies.TabIndex = 9;
 			this.buttonPokemonSpecies.Text = "ポケモン種";
 			this.buttonPokemonSpecies.UseVisualStyleBackColor = true;
 			this.buttonPokemonSpecies.Click += new System.EventHandler(this.buttonPokemonSpecies_Click);
@@ -113,7 +116,7 @@
 			this.buttonItem.Location = new System.Drawing.Point(12, 136);
 			this.buttonItem.Name = "buttonItem";
 			this.buttonItem.Size = new System.Drawing.Size(80, 35);
-			this.buttonItem.TabIndex = 8;
+			this.buttonItem.TabIndex = 11;
 			this.buttonItem.Text = "アイテム";
 			this.buttonItem.UseVisualStyleBackColor = true;
 			this.buttonItem.Click += new System.EventHandler(this.buttonItem_Click);
@@ -123,16 +126,49 @@
 			this.buttonPokemon.Location = new System.Drawing.Point(185, 95);
 			this.buttonPokemon.Name = "buttonPokemon";
 			this.buttonPokemon.Size = new System.Drawing.Size(80, 35);
-			this.buttonPokemon.TabIndex = 7;
+			this.buttonPokemon.TabIndex = 10;
 			this.buttonPokemon.Text = "ポケモン";
 			this.buttonPokemon.UseVisualStyleBackColor = true;
 			this.buttonPokemon.Click += new System.EventHandler(this.buttonPokemon_Click);
+			// 
+			// buttonLocation
+			// 
+			this.buttonLocation.Location = new System.Drawing.Point(185, 54);
+			this.buttonLocation.Name = "buttonLocation";
+			this.buttonLocation.Size = new System.Drawing.Size(80, 35);
+			this.buttonLocation.TabIndex = 5;
+			this.buttonLocation.Text = "場所";
+			this.buttonLocation.UseVisualStyleBackColor = true;
+			this.buttonLocation.Click += new System.EventHandler(this.buttonLocation_Click);
+			// 
+			// buttonLocationArea
+			// 
+			this.buttonLocationArea.Location = new System.Drawing.Point(271, 54);
+			this.buttonLocationArea.Name = "buttonLocationArea";
+			this.buttonLocationArea.Size = new System.Drawing.Size(80, 35);
+			this.buttonLocationArea.TabIndex = 6;
+			this.buttonLocationArea.Text = "場所エリア";
+			this.buttonLocationArea.UseVisualStyleBackColor = true;
+			this.buttonLocationArea.Click += new System.EventHandler(this.buttonLocationArea_Click);
+			// 
+			// buttonPalParkArea
+			// 
+			this.buttonPalParkArea.Location = new System.Drawing.Point(357, 54);
+			this.buttonPalParkArea.Name = "buttonPalParkArea";
+			this.buttonPalParkArea.Size = new System.Drawing.Size(80, 35);
+			this.buttonPalParkArea.TabIndex = 7;
+			this.buttonPalParkArea.Text = "パルパーク\r\nエリア";
+			this.buttonPalParkArea.UseVisualStyleBackColor = true;
+			this.buttonPalParkArea.Click += new System.EventHandler(this.buttonPalParkArea_Click);
 			// 
 			// MenuDialog
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1008, 729);
+			this.Controls.Add(this.buttonPalParkArea);
+			this.Controls.Add(this.buttonLocationArea);
+			this.Controls.Add(this.buttonLocation);
 			this.Controls.Add(this.buttonPokemon);
 			this.Controls.Add(this.buttonItem);
 			this.Controls.Add(this.buttonPokemonSpecies);
@@ -160,6 +196,9 @@
 		private System.Windows.Forms.Button buttonPokemonSpecies;
 		private System.Windows.Forms.Button buttonItem;
 		private System.Windows.Forms.Button buttonPokemon;
+		private System.Windows.Forms.Button buttonLocation;
+		private System.Windows.Forms.Button buttonLocationArea;
+		private System.Windows.Forms.Button buttonPalParkArea;
 	}
 }
 

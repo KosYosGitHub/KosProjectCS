@@ -22,18 +22,9 @@ namespace PokeAPITool
 		/// <param name="parent">親フォーム</param>
 		public static void ShowDialog(string titleText, Type detailFormType, NamedAPIResourceList namedAPIResourceList, Form parent)
 		{
-			Cursor cursor = Cursor.Current;
+			NamedAPIResourceListForm form = new NamedAPIResourceListForm(titleText, detailFormType, namedAPIResourceList);
 
-			try {
-				Cursor.Current = Cursors.WaitCursor;
-
-				NamedAPIResourceListForm form = new NamedAPIResourceListForm(titleText, detailFormType, namedAPIResourceList);
-
-				form.ShowDialog(parent);
-			}
-			finally {
-				Cursor.Current = cursor;
-			}
+			form.ShowDialog(parent);
 		}
 		#endregion
 

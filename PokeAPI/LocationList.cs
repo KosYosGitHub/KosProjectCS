@@ -1,6 +1,9 @@
 ﻿namespace PokeAPI
 {
-	public class ItemList : NamedAPIResourceList
+	/// <summary>
+	/// 場所リストクラス
+	/// </summary>
+	public class LocationList : NamedAPIResourceList
 	{
 		// public メソッド
 
@@ -8,7 +11,7 @@
 		/// <summary>
 		/// コンストラクタ
 		/// </summary>
-		public ItemList() : base("item")
+		public LocationList() : base("location")
 		{
 		}
 		#endregion

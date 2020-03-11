@@ -58,12 +58,6 @@
     <Compile Include="GenerationDetailForm.Designer.cs">
       <DependentUpon>GenerationDetailForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ItemListDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ItemListDialog.Designer.cs">
-      <DependentUpon>ItemListDialog.cs</DependentUpon>
-    </Compile>
     <Compile Include="LanguageDetailForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,12 +82,6 @@
     </Compile>
     <Compile Include="PokedexDetailForm.Designer.cs">
       <DependentUpon>PokedexDetailForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PokemonListDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PokemonListDialog.Designer.cs">
-      <DependentUpon>PokemonListDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="PokemonSpeciesDetailForm.cs">
       <SubType>Form</SubType>
@@ -127,9 +115,6 @@
     <EmbeddedResource Include="GenerationDetailForm.resx">
       <DependentUpon>GenerationDetailForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ItemListDialog.resx">
-      <DependentUpon>ItemListDialog.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="LanguageDetailForm.resx">
       <DependentUpon>LanguageDetailForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -141,9 +126,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PokedexDetailForm.resx">
       <DependentUpon>PokedexDetailForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PokemonListDialog.resx">
-      <DependentUpon>PokemonListDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PokemonSpeciesDetailForm.resx">
       <DependentUpon>PokemonSpeciesDetailForm.cs</DependentUpon>

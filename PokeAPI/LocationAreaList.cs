@@ -1,9 +1,9 @@
 ﻿namespace PokeAPI
 {
 	/// <summary>
-	/// ポケモンリスト
+	/// 場所エリアリストクラス
 	/// </summary>
-	public class PokemonList : NamedAPIResourceList
+	public class LocationAreaList : NamedAPIResourceList
 	{
 		// public メソッド
 
@@ -11,7 +11,7 @@
 		/// <summary>
 		/// コンストラクタ
 		/// </summary>
-		public PokemonList() : base("pokemon")
+		public LocationAreaList() : base("location-area")
 		{
 		}
 		#endregion

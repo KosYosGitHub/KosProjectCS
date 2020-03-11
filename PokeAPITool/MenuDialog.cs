@@ -80,6 +80,42 @@ namespace PokeAPITool
 		}
 		#endregion
 
+		#region 場所ボタン クリック
+		/// <summary>
+		/// 場所ボタン クリック
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void buttonLocation_Click(object sender, EventArgs e)
+		{
+			NamedAPIResourceListForm.ShowDialog(PokeAPIToolModel.TitleLocation, typeof(DetailForm), Singleton<PokeAPIToolModel>.Instance.LocationList, this);
+		}
+		#endregion
+
+		#region 場所エリアボタン クリック
+		/// <summary>
+		/// 場所エリアボタン クリック
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void buttonLocationArea_Click(object sender, EventArgs e)
+		{
+			NamedAPIResourceListForm.ShowDialog(PokeAPIToolModel.TitleLocationArea, typeof(DetailForm), Singleton<PokeAPIToolModel>.Instance.LocationAreaList, this);
+		}
+		#endregion
+
+		#region パルパークエリアボタン クリック
+		/// <summary>
+		/// パルパークエリアボタン クリック
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void buttonPalParkArea_Click(object sender, EventArgs e)
+		{
+			NamedAPIResourceListForm.ShowDialog(PokeAPIToolModel.TitlePalParkArea, typeof(DetailForm), Singleton<PokeAPIToolModel>.Instance.PalParkAreaList, this);
+		}
+		#endregion
+
 		#region ポケモン図鑑ボタン クリック
 		/// <summary>
 		/// ポケモン図鑑ボタン クリック
@@ -112,8 +148,7 @@ namespace PokeAPITool
 		/// <param name="e"></param>
 		private void buttonPokemon_Click(object sender, EventArgs e)
 		{
-			PokemonListDialog dialog = new PokemonListDialog();
-			dialog.ShowDialog(this);
+			NamedAPIResourceListForm.ShowDialog(PokeAPIToolModel.TitlePokemon, typeof(DetailForm), Singleton<PokeAPIToolModel>.Instance.PokemonList, this);
 		}
 		#endregion
 
@@ -125,8 +160,7 @@ namespace PokeAPITool
 		/// <param name="e"></param>
 		private void buttonItem_Click(object sender, EventArgs e)
 		{
-			ItemListDialog dialog = new ItemListDialog();
-			dialog.ShowDialog(this);
+			NamedAPIResourceListForm.ShowDialog(PokeAPIToolModel.TitleItem, typeof(DetailForm), Singleton<PokeAPIToolModel>.Instance.ItemList, this);
 		}
 		#endregion
 	}

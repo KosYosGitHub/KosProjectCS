@@ -31,6 +31,21 @@ namespace PokeAPITool
 		public const string TitleRegion = "地方(Region)";
 		#endregion
 
+		#region 場所タイトル
+		/// <summary>場所</summary>
+		public const string TitleLocation = "場所(Location)";
+		#endregion
+
+		#region 場所エリアタイトル
+		/// <summary>場所エリアタイトル</summary>
+		public const string TitleLocationArea = "場所エリア(LocationArea)";
+		#endregion
+
+		#region パルパークエリアタイトル
+		/// <summary>パルパークエリアタイトル</summary>
+		public const string TitlePalParkArea = "パルパークエリア(PalParkArea)";
+		#endregion
+
 		#region ポケモン図鑑タイトル
 		/// <summary>ポケモン図鑑タイトル</summary>
 		public const string TitlePokedex = "ポケモン図鑑(Pokedex)";
@@ -39,6 +54,16 @@ namespace PokeAPITool
 		#region ポケモン種タイトル
 		/// <summary>ポケモン種タイトル</summary>
 		public const string TitlePokemonSpecies = "ポケモン種(PokemonSpecies)";
+		#endregion
+
+		#region ポケモンタイトル
+		/// <summary>ポケモンタイトル</summary>
+		public const string TitlePokemon = "ポケモン(Pokemon)";
+		#endregion
+
+		#region アイテム
+		/// <summary>アイテムタイトル</summary>
+		public const string TitleItem = "アイテム(Item)";
 		#endregion
 
 		// public プロパティ
@@ -91,6 +116,21 @@ namespace PokeAPITool
 		#region 地方詳細リスト
 		/// <summary>地方詳細リスト</summary>
 		public PokeAPI.Region RegionDetailList => Singleton<PokeAPI.Region>.Instance;
+		#endregion
+
+		#region 場所リスト
+		/// <summary>場所リスト</summary>
+		public PokeAPI.LocationList LocationList => Singleton<PokeAPI.LocationList>.Instance;
+		#endregion
+
+		#region 場所エリアリスト
+		/// <summary>場所エリアリスト</summary>
+		public PokeAPI.LocationAreaList LocationAreaList => Singleton<PokeAPI.LocationAreaList>.Instance;
+		#endregion
+
+		#region パルパークエリアタイトル
+		/// <summary>パルパークエリアタイトル</summary>
+		public PokeAPI.PalParkAreaList PalParkAreaList => Singleton<PokeAPI.PalParkAreaList>.Instance;
 		#endregion
 
 		#region 図鑑リスト

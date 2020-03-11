@@ -1,6 +1,6 @@
 ﻿namespace PokeAPI
 {
-	public class ItemList : NamedAPIResourceList
+	public class PalParkAreaList : NamedAPIResourceList
 	{
 		// public メソッド
 
@@ -8,7 +8,7 @@
 		/// <summary>
 		/// コンストラクタ
 		/// </summary>
-		public ItemList() : base("item")
+		public PalParkAreaList() : base("pal-park-area")
 		{
 		}
 		#endregion
