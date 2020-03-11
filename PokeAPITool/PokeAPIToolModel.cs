@@ -61,9 +61,19 @@ namespace PokeAPITool
 		public const string TitlePokemon = "ポケモン(Pokemon)";
 		#endregion
 
-		#region アイテム
+		#region アイテムタイトル
 		/// <summary>アイテムタイトル</summary>
 		public const string TitleItem = "アイテム(Item)";
+		#endregion
+
+		#region アイテム属性タイトル
+		/// <summary>アイテム属性タイトル</summary>
+		public const string TitleItemAttribute = "アイテム属性(ItemAttribute)";
+		#endregion
+
+		#region アイテムカテゴリタイトル
+		/// <summary>アイテムカテゴリタイトル</summary>
+		public const string TitleItemCategory = "アイテムカテゴリ(ItemCategory)";
 		#endregion
 
 		// public プロパティ
@@ -161,6 +171,16 @@ namespace PokeAPITool
 		#region アイテムリスト
 		/// <summary>アイテムリスト</summary>
 		public PokeAPI.ItemList ItemList => Singleton<PokeAPI.ItemList>.Instance;
+		#endregion
+
+		#region アイテム属性リスト
+		/// <summary>アイテム属性リスト</summary>
+		public PokeAPI.ItemAttributeList ItemAttributeList => Singleton<PokeAPI.ItemAttributeList>.Instance;
+		#endregion
+
+		#region アイテムカテゴリリスト
+		/// <summary>アイテムカテゴリリスト</summary>
+		public PokeAPI.ItemCategoryList ItemCategoryList => Singleton<PokeAPI.ItemCategoryList>.Instance;
 		#endregion
 	}
 }

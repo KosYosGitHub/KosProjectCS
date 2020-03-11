@@ -55,6 +55,8 @@
     <Compile Include="Generation.cs" />
     <Compile Include="GenerationList.cs" />
     <Compile Include="GrowthRate.cs" />
+    <Compile Include="ItemAttributeList.cs" />
+    <Compile Include="ItemCategoryList.cs" />
     <Compile Include="ItemList.cs" />
     <Compile Include="Language.cs" />
     <Compile Include="LanguageList.cs" />

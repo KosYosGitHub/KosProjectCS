@@ -39,6 +39,8 @@
 			this.buttonLocation = new System.Windows.Forms.Button();
 			this.buttonLocationArea = new System.Windows.Forms.Button();
 			this.buttonPalParkArea = new System.Windows.Forms.Button();
+			this.buttonItemAttribute = new System.Windows.Forms.Button();
+			this.buttonItemCategory = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// buttonLanguage
@@ -161,11 +163,33 @@
 			this.buttonPalParkArea.UseVisualStyleBackColor = true;
 			this.buttonPalParkArea.Click += new System.EventHandler(this.buttonPalParkArea_Click);
 			// 
+			// buttonItemAttribute
+			// 
+			this.buttonItemAttribute.Location = new System.Drawing.Point(99, 136);
+			this.buttonItemAttribute.Name = "buttonItemAttribute";
+			this.buttonItemAttribute.Size = new System.Drawing.Size(80, 35);
+			this.buttonItemAttribute.TabIndex = 12;
+			this.buttonItemAttribute.Text = "アイテム属性";
+			this.buttonItemAttribute.UseVisualStyleBackColor = true;
+			this.buttonItemAttribute.Click += new System.EventHandler(this.buttonItemAttribute_Click);
+			// 
+			// buttonItemCategory
+			// 
+			this.buttonItemCategory.Location = new System.Drawing.Point(185, 136);
+			this.buttonItemCategory.Name = "buttonItemCategory";
+			this.buttonItemCategory.Size = new System.Drawing.Size(80, 35);
+			this.buttonItemCategory.TabIndex = 13;
+			this.buttonItemCategory.Text = "アイテム\r\nカテゴリ";
+			this.buttonItemCategory.UseVisualStyleBackColor = true;
+			this.buttonItemCategory.Click += new System.EventHandler(this.buttonItemCategory_Click);
+			// 
 			// MenuDialog
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1008, 729);
+			this.Controls.Add(this.buttonItemCategory);
+			this.Controls.Add(this.buttonItemAttribute);
 			this.Controls.Add(this.buttonPalParkArea);
 			this.Controls.Add(this.buttonLocationArea);
 			this.Controls.Add(this.buttonLocation);
@@ -199,6 +223,8 @@
 		private System.Windows.Forms.Button buttonLocation;
 		private System.Windows.Forms.Button buttonLocationArea;
 		private System.Windows.Forms.Button buttonPalParkArea;
+		private System.Windows.Forms.Button buttonItemAttribute;
+		private System.Windows.Forms.Button buttonItemCategory;
 	}
 }
 
