@@ -1,9 +1,9 @@
 ﻿namespace PokeAPI
 {
 	/// <summary>
-	/// ポケモン種リスト
+	/// 卵グループリストクラス
 	/// </summary>
-	public class PokemonSpeciesList : NamedAPIResourceList
+	public class EggGroupList : NamedAPIResourceList
 	{
 		// public メソッド
 
@@ -11,7 +11,7 @@
 		/// <summary>
 		/// コンストラクタ
 		/// </summary>
-		public PokemonSpeciesList() : base("pokemon-species")
+		public EggGroupList() : base("egg-group")
 		{
 		}
 		#endregion

@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json.Linq;
 using Generic;
 
 //--- MITライセンスに基づくコメント ---
@@ -12,7 +11,7 @@ namespace PokeAPI
 	/// <summary>
 	/// ポケモン図鑑クラス
 	/// </summary>
-	public class Pokedex : PokeAPIBase
+	public class Pokedex : NamedAPIResourceListItem
 	{
 		// public メソッド
 
@@ -20,24 +19,10 @@ namespace PokeAPI
 		/// <summary>
 		/// コンストラクタ
 		/// </summary>
-		public Pokedex() : base("pokedex")
+		public Pokedex() : base("pokedex", Singleton<PokedexList>.Instance)
 		{
 		}
 		#endregion
-
-		#region クリア
-		/// <summary>
-		/// クリア
-		/// </summary>
-		public new void Clear()
-		{
-			base.Clear();
-			pokedexDataIDKey.Clear();
-			pokedexDataNameKey.Clear();
-		}
-		#endregion
-
-		// internal メソッド
 
 		#region ポケモン図鑑情報取得
 		/// <summary>
@@ -47,56 +32,21 @@ namespace PokeAPI
 		/// <returns>取得データ</returns>
 		public PokedexData GetPokedex(string name)
 		{
-			// ポケモン図鑑リストの取得
-			GetNamedAPIResourceList();
-
-			// 読込済確認
-			PokedexData data;
-			if(pokedexDataNameKey.TryGetValue(name.ToUpper(), out data)) {
-				return data;
-			}
-
-			// ポケモン図鑑APIリソースURL取得
-			string url = NamedAPIResourceList.GetURL(name);
-
-			// ポケモン図鑑JSON文字列取得
-			string json = Singleton<PokeAPIClient>.Instance.GetJson(url);
-
-			// ポケモン図鑑JSON文字列解析
-			return ParsePokedexJson(json);
+			return GetResource(name) as PokedexData;
 		}
 		#endregion
 
-		// private メンバ変数
-
-		#region ポケモン図鑑ディクショナリ(IDキー)
-		/// <summary>ポケモン図鑑ディクショナリ(IDキー)</summary>
-		private Dictionary<int, PokedexData> pokedexDataIDKey = new Dictionary<int, PokedexData>();
-		#endregion
-
-		#region ポケモン図鑑ディクショナリ(Nameキー)
-		/// <summary>ポケモン図鑑ディクショナリ(Nameキー)</summary>
-		private Dictionary<string, PokedexData> pokedexDataNameKey = new Dictionary<string, PokedexData>();
-		#endregion
-
-		// private メソッド
+		// protected メソッド
 
 		#region ポケモン図鑑 JSON解析
 		/// <summary>
 		/// ポケモン図鑑 JSON解析
 		/// </summary>
 		/// <param name="json">JSON文字列</param>
-		private PokedexData ParsePokedexJson(string json)
+		/// <returns>ポケモン図鑑</returns>
+		protected override APIResource ParseJson(string json)
 		{
-			JObject obj = JObject.Parse(json);
-
-			PokedexData data = new PokedexData(obj);
-
-			// ディクショナリに追加
-			pokedexDataIDKey.Add(data.ID, data);
-			pokedexDataNameKey.Add(data.Name.ToUpper(), data);
-
-			return data;
+			return new PokedexData(JObject.Parse(json));
 		}
 		#endregion
 	}

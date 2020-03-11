@@ -11,19 +11,9 @@ namespace PokeAPI
 	/// <summary>
 	/// バージョンデータクラス
 	/// </summary>
-	public class VersionData
+	public class VersionData : APIResource
 	{
 		// プロパティ
-
-		#region ID
-		/// <summary>ID</summary>
-		public int ID { get; internal set; } = 0;
-		#endregion
-
-		#region 名称
-		/// <summary>名称</summary>
-		public string Name { get; internal set; } = string.Empty;
-		#endregion
 
 		#region 各言語の名称
 		/// <summary>各言語での名称</summary>

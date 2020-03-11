@@ -8,19 +8,9 @@ using Newtonsoft.Json.Linq;
 
 namespace PokeAPI
 {
-	public class RegionData
+	public class RegionData : APIResource
 	{
 		// プロパティ
-
-		#region ID
-		/// <summary>ID</summary>
-		public int ID { get; internal set; } = 0;
-		#endregion
-
-		#region 名称
-		/// <summary>名称</summary>
-		public string Name { get; internal set; } = string.Empty;
-		#endregion
 
 		#region 言語ごとの名称
 		/// <summary>言語ごとの名称</summary>

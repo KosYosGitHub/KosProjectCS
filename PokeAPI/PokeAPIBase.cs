@@ -1,12 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Net.Http;
-using Generic;
-using Newtonsoft.Json.Linq;
-
-//--- MITライセンスに基づくコメント ---
-// Newtonsoft.Json 使用
-// 作成: James Newton-King
-//-------------------------------------
+﻿using Generic;
 
 namespace PokeAPI
 {
@@ -17,11 +9,6 @@ namespace PokeAPI
 	{
 		// protected メンバ変数
 
-		#region 名前付きAPIリソースリスト
-		/// <summary>名前付きAPIリソースリスト</summary>
-		protected NamedAPIResourceListData namedAPIResourceList = null;
-		#endregion
-
 		#region APIリソースリスト
 		/// <summary>APIリソースリスト</summary>
 		protected APIResourceListData apiResourceList = null;
@@ -29,9 +16,9 @@ namespace PokeAPI
 
 		// protected プロパティ
 
-		#region 名前付きAPIリソースリスト
-		/// <summary>名前付きAPIリソースリスト</summary>
-		protected NamedAPIResourceListData NamedAPIResourceList => namedAPIResourceList;
+		#region APIエンドポイント
+		/// <summary>APIエンドポイント</summary>
+		protected string APIEndPoint => apiEndPoint;
 		#endregion
 
 		#region APIリソースリスト
@@ -49,25 +36,6 @@ namespace PokeAPI
 		protected PokeAPIBase(string apiEndPoint)
 		{
 			this.apiEndPoint = apiEndPoint;
-		}
-		#endregion
-
-		#region 名前付きAPIリソースの取得
-		/// <summary>
-		/// 名前付きAPIリソースの取得
-		/// </summary>
-		protected void GetNamedAPIResourceList()
-		{
-			// 取得済確認
-			if(namedAPIResourceList != null) {
-				return;
-			}
-
-			// APIリソースのJSON文字列取得
-			string json = Singleton<PokeAPIClient>.Instance.GetAPIResourceListEndPoint(apiEndPoint);
-
-			// 取得したJSON文字列を解析
-			namedAPIResourceList = new NamedAPIResourceListData(json);
 		}
 		#endregion
 
@@ -96,7 +64,6 @@ namespace PokeAPI
 		/// </summary>
 		protected void Clear()
 		{
-			namedAPIResourceList = null;
 			apiResourceList = null;
 		}
 		#endregion
@@ -105,7 +72,7 @@ namespace PokeAPI
 
 		#region APIエンドポイント
 		/// <summary>APIエンドポイント</summary>
-		string apiEndPoint = null;
+		private string apiEndPoint = null;
 		#endregion
 	}
 }

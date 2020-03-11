@@ -11,19 +11,9 @@ namespace PokeAPI
 	/// <summary>
 	/// 言語情報クラス
 	/// </summary>
-	public class LanguageData
+	public class LanguageData : APIResource
 	{
 		// プロパティ
-
-		#region ID
-		/// <summary>ID</summary>
-		public int ID { get; internal set; } = 0;
-		#endregion
-
-		#region 名称
-		/// <summary>名称</summary>
-		public string Name { get; internal set; } = string.Empty;
-		#endregion
 
 		#region ゲーム上で公開されている言語か
 		/// <summary>ゲーム上で公開されている言語か</summary>

@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json.Linq;
 using Generic;
 
 //--- MITライセンスに基づくコメント ---
@@ -9,7 +8,7 @@ using Generic;
 
 namespace PokeAPI
 {
-	public class Region : PokeAPIBase
+	public class Region : NamedAPIResourceListItem
 	{
 		// public メソッド
 
@@ -17,57 +16,24 @@ namespace PokeAPI
 		/// <summary>
 		/// コンストラクタ
 		/// </summary>
-		public Region() : base("region")
+		public Region() : base("region", Singleton<RegionList>.Instance)
 		{
 		}
 		#endregion
 
-		#region クリア
+		#region データ取得
 		/// <summary>
-		/// クリア
+		/// データ取得
 		/// </summary>
-		public new void Clear()
-		{
-			base.Clear();
-			regionDataIDKey.Clear();
-			regionDataNameKey.Clear();
-		}
-		#endregion
-
+		/// <param name="name">名称</param>
+		/// <returns>データ</returns>
 		public RegionData GetRegion(string name)
 		{
-			// 地方リストの取得
-			GetNamedAPIResourceList();
-
-			// 読込済確認
-			RegionData data;
-			if(regionDataNameKey.TryGetValue(name.ToUpper(), out data)) {
-				return data;
-			}
-
-			// 地方APIリソースURL取得
-			string url = NamedAPIResourceList.GetURL(name);
-
-			// 地方JSON文字列取得
-			string json = Singleton<PokeAPIClient>.Instance.GetJson(url);
-
-			// 地方JSON文字列解析
-			return ParseRegionData(json);
+			return GetResource(name) as RegionData;
 		}
-
-		// private メンバ変数
-
-		#region 地方データ(IDキー)
-		/// <summary>地方データ(IDキー)</summary>
-		private Dictionary<int, RegionData> regionDataIDKey = new Dictionary<int, RegionData>();
 		#endregion
 
-		#region 地方データ(Nameキー)
-		/// <summary>地方データ(Nameキー)</summary>
-		private Dictionary<string, RegionData> regionDataNameKey = new Dictionary<string, RegionData>();
-		#endregion
-
-		// private メソッド
+		// protected メソッド
 
 		#region 地方 JSON解析
 		/// <summary>
@@ -75,17 +41,9 @@ namespace PokeAPI
 		/// </summary>
 		/// <param name="json">JSON文字列</param>
 		/// <returns>解析データ</returns>
-		private RegionData ParseRegionData(string json)
+		protected override APIResource ParseJson(string json)
 		{
-			JObject obj = JObject.Parse(json);
-
-			RegionData data = new RegionData(obj);
-
-			// ディクショナリに追加
-			regionDataIDKey.Add(data.ID, data);
-			regionDataNameKey.Add(data.Name.ToUpper(), data);
-
-			return data;
+			return new RegionData(JObject.Parse(json));
 		}
 		#endregion
 	}

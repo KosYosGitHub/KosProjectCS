@@ -65,18 +65,18 @@
 			nameCaption.AutoSize = true;
 			nameCaption.Location = new System.Drawing.Point(13, 39);
 			nameCaption.Name = "nameCaption";
-			nameCaption.Size = new System.Drawing.Size(29, 12);
+			nameCaption.Size = new System.Drawing.Size(66, 12);
 			nameCaption.TabIndex = 2;
-			nameCaption.Text = "名称";
+			nameCaption.Text = "名称(Name)";
 			// 
 			// officialCaption
 			// 
 			officialCaption.AutoSize = true;
 			officialCaption.Location = new System.Drawing.Point(13, 65);
 			officialCaption.Name = "officialCaption";
-			officialCaption.Size = new System.Drawing.Size(53, 12);
+			officialCaption.Size = new System.Drawing.Size(98, 12);
 			officialCaption.TabIndex = 4;
-			officialCaption.Text = "公式言語";
+			officialCaption.Text = "公式言語(Official)";
 			// 
 			// iso639Caption
 			// 
@@ -99,16 +99,16 @@
 			// namesCaption
 			// 
 			namesCaption.AutoSize = true;
-			namesCaption.Location = new System.Drawing.Point(197, 12);
+			namesCaption.Location = new System.Drawing.Point(244, 13);
 			namesCaption.Name = "namesCaption";
-			namesCaption.Size = new System.Drawing.Size(75, 12);
+			namesCaption.Size = new System.Drawing.Size(72, 12);
 			namesCaption.TabIndex = 10;
-			namesCaption.Text = "言語毎の名称";
+			namesCaption.Text = "名称(Names)";
 			// 
 			// idData
 			// 
 			this.idData.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.idData.Location = new System.Drawing.Point(70, 12);
+			this.idData.Location = new System.Drawing.Point(119, 12);
 			this.idData.Name = "idData";
 			this.idData.Size = new System.Drawing.Size(30, 15);
 			this.idData.TabIndex = 1;
@@ -116,7 +116,7 @@
 			// nameData
 			// 
 			this.nameData.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.nameData.Location = new System.Drawing.Point(70, 38);
+			this.nameData.Location = new System.Drawing.Point(119, 36);
 			this.nameData.Name = "nameData";
 			this.nameData.Size = new System.Drawing.Size(100, 15);
 			this.nameData.TabIndex = 3;
@@ -124,7 +124,7 @@
 			// officialData
 			// 
 			this.officialData.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.officialData.Location = new System.Drawing.Point(70, 64);
+			this.officialData.Location = new System.Drawing.Point(119, 62);
 			this.officialData.Name = "officialData";
 			this.officialData.Size = new System.Drawing.Size(40, 15);
 			this.officialData.TabIndex = 5;
@@ -132,7 +132,7 @@
 			// iso639Data
 			// 
 			this.iso639Data.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.iso639Data.Location = new System.Drawing.Point(70, 90);
+			this.iso639Data.Location = new System.Drawing.Point(119, 88);
 			this.iso639Data.Name = "iso639Data";
 			this.iso639Data.Size = new System.Drawing.Size(30, 15);
 			this.iso639Data.TabIndex = 7;
@@ -140,7 +140,7 @@
 			// iso3166Data
 			// 
 			this.iso3166Data.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.iso3166Data.Location = new System.Drawing.Point(70, 116);
+			this.iso3166Data.Location = new System.Drawing.Point(119, 114);
 			this.iso3166Data.Name = "iso3166Data";
 			this.iso3166Data.Size = new System.Drawing.Size(30, 15);
 			this.iso3166Data.TabIndex = 9;
@@ -155,28 +155,27 @@
 			this.languageNameView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.LanguageColumn,
             this.LanguageNameColumn});
-			this.languageNameView.Location = new System.Drawing.Point(199, 27);
+			this.languageNameView.Location = new System.Drawing.Point(246, 28);
 			this.languageNameView.MultiSelect = false;
 			this.languageNameView.Name = "languageNameView";
 			this.languageNameView.ReadOnly = true;
 			this.languageNameView.RowHeadersVisible = false;
 			this.languageNameView.RowTemplate.Height = 21;
 			this.languageNameView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.languageNameView.Size = new System.Drawing.Size(198, 138);
+			this.languageNameView.Size = new System.Drawing.Size(229, 138);
 			this.languageNameView.TabIndex = 11;
 			// 
 			// LanguageColumn
 			// 
-			this.LanguageColumn.HeaderText = "言語";
+			this.LanguageColumn.HeaderText = "言語(Language)";
 			this.LanguageColumn.Name = "LanguageColumn";
 			this.LanguageColumn.ReadOnly = true;
 			this.LanguageColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
 			this.LanguageColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-			this.LanguageColumn.Width = 80;
 			// 
 			// LanguageNameColumn
 			// 
-			this.LanguageNameColumn.HeaderText = "名称";
+			this.LanguageNameColumn.HeaderText = "名称(Name)";
 			this.LanguageNameColumn.Name = "LanguageNameColumn";
 			this.LanguageNameColumn.ReadOnly = true;
 			this.LanguageNameColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -184,7 +183,7 @@
 			// 
 			// languageDetailButton
 			// 
-			this.languageDetailButton.Location = new System.Drawing.Point(197, 171);
+			this.languageDetailButton.Location = new System.Drawing.Point(246, 172);
 			this.languageDetailButton.Name = "languageDetailButton";
 			this.languageDetailButton.Size = new System.Drawing.Size(52, 23);
 			this.languageDetailButton.TabIndex = 12;
@@ -192,11 +191,11 @@
 			this.languageDetailButton.UseVisualStyleBackColor = true;
 			this.languageDetailButton.Click += new System.EventHandler(this.languageDetailButton_Click);
 			// 
-			// LanguageDetailDialog
+			// LanguageDetailForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1008, 729);
+			this.ClientSize = new System.Drawing.Size(500, 213);
 			this.Controls.Add(this.languageDetailButton);
 			this.Controls.Add(this.languageNameView);
 			this.Controls.Add(namesCaption);
@@ -210,8 +209,7 @@
 			this.Controls.Add(officialCaption);
 			this.Controls.Add(nameCaption);
 			this.Controls.Add(idCaption);
-			this.Name = "LanguageDetailDialog";
-			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+			this.Name = "LanguageDetailForm";
 			this.Text = "言語(Language)";
 			this.Load += new System.EventHandler(this.LanguageDetail_Load);
 			((System.ComponentModel.ISupportInitialize)(this.languageNameView)).EndInit();

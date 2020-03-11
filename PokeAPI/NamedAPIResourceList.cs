@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Generic;
 
 namespace PokeAPI
 {
@@ -8,6 +9,13 @@ namespace PokeAPI
 	/// </summary>
 	public abstract class NamedAPIResourceList : PokeAPIBase
 	{
+		// protected メンバ変数
+
+		#region 名前付きAPIリソースリスト
+		/// <summary>名前付きAPIリソースリスト</summary>
+		protected NamedAPIResourceListData namedAPIResourceList = null;
+		#endregion
+
 		// public プロパティ
 
 		#region 名称リスト
@@ -36,13 +44,43 @@ namespace PokeAPI
 		/// <returns>URL</returns>
 		public string GetURL(string name)
 		{
-			string url = NamedAPIResourceList.Results.FirstOrDefault(x => x.Name == name)?.URL;
+			string url = namedAPIResourceList.Results.FirstOrDefault(x => x.Name == name)?.URL;
 
 			if(url == null) {
 				return string.Empty;
 			}
 
 			return url;
+		}
+		#endregion
+
+		#region 名前付きAPIリソースの取得
+		/// <summary>
+		/// 名前付きAPIリソースの取得
+		/// </summary>
+		private void GetNamedAPIResourceList()
+		{
+			// 取得済確認
+			if(namedAPIResourceList != null) {
+				return;
+			}
+
+			// APIリソースのJSON文字列取得
+			string json = Singleton<PokeAPIClient>.Instance.GetAPIResourceListEndPoint(APIEndPoint);
+
+			// 取得したJSON文字列を解析
+			namedAPIResourceList = new NamedAPIResourceListData(json);
+		}
+		#endregion
+
+		#region クリア
+		/// <summary>
+		/// クリア
+		/// </summary>
+		public new void Clear()
+		{
+			base.Clear();
+			namedAPIResourceList = null;
 		}
 		#endregion
 
@@ -55,7 +93,7 @@ namespace PokeAPI
 		/// <returns>名称リスト</returns>
 		private List<string> MakeNames()
 		{
-			return NamedAPIResourceList.Results.Select(x => x.Name).ToList();
+			return namedAPIResourceList.Results.Select(x => x.Name).ToList();
 		}
 		#endregion
 	}

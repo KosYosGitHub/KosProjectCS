@@ -1,9 +1,9 @@
 ﻿namespace PokeAPI
 {
 	/// <summary>
-	/// ポケモン種リスト
+	/// 性別リスト
 	/// </summary>
-	public class PokemonSpeciesList : NamedAPIResourceList
+	public class GenderList : NamedAPIResourceList
 	{
 		// public メソッド
 
@@ -11,7 +11,7 @@
 		/// <summary>
 		/// コンストラクタ
 		/// </summary>
-		public PokemonSpeciesList() : base("pokemon-species")
+		public GenderList() : base("gender")
 		{
 		}
 		#endregion

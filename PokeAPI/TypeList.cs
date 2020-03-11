@@ -1,9 +1,9 @@
 ﻿namespace PokeAPI
 {
 	/// <summary>
-	/// ポケモン種リスト
+	/// タイプリスト
 	/// </summary>
-	public class PokemonSpeciesList : NamedAPIResourceList
+	public class TypeList : NamedAPIResourceList
 	{
 		// public メソッド
 
@@ -11,7 +11,7 @@
 		/// <summary>
 		/// コンストラクタ
 		/// </summary>
-		public PokemonSpeciesList() : base("pokemon-species")
+		public TypeList() : base("type")
 		{
 		}
 		#endregion

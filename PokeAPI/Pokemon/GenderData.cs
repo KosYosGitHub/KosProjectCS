@@ -8,20 +8,12 @@ using Newtonsoft.Json.Linq;
 
 namespace PokeAPI
 {
-	/// <summary>性別データクラス</summary>
-	public class GenderData
+	/// <summary>
+	/// 性別データクラス
+	/// </summary>
+	public class GenderData : APIResource
 	{
 		// プロパティ
-
-		#region ID
-		/// <summary>ID</summary>
-		public int ID { get; internal set; } = 0;
-		#endregion
-
-		#region 名称
-		/// <summary>名称</summary>
-		public string Name { get; internal set; } = string.Empty;
-		#endregion
 
 		#region ポケモンごとの詳細
 		/// <summary>ポケモンごとの詳細</summary>

@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json.Linq;
 using Generic;
 
 //--- MITライセンスに基づくコメント ---
@@ -12,101 +11,42 @@ namespace PokeAPI
 	/// <summary>
 	/// 性別
 	/// </summary>
-	public class Gender : PokeAPIBase
+	public class Gender : NamedAPIResourceListItem
 	{
-		// public 定数
-
-		#region メス
-		/// <summary>メス</summary>
-		public const string NameFemale = "FEMALE";
-		#endregion
-
-		#region オス
-		/// <summary>オス</summary>
-		public const string NameMale = "MALE";
-		#endregion
-
-		#region 性別なし
-		/// <summary>性別なし</summary>
-		public const string NameGenderless = "GENDERLESS";
-		#endregion
-
 		// public メソッド
 
 		#region コンストラクタ
 		/// <summary>
 		/// コンストラクタ
 		/// </summary>
-		public Gender() : base("gender")
+		public Gender() : base("gender", Singleton<GenderList>.Instance)
 		{
 		}
 		#endregion
-
-		#region クリア
-		/// <summary>クリア</summary>
-		public new void Clear()
-		{
-			base.Clear();
-
-		}
-		#endregion
-
-		// internal メソッド
 
 		#region 性別の取得
 		/// <summary>
 		/// 性別の取得
 		/// </summary>
 		/// <param name="name">名称</param>
-		public void GetGender(string name)
+		/// <returns>データ</returns>
+		public GenderData GetGender(string name)
 		{
-			// 性別リストの取得
-			GetNamedAPIResourceList();
-
-			// 読込済確認
-			if(genderDataNameKey.ContainsKey(name)) {
-				return;
-			}
-
-			// 性別APIリソースURLの取得
-			string url = NamedAPIResourceList.GetURL(name);
-
-			// 性別JSON文字列の取得
-			string json = Singleton<PokeAPIClient>.Instance.GetJson(url);
-
-			// 性別JSON文字列の解析
-			ParseGenderJson(json);
+			return GetResource(name) as GenderData;
 		}
 		#endregion
 
-		// private メンバ変数
-
-		#region 性別データ(IDキー)
-		/// <summary>性別データ(IDキー)</summary>
-		private Dictionary<int, GenderData> genderDataIDKey = new Dictionary<int, GenderData>();
-		#endregion
-
-		#region 性別データ(Nameキー)
-		/// <summary>性別データ(Nameキー)</summary>
-		private Dictionary<string, GenderData> genderDataNameKey = new Dictionary<string, GenderData>();
-		#endregion
-
-		// private メソッド
+		// protected メソッド
 
 		#region GenderDataの解析
 		/// <summary>
 		/// GenderDataの解析
 		/// </summary>
 		/// <param name="json">JSON文字列</param>
-		private void ParseGenderJson(string json)
+		/// <returns>解析データ</returns>
+		protected override APIResource ParseJson(string json)
 		{
-			JObject obj = JObject.Parse(json);
-
-			GenderData data = new GenderData(obj);
-
-			// ディクショナリに追加
-			genderDataIDKey.Add(data.ID, data);
-			genderDataNameKey.Add(data.Name, data);
+			return new GenderData(JObject.Parse(json));
 		}
 		#endregion
 	}

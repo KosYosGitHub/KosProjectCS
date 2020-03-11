@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json.Linq;
 using Generic;
 
 //--- MITライセンスに基づくコメント ---
@@ -12,119 +11,41 @@ namespace PokeAPI
 	/// <summary>
 	/// 経験値タイプクラス
 	/// </summary>
-	internal class GrowthRate : PokeAPIBase
+	internal class GrowthRate : NamedAPIResourceListItem
 	{
-		// public 定数
-
-		#region 60万タイプ(初期は成長が非常に遅い（全タイプ中最遅）が、途中から早くなり、高レベルになっても必要な経験値がほとんど増えなくなる)
-		/// <summary>60万タイプ(初期は成長が非常に遅い（全タイプ中最遅）が、途中から早くなり、高レベルになっても必要な経験値がほとんど増えなくなる)</summary>
-		public const string NameSlowThenVeryFast = "SLOW-THEN-VERY-FAST";
-		#endregion
-
-		#region 80万タイプ(最初から最後まで比較的早い)
-		/// <summary>80万タイプ(最初から最後まで比較的早い)</summary>
-		public const string NameFast = "FAST";
-		#endregion
-
-		#region 100万タイプ(標準的に成長する)
-		/// <summary>100万タイプ(標準的)</summary>
-		public const string NameMedium = "MEDIUM";
-		#endregion
-
-		#region 105万タイプ(初期は早いペースで成長し、途中から標準的なペースに移行)
-		/// <summary>105万タイプ(初期は早いペースで成長し、途中から標準的なペースに移行)</summary>
-		public const string NameMediumSlow = "MEDIUM-SLOW";
-		#endregion
-
-		#region 125万タイプ(最初から最後まで比較的遅い)
-		/// <summary>125万タイプ(最初から最後まで比較的遅い)</summary>
-		public const string NameSlow = "SLOW";
-		#endregion
-
-		#region 164万タイプ(初期は成長が非常に早いが、途中から遅くなっていき、高レベルになると1レベル上げるのに必要な経験値が爆発的に増えていく)
-		/// <summary>164万タイプ(初期は成長が非常に早いが、途中から遅くなっていき、高レベルになると1レベル上げるのに必要な経験値が爆発的に増えていく)</summary>
-		public const string NameFastThenVerySlow = "FAST-THEN-VERY-SLOW";
-		#endregion
-
 		// public メソッド
 
 		#region コンストラクタ
 		/// <summary>
 		/// コンストラクタ
 		/// </summary>
-		public GrowthRate() : base("growth-rate")
+		public GrowthRate() : base("growth-rate", Singleton<GrowthRateList>.Instance)
 		{
 		}
 		#endregion
-
-		#region クリア
-		/// <summary>
-		/// クリア
-		/// </summary>
-		public new void Clear()
-		{
-			base.Clear();
-			growthRateDataIDKey.Clear();
-			growthRateDataNameKey.Clear();
-		}
-		#endregion
-
-		// interanal メソッド
 
 		#region 経験値タイプの取得
 		/// <summary>
 		/// 経験値タイプの取得
 		/// </summary>
 		/// <param name="name">名称</param>
-		public void GetGrowthRate(string name)
+		/// <returns>データ</returns>
+		public GrowthRateData GetGrowthRate(string name)
 		{
-			// 経験値タイプリストの取得
-			GetNamedAPIResourceList();
-
-			// 読込済確認
-			if(growthRateDataNameKey.ContainsKey(name)) {
-				return;
-			}
-
-			// 経験値タイプAPIリソースURLの取得
-			string url = NamedAPIResourceList.GetURL(name);
-
-			// 経験値タイプJSON文字列の取得
-			string json = Singleton<PokeAPIClient>.Instance.GetJson(url);
-
-			// 経験値タイプJSON文字列の解析
-			ParseGrowthRateJson(json);
+			return GetResource(name) as GrowthRateData;
 		}
 		#endregion
 
-		// private メンバ変数
-
-		#region 経験値タイプデータ(IDキー)
-		/// <summary>経験値タイプデータ(IDキー)</summary>
-		private Dictionary<int, GrowthRateData> growthRateDataIDKey = new Dictionary<int, GrowthRateData>();
-		#endregion
-
-		#region 経験値タイプデータ(Nameキー)
-		/// <summary>経験値タイプデータ(Nameキー)</summary>
-		private Dictionary<string, GrowthRateData> growthRateDataNameKey = new Dictionary<string, GrowthRateData>();
-		#endregion
-
-		// private メソッド
+		// protected メソッド
 
 		#region 経験値タイプ 解析
 		/// <summary>
 		/// 経験値タイプ 解析
 		/// </summary>
 		/// <param name="json">JSON文字列</param>
-		private void ParseGrowthRateJson(string json)
+		protected override APIResource ParseJson(string json)
 		{
-			JObject obj = JObject.Parse(json);
-
-			GrowthRateData data = new GrowthRateData(obj);
-
-			// ディクショナリに追加
-			growthRateDataIDKey.Add(data.ID, data);
-			growthRateDataNameKey.Add(data.Name.ToUpper(), data);
+			return new GrowthRateData(JObject.Parse(json));
 		}
 		#endregion
 	}

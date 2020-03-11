@@ -51,9 +51,9 @@
 			nameCaption.AutoSize = true;
 			nameCaption.Location = new System.Drawing.Point(12, 33);
 			nameCaption.Name = "nameCaption";
-			nameCaption.Size = new System.Drawing.Size(29, 12);
+			nameCaption.Size = new System.Drawing.Size(66, 12);
 			nameCaption.TabIndex = 2;
-			nameCaption.Text = "名称";
+			nameCaption.Text = "名称(Name)";
 			// 
 			// idCaption
 			// 
@@ -69,23 +69,23 @@
 			versionGroupCaption.AutoSize = true;
 			versionGroupCaption.Location = new System.Drawing.Point(12, 57);
 			versionGroupCaption.Name = "versionGroupCaption";
-			versionGroupCaption.Size = new System.Drawing.Size(88, 12);
+			versionGroupCaption.Size = new System.Drawing.Size(165, 12);
 			versionGroupCaption.TabIndex = 4;
-			versionGroupCaption.Text = "バージョングループ";
+			versionGroupCaption.Text = "バージョングループ(VersionGroup)";
 			// 
 			// namesCaption
 			// 
 			namesCaption.AutoSize = true;
-			namesCaption.Location = new System.Drawing.Point(333, 9);
+			namesCaption.Location = new System.Drawing.Point(12, 88);
 			namesCaption.Name = "namesCaption";
-			namesCaption.Size = new System.Drawing.Size(75, 12);
+			namesCaption.Size = new System.Drawing.Size(72, 12);
 			namesCaption.TabIndex = 7;
-			namesCaption.Text = "言語毎の名称";
+			namesCaption.Text = "名称(Names)";
 			// 
 			// nameData
 			// 
 			this.nameData.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.nameData.Location = new System.Drawing.Point(106, 32);
+			this.nameData.Location = new System.Drawing.Point(183, 32);
 			this.nameData.Name = "nameData";
 			this.nameData.Size = new System.Drawing.Size(153, 15);
 			this.nameData.TabIndex = 3;
@@ -93,7 +93,7 @@
 			// idData
 			// 
 			this.idData.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.idData.Location = new System.Drawing.Point(106, 8);
+			this.idData.Location = new System.Drawing.Point(183, 8);
 			this.idData.Name = "idData";
 			this.idData.Size = new System.Drawing.Size(30, 15);
 			this.idData.TabIndex = 1;
@@ -101,14 +101,14 @@
 			// versionGroupData
 			// 
 			this.versionGroupData.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.versionGroupData.Location = new System.Drawing.Point(106, 56);
+			this.versionGroupData.Location = new System.Drawing.Point(183, 56);
 			this.versionGroupData.Name = "versionGroupData";
 			this.versionGroupData.Size = new System.Drawing.Size(153, 15);
 			this.versionGroupData.TabIndex = 5;
 			// 
 			// buttonVersionGroupDetail
 			// 
-			this.buttonVersionGroupDetail.Location = new System.Drawing.Point(262, 51);
+			this.buttonVersionGroupDetail.Location = new System.Drawing.Point(339, 51);
 			this.buttonVersionGroupDetail.Name = "buttonVersionGroupDetail";
 			this.buttonVersionGroupDetail.Size = new System.Drawing.Size(39, 24);
 			this.buttonVersionGroupDetail.TabIndex = 6;
@@ -118,7 +118,7 @@
 			// 
 			// buttonLanguageDetail
 			// 
-			this.buttonLanguageDetail.Location = new System.Drawing.Point(335, 178);
+			this.buttonLanguageDetail.Location = new System.Drawing.Point(14, 257);
 			this.buttonLanguageDetail.Name = "buttonLanguageDetail";
 			this.buttonLanguageDetail.Size = new System.Drawing.Size(39, 24);
 			this.buttonLanguageDetail.TabIndex = 9;
@@ -136,38 +136,37 @@
 			this.languageNameView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.LanguageColumn,
             this.LanguageNameColumn});
-			this.languageNameView.Location = new System.Drawing.Point(335, 24);
+			this.languageNameView.Location = new System.Drawing.Point(14, 103);
 			this.languageNameView.MultiSelect = false;
 			this.languageNameView.Name = "languageNameView";
 			this.languageNameView.ReadOnly = true;
 			this.languageNameView.RowHeadersVisible = false;
 			this.languageNameView.RowTemplate.Height = 21;
 			this.languageNameView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.languageNameView.Size = new System.Drawing.Size(198, 153);
+			this.languageNameView.Size = new System.Drawing.Size(222, 153);
 			this.languageNameView.TabIndex = 8;
 			// 
 			// LanguageColumn
 			// 
-			this.LanguageColumn.HeaderText = "言語";
+			this.LanguageColumn.HeaderText = "言語(Language)";
 			this.LanguageColumn.Name = "LanguageColumn";
 			this.LanguageColumn.ReadOnly = true;
 			this.LanguageColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
 			this.LanguageColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-			this.LanguageColumn.Width = 80;
 			// 
 			// LanguageNameColumn
 			// 
-			this.LanguageNameColumn.HeaderText = "名称";
+			this.LanguageNameColumn.HeaderText = "名称(Name)";
 			this.LanguageNameColumn.Name = "LanguageNameColumn";
 			this.LanguageNameColumn.ReadOnly = true;
 			this.LanguageNameColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
 			this.LanguageNameColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
 			// 
-			// VersionDetailDialog
+			// VersionDetailForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1008, 729);
+			this.ClientSize = new System.Drawing.Size(413, 310);
 			this.Controls.Add(this.buttonLanguageDetail);
 			this.Controls.Add(this.languageNameView);
 			this.Controls.Add(namesCaption);
@@ -178,8 +177,7 @@
 			this.Controls.Add(this.idData);
 			this.Controls.Add(nameCaption);
 			this.Controls.Add(idCaption);
-			this.Name = "VersionDetailDialog";
-			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+			this.Name = "VersionDetailForm";
 			this.Text = "バージョン(Version)";
 			this.Load += new System.EventHandler(this.VersionDetailDialog_Load);
 			((System.ComponentModel.ISupportInitialize)(this.languageNameView)).EndInit();

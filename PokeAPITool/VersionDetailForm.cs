@@ -40,6 +40,7 @@ namespace PokeAPITool
 		/// <param name="e"></param>
 		private void buttonVersionGroupDetail_Click(object sender, EventArgs e)
 		{
+			DetailForm.ShowDialog(PokeAPIToolModel.TitleVersionGroup, Constant.APIVersionGroup, typeof(VersionGroupDetailForm), this);
 		}
 		#endregion
 

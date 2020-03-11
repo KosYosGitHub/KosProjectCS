@@ -58,6 +58,16 @@ namespace PokeAPITool
 		}
 		#endregion
 
+		#region コンストラクタ
+		/// <summary>
+		/// コンストラクタ
+		/// </summary>
+		public DetailForm()
+		{
+			InitializeComponent();
+		}
+		#endregion
+
 		// protected メソッド
 
 		#region データの表示

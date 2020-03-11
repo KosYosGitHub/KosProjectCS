@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
 
 //--- MITライセンスに基づくコメント ---
@@ -15,7 +12,7 @@ namespace PokeAPI
 	/// <summary>
 	/// ポケモン(大分類)データクラス
 	/// </summary>
-	public class PokemonSpeciesData
+	public class PokemonSpeciesData : APIResource
 	{
 		// public static メソッド
 
@@ -40,16 +37,6 @@ namespace PokeAPI
 		#endregion
 
 		// public プロパティ
-
-		#region ID
-		/// <summary>ID</summary>
-		public int ID { get; internal set; } = 0;
-		#endregion
-
-		#region 名称
-		/// <summary>名称</summary>
-		public string Name { get; internal set; } = string.Empty;
-		#endregion
 
 		#region ソート順番
 		/// <summary>ソート順番</summary>

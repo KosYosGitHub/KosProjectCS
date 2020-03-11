@@ -44,17 +44,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="APIResource.cs" />
     <Compile Include="Characteristic.cs" />
     <Compile Include="CommonModels\APIResourceData.cs" />
     <Compile Include="CommonModels\DescriptionData.cs" />
     <Compile Include="CommonModels\FlavorText.cs" />
     <Compile Include="CommonModels\GenerationGameIndexData.cs" />
     <Compile Include="EggGroup.cs" />
+    <Compile Include="EggGroupList.cs" />
     <Compile Include="Games\GenerationData.cs" />
     <Compile Include="Gender.cs" />
+    <Compile Include="GenderList.cs" />
     <Compile Include="Generation.cs" />
     <Compile Include="GenerationList.cs" />
     <Compile Include="GrowthRate.cs" />
+    <Compile Include="GrowthRateList.cs" />
     <Compile Include="ItemAttributeList.cs" />
     <Compile Include="ItemCategoryList.cs" />
     <Compile Include="ItemList.cs" />
@@ -65,7 +69,9 @@
     <Compile Include="Locations\RegionData.cs" />
     <Compile Include="NamedAPIResourceList.cs" />
     <Compile Include="Nature.cs" />
+    <Compile Include="NatureList.cs" />
     <Compile Include="PalParkAreaList.cs" />
+    <Compile Include="PokeAPI.cs" />
     <Compile Include="PokeAPIClient.cs" />
     <Compile Include="Pokedex.cs" />
     <Compile Include="PokedexList.cs" />
@@ -91,8 +97,10 @@
     <Compile Include="Pokemon\TypeRelationsData.cs" />
     <Compile Include="Region.cs" />
     <Compile Include="RegionList.cs" />
+    <Compile Include="NamedAPIResourceListItem.cs" />
     <Compile Include="ResourceLists\APIResourceListData.cs" />
     <Compile Include="Type.cs" />
+    <Compile Include="TypeList.cs" />
     <Compile Include="Utility\LanguageData.cs" />
     <Compile Include="ResourceLists\NamedAPIResourceListData.cs" />
     <Compile Include="CommonModels\NameData.cs" />

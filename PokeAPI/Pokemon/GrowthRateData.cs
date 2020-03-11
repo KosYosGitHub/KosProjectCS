@@ -11,19 +11,9 @@ namespace PokeAPI
 	/// <summary>
 	/// 経験値タイプデータクラス
 	/// </summary>
-	public class GrowthRateData
+	public class GrowthRateData : APIResource
 	{
 		// コンストラクタ
-
-		#region ID
-		/// <summary>ID</summary>
-		public int ID { get; internal set; } = 0;
-		#endregion
-
-		#region 名称
-		/// <summary>名称</summary>
-		public string Name { get; internal set; } = string.Empty;
-		#endregion
 
 		#region レベルアップ割合を計算する式
 		/// <summary>レベルアップ割合を計算する式</summary>
