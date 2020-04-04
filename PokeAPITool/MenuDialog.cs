@@ -187,5 +187,29 @@ namespace PokeAPITool
 			NamedAPIResourceListForm.ShowDialog(PokeAPIToolModel.TitleItemCategory, typeof(DetailForm), Singleton<PokeAPIToolModel>.Instance.ItemCategoryList, this);
 		}
 		#endregion
+
+		#region アイテムポケットボタン クリック
+		/// <summary>
+		/// アイテムポケットボタン クリック
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void buttonItemPocket_Click(object sender, EventArgs e)
+		{
+			NamedAPIResourceListForm.ShowDialog(PokeAPIToolModel.TitleItemPocket, typeof(DetailForm), Singleton<PokeAPIToolModel>.Instance.ItemPocketList, this);
+		}
+		#endregion
+
+		#region 技マシンボタン クリック
+		/// <summary>
+		/// 技マシンボタン クリック
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void buttonMachine_Click(object sender, EventArgs e)
+		{
+			APIResourceListForm.ShowDialog(PokeAPIToolModel.TitleMachine, typeof(DetailForm), Singleton<PokeAPIToolModel>.Instance.MachineList, this);
+		}
+		#endregion
 	}
 }

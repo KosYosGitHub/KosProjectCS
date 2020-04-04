@@ -41,6 +41,8 @@
 			this.buttonPalParkArea = new System.Windows.Forms.Button();
 			this.buttonItemAttribute = new System.Windows.Forms.Button();
 			this.buttonItemCategory = new System.Windows.Forms.Button();
+			this.buttonItemPocket = new System.Windows.Forms.Button();
+			this.buttonMachine = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// buttonLanguage
@@ -183,11 +185,33 @@
 			this.buttonItemCategory.UseVisualStyleBackColor = true;
 			this.buttonItemCategory.Click += new System.EventHandler(this.buttonItemCategory_Click);
 			// 
+			// buttonItemPocket
+			// 
+			this.buttonItemPocket.Location = new System.Drawing.Point(271, 136);
+			this.buttonItemPocket.Name = "buttonItemPocket";
+			this.buttonItemPocket.Size = new System.Drawing.Size(80, 35);
+			this.buttonItemPocket.TabIndex = 14;
+			this.buttonItemPocket.Text = "アイテム\r\nポケット";
+			this.buttonItemPocket.UseVisualStyleBackColor = true;
+			this.buttonItemPocket.Click += new System.EventHandler(this.buttonItemPocket_Click);
+			// 
+			// buttonMachine
+			// 
+			this.buttonMachine.Location = new System.Drawing.Point(357, 136);
+			this.buttonMachine.Name = "buttonMachine";
+			this.buttonMachine.Size = new System.Drawing.Size(80, 35);
+			this.buttonMachine.TabIndex = 15;
+			this.buttonMachine.Text = "技マシン";
+			this.buttonMachine.UseVisualStyleBackColor = true;
+			this.buttonMachine.Click += new System.EventHandler(this.buttonMachine_Click);
+			// 
 			// MenuDialog
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1008, 729);
+			this.Controls.Add(this.buttonMachine);
+			this.Controls.Add(this.buttonItemPocket);
 			this.Controls.Add(this.buttonItemCategory);
 			this.Controls.Add(this.buttonItemAttribute);
 			this.Controls.Add(this.buttonPalParkArea);
@@ -225,6 +249,8 @@
 		private System.Windows.Forms.Button buttonPalParkArea;
 		private System.Windows.Forms.Button buttonItemAttribute;
 		private System.Windows.Forms.Button buttonItemCategory;
+		private System.Windows.Forms.Button buttonItemPocket;
+		private System.Windows.Forms.Button buttonMachine;
 	}
 }
 

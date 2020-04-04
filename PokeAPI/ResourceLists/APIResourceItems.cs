@@ -11,7 +11,7 @@ namespace PokeAPI
 	/// <summary>
 	/// APIリソースリスト
 	/// </summary>
-	public class APIResourceListItems : APIResourceItesmBase
+	public class APIResourceItems : APIResourceItesmBase
 	{
 		// プロパティ
 		#region リソースリスト
@@ -26,7 +26,7 @@ namespace PokeAPI
 		/// コンストラクタ
 		/// </summary>
 		/// <param name="json">JSON文字列</param>
-		public APIResourceListItems(string json) : base(json)
+		public APIResourceItems(string json) : base(json)
 		{
 		}
 		#endregion

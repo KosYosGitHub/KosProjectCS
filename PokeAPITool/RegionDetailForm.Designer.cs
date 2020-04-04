@@ -103,7 +103,7 @@
 			// pokedexesCaption
 			// 
 			pokedexesCaption.AutoSize = true;
-			pokedexesCaption.Location = new System.Drawing.Point(210, 86);
+			pokedexesCaption.Location = new System.Drawing.Point(218, 86);
 			pokedexesCaption.Name = "pokedexesCaption";
 			pokedexesCaption.Size = new System.Drawing.Size(29, 12);
 			pokedexesCaption.TabIndex = 10;
@@ -112,7 +112,7 @@
 			// versionGroupCaption
 			// 
 			versionGroupCaption.AutoSize = true;
-			versionGroupCaption.Location = new System.Drawing.Point(561, 86);
+			versionGroupCaption.Location = new System.Drawing.Point(585, 86);
 			versionGroupCaption.Name = "versionGroupCaption";
 			versionGroupCaption.Size = new System.Drawing.Size(88, 12);
 			versionGroupCaption.TabIndex = 16;
@@ -121,7 +121,7 @@
 			// namesCaption
 			// 
 			namesCaption.AutoSize = true;
-			namesCaption.Location = new System.Drawing.Point(357, 86);
+			namesCaption.Location = new System.Drawing.Point(373, 86);
 			namesCaption.Name = "namesCaption";
 			namesCaption.Size = new System.Drawing.Size(75, 12);
 			namesCaption.TabIndex = 13;
@@ -166,7 +166,7 @@
 			// 
 			// buttonPokedexDetail
 			// 
-			this.buttonPokedexDetail.Location = new System.Drawing.Point(212, 693);
+			this.buttonPokedexDetail.Location = new System.Drawing.Point(220, 693);
 			this.buttonPokedexDetail.Name = "buttonPokedexDetail";
 			this.buttonPokedexDetail.Size = new System.Drawing.Size(39, 24);
 			this.buttonPokedexDetail.TabIndex = 12;
@@ -183,7 +183,7 @@
 			this.pokedexDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.pokedexDataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.pokedexColumn});
-			this.pokedexDataView.Location = new System.Drawing.Point(212, 101);
+			this.pokedexDataView.Location = new System.Drawing.Point(220, 101);
 			this.pokedexDataView.MultiSelect = false;
 			this.pokedexDataView.Name = "pokedexDataView";
 			this.pokedexDataView.ReadOnly = true;
@@ -203,7 +203,7 @@
 			// 
 			// buttonVersionGroupDetail
 			// 
-			this.buttonVersionGroupDetail.Location = new System.Drawing.Point(563, 693);
+			this.buttonVersionGroupDetail.Location = new System.Drawing.Point(587, 693);
 			this.buttonVersionGroupDetail.Name = "buttonVersionGroupDetail";
 			this.buttonVersionGroupDetail.Size = new System.Drawing.Size(39, 24);
 			this.buttonVersionGroupDetail.TabIndex = 18;
@@ -220,7 +220,7 @@
 			this.versionGroupDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.versionGroupDataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.VersionGroupColumn});
-			this.versionGroupDataView.Location = new System.Drawing.Point(563, 101);
+			this.versionGroupDataView.Location = new System.Drawing.Point(587, 101);
 			this.versionGroupDataView.MultiSelect = false;
 			this.versionGroupDataView.Name = "versionGroupDataView";
 			this.versionGroupDataView.ReadOnly = true;
@@ -241,7 +241,7 @@
 			// 
 			// buttonNamesDetail
 			// 
-			this.buttonNamesDetail.Location = new System.Drawing.Point(359, 693);
+			this.buttonNamesDetail.Location = new System.Drawing.Point(375, 693);
 			this.buttonNamesDetail.Name = "buttonNamesDetail";
 			this.buttonNamesDetail.Size = new System.Drawing.Size(39, 24);
 			this.buttonNamesDetail.TabIndex = 15;
@@ -259,7 +259,7 @@
 			this.namesDataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.LanguageColumn,
             this.LanguageNameColumn});
-			this.namesDataView.Location = new System.Drawing.Point(359, 101);
+			this.namesDataView.Location = new System.Drawing.Point(375, 101);
 			this.namesDataView.MultiSelect = false;
 			this.namesDataView.Name = "namesDataView";
 			this.namesDataView.ReadOnly = true;
@@ -320,11 +320,11 @@
 			this.mainGenerationData.Size = new System.Drawing.Size(100, 15);
 			this.mainGenerationData.TabIndex = 5;
 			// 
-			// RegionDetailDialog
+			// RegionDetailForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1008, 729);
+			this.ClientSize = new System.Drawing.Size(783, 729);
 			this.Controls.Add(this.buttonGenerationDetail);
 			this.Controls.Add(this.mainGenerationData);
 			this.Controls.Add(this.nameData);
@@ -344,8 +344,7 @@
 			this.Controls.Add(mainGenerationCaption);
 			this.Controls.Add(nameCaption);
 			this.Controls.Add(idCaption);
-			this.Name = "RegionDetailDialog";
-			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+			this.Name = "RegionDetailForm";
 			this.Text = "地方(Region)";
 			this.Load += new System.EventHandler(this.RegionDetailDialog_Load);
 			((System.ComponentModel.ISupportInitialize)(this.locationDataView)).EndInit();

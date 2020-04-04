@@ -46,6 +46,7 @@ namespace PokeAPITool
 		/// <summary>
 		/// コンストラクタ
 		/// </summary>
+		/// <param name="titleText">タイトル</param>
 		/// <param name="apiName">API名称</param>
 		public DetailForm(string titleText, string apiName)
 		{
@@ -58,7 +59,7 @@ namespace PokeAPITool
 		}
 		#endregion
 
-		#region コンストラクタ
+		#region コンストラクタ(デザイン表示用)
 		/// <summary>
 		/// コンストラクタ
 		/// </summary>

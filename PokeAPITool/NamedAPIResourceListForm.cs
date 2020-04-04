@@ -7,7 +7,6 @@ namespace PokeAPITool
 	/// <summary>
 	/// 名前付きAPIリソースリスト画面
 	/// </summary>
-	/// <typeparam name="T">詳細フォームクラス</typeparam>
 	public partial class NamedAPIResourceListForm : Form
 	{
 		// public static メソッド
@@ -85,19 +84,8 @@ namespace PokeAPITool
 		/// <param name="e"></param>
 		private void NamedAPIResourceListForm_Shown(object sender, EventArgs e)
 		{
-			Cursor cursor = Cursor.Current;
-
-			try {
-				// カーソルをウェイトに変更
-				Cursor.Current = Cursors.WaitCursor;
-
-				// データを表示
-				ShowData();
-			}
-			finally {
-				// カーソルを戻す
-				Cursor.Current = cursor;
-			}
+			// データを表示
+			ShowData();
 		}
 		#endregion
 
@@ -142,7 +130,6 @@ namespace PokeAPITool
 		/// </summary>
 		private void Clear()
 		{
-			this.Text = "読込中...";
 			listDataView.Columns[0].HeaderText = string.Empty;
 			listDataView.Rows.Clear();
 		}

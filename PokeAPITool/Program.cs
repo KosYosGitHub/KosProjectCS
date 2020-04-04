@@ -1,13 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PokeAPITool
 {
 	static class Program
 	{
+		#region エントリポイント
 		/// <summary>
 		/// アプリケーションのメイン エントリ ポイントです。
 		/// </summary>
@@ -18,5 +16,6 @@ namespace PokeAPITool
 			Application.SetCompatibleTextRenderingDefault(false);
 			Application.Run(new MenuDialog());
 		}
+		#endregion
 	}
 }

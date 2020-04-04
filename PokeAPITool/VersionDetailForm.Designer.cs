@@ -166,7 +166,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(413, 310);
+			this.ClientSize = new System.Drawing.Size(390, 294);
 			this.Controls.Add(this.buttonLanguageDetail);
 			this.Controls.Add(this.languageNameView);
 			this.Controls.Add(namesCaption);

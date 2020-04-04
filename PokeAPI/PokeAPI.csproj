@@ -48,6 +48,8 @@
     <Compile Include="Abstracts\APIResourceList.cs" />
     <Compile Include="Abstracts\APIResourceListBase.cs" />
     <Compile Include="Abstracts\APIResource.cs" />
+    <Compile Include="Items\ItemPockets\ItemPocketList.cs" />
+    <Compile Include="Machines\Machines\MachineList.cs" />
     <Compile Include="Pokemon\Characteristics\Characteristic.cs" />
     <Compile Include="Utility\CommonModels\APIResourceData.cs" />
     <Compile Include="Utility\CommonModels\DescriptionData.cs" />
@@ -101,7 +103,7 @@
     <Compile Include="Locations\Regions\Region.cs" />
     <Compile Include="Locations\Regions\RegionList.cs" />
     <Compile Include="Abstracts\PokeAPIBase.cs" />
-    <Compile Include="ResourceLists\APIResourceListItems.cs" />
+    <Compile Include="ResourceLists\APIResourceItems.cs" />
     <Compile Include="Pokemon\Types\Type\Type.cs" />
     <Compile Include="Pokemon\Types\Type\TypeList.cs" />
     <Compile Include="Utility\Languages\LanguageData.cs" />

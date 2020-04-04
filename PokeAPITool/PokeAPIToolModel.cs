@@ -76,6 +76,16 @@ namespace PokeAPITool
 		public const string TitleItemCategory = "アイテムカテゴリ(ItemCategory)";
 		#endregion
 
+		#region アイテムポケットタイトル
+		/// <summary>アイテムポケットタイトル</summary>
+		public const string TitleItemPocket = "アイテムポケット(ItemPocket)";
+		#endregion
+
+		#region 技マシンタイトル
+		/// <summary>技マシンタイトル</summary>
+		public const string TitleMachine = "技マシン(Machine)";
+		#endregion
+
 		// public プロパティ
 
 		#region 言語リスト
@@ -181,6 +191,16 @@ namespace PokeAPITool
 		#region アイテムカテゴリリスト
 		/// <summary>アイテムカテゴリリスト</summary>
 		public PokeAPI.ItemCategoryList ItemCategoryList => Singleton<PokeAPI.ItemCategoryList>.Instance;
+		#endregion
+
+		#region アイテムポケットリスト
+		/// <summary>アイテムポケットリスト</summary>
+		public PokeAPI.ItemPocketList ItemPocketList => Singleton<PokeAPI.ItemPocketList>.Instance;
+		#endregion
+
+		#region 技マシンリスト
+		/// <summary>技マシンリスト</summary>
+		public PokeAPI.MachineList MachineList => Singleton<PokeAPI.MachineList>.Instance;
 		#endregion
 	}
 }

@@ -9,6 +9,11 @@ namespace PokeAPITool
 	/// </summary>
 	public partial class GenerationDetailForm : DetailForm
 	{
+		// private メンバ変数
+
+		/// <summary>API名</summary>
+		private string apiName = string.Empty;
+
 		// public イベント
 
 		#region コンストラクタ
@@ -18,6 +23,8 @@ namespace PokeAPITool
 		public GenerationDetailForm(string titleText, string apiName) : base(titleText, apiName)
 		{
 			InitializeComponent();
+
+			this.apiName = apiName;
 		}
 		#endregion
 
