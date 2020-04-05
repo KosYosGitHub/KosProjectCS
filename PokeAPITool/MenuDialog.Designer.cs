@@ -203,6 +203,7 @@
 			this.buttonMachine.TabIndex = 15;
 			this.buttonMachine.Text = "技マシン";
 			this.buttonMachine.UseVisualStyleBackColor = true;
+			this.buttonMachine.Visible = false;
 			this.buttonMachine.Click += new System.EventHandler(this.buttonMachine_Click);
 			// 
 			// MenuDialog
